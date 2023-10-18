@@ -318,6 +318,13 @@ let router = new Router({
         layout: AdminLayout
     }
     },
+
+    {path: '/actiontype', component: require("./views/admin/new_ActionType.vue").default,
+    meta: {
+
+        layout: AdminLayout
+    }
+    },
     {path: '/NewCampaign', component: require("./views/admin/NewCampaign.vue").default,
     meta: {
 

@@ -157,7 +157,7 @@
     <div class="card ">
         <div class="row">
         <div class="col-4 text-center ">
-        <img src="/images/accounts.png" style="width: 70%;
+        <img src="/images/whitelist.png" style="width: 90%;
 
     padding: 20px;">
     </div>
@@ -482,7 +482,7 @@ export default {
 #image-drop-area {
     width: 90%;
     height: 250px;
-  border: 2px dotted #ccc;
+  border: 2px dashed #ccc;
   padding: 20px;
   text-align: center;
   border-radius: 5px;

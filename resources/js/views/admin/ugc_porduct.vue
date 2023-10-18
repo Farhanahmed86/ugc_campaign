@@ -7,14 +7,14 @@
           src="/images/dline-2.png" style="width: 90%;height: 20px;"/>
           </div>   
           <div class="row">
-              <div class="col">
+              <div class="col-6">
                 <div class="form-type" style="width: 40%; padding-bottom: 25px;">
                   <h4 style="font-weight: 400;color: #000;border-bottom: 1px solid #2A2C76;">Add UGC Product</h4>
                 </div>
                   <form>
                      <div class="form-group">
                           <label for="Product Name*" style="color: #000; font-size: 18px;">Product Name*</label>
-                          <input type="name" class="form-control" id="name" aria-describedby="" placeholder="" style= "border: none;box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; border-radius: 10px;">
+                          <input type="name" class="form-control" id="name" aria-describedby="" placeholder="" style= "border: none;box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; border-radius: 5px;">
                       </div>
                       <div class="form-group">
                           <label for="Product Name*" style="color: #000; font-size: 18px;">Product Description*</label>
@@ -27,15 +27,15 @@
                       </div>
                       <div class="form-group">
                           <label for="Product Name*" style="color: #000; font-size: 18px;">Start of Application*</label>
-                          <input type="name" class="form-control" id="name" aria-describedby="" placeholder="" style="border: none;box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; border-radius: 10px;">
+                          <input type="name" class="form-control" id="name" aria-describedby="" placeholder="" style="border: none;box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; border-radius: 5px;">
                       </div>
                       <div class="form-group">
                           <label for="Product Name*" style="color: #000; font-size: 18px;">End of Application*</label>
-                          <input type="name" class="form-control" id="name" aria-describedby="" placeholder="" style="border: none;box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; border-radius: 10px;">
+                          <input type="name" class="form-control" id="name" aria-describedby="" placeholder="" style="border: none;box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; border-radius: 5px;">
                       </div>
                       <div class="form-group">
                       <label for="Product Name*" style="color: #000; font-size: 18px;">Number of products you would like to offer*</label>
-                          <input type="name" class="form-control" id="name" aria-describedby="" placeholder="" style="border: none;box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; border-radius: 10px;">
+                          <input type="name" class="form-control" id="name" aria-describedby="" placeholder="" style="border: none;box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; border-radius: 5px;">
                       </div>
                       <div class="col">
                       <button class="button2">
@@ -44,7 +44,30 @@
                   </div>
                   </form>
               </div>
-              <div class="col"></div>
+              <div class="col-6">
+                <br>
+                <br>
+                <br>
+                <p style="color: #000; font-size: 18px;"> Image of your Product</p>
+                <div
+      id="image-drop-area"
+      @dragover="onDragOver"
+      @drop="onDrop"
+      @click="openFileDialog"
+     
+    >
+    <input type="file" id="file-input" ref="fileInput" style="display: none" @change="handleFileChange" accept="image/*">
+      <div class="image-drop-zone" v-if="!imageUrl"  >
+      
+        <p>Drag and drop an image here</p>
+      </div>
+      <div class="image-preview" v-else>
+        <img :src="imageUrl" alt="Uploaded Image" />
+      </div>
+    </div>
+<br>
+    <p style="color: #000;">How do you want to distribute your project?</p>
+              </div>
           </div>
       </div>
 </template>
@@ -61,6 +84,8 @@ export default {
   components: { Typehead },
 data () {
           return {
+            imageUrl: null,
+                file: null,
               form: {},
               users_data:{},
               model: {
@@ -69,7 +94,26 @@ data () {
           }
       },
 name: "Dashboard",
-methods: {}
+methods: {
+
+    handleFileChange(event) {
+      this.file = event.target.files[0];
+      this.imageUrl = URL.createObjectURL(this.file);
+    },
+    onDragOver(event) {
+      event.preventDefault();
+    },
+    onDrop(event) {
+      event.preventDefault();
+      this.file = event.dataTransfer.files[0];
+      this.imageUrl = URL.createObjectURL(this.file);
+    },
+    openFileDialog() {
+        
+    //   document.getElementById('file-input').click();
+    this.$refs.fileInput.click();
+    },
+}
 };
 </script>
 
@@ -142,4 +186,33 @@ top: -45%;
 background-color: #ECEC4F;
 transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
 }
+
+#image-drop-area {
+    width: 90%;
+  height: 200px;
+  border: 2px dashed #ccc; /* Use dashed instead of dotted */
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.image-drop-zone {
+    margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #666;
+}
+
+.image-drop-zone i {
+  font-size: 48px;
+}
+
+.image-preview img {
+  max-width: 88%;
+  max-height: 150px;
+}
+
 </style>

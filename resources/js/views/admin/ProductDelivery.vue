@@ -6,7 +6,7 @@
             </div>  
       <div class="row" style="    display: flex; flex-direction: column; align-items: flex-start;">
         <div class="col">
-          <h4 style="color: #000; font-weight:400px;">Product Delivery</h4>
+          <h4 style="color: #000; font-weight:bold;">Product Delivery</h4>
           <p style="font-size: 14px; color: #000;">Choose how you want Creators to receive the product.</p>
         </div>
         <div class="col-8">
@@ -55,7 +55,7 @@ of what's expected from this collaboration</p>
         </div>
         <div class="col-4">
           <div class="form-group">
-            <input type="name" class="form-control" id="name" aria-describedby="" placeholder="" style="border: none;box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; border-radius: 10px;">
+            <input type="name" class="form-control" id="name" aria-describedby="" placeholder="" style="border: none;box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; border-radius: 5px;">
           </div>
         </div>
       </div>
@@ -84,6 +84,7 @@ export default {
 </script>
 <style scoped>
 .card{
+  cursor: pointer;
     box-sizing: border-box;
     width: 100%;
     background: #FFFFFF;
@@ -94,6 +95,7 @@ export default {
     padding: 20px 0px;
     color: black;
     font-size: 18px;
+    font-weight: bold;
 }
 .card-1{
     box-sizing: border-box;

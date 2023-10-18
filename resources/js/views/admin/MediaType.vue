@@ -8,7 +8,7 @@
         <div class="col">
           <div class="row" style="display: flex; flex-direction: column; justify-content: center;">
             <div class="col-7">
-              <h4 style="color: #000; font-weight: 400;">Media Type</h4>
+              <h4 style="color: #000; font-weight: bold;">Media Type</h4>
               <p style="color: #000;">Select the type of creative assest you want for this campaign.</p>
             </div>
             <div class="col-7">
@@ -132,24 +132,26 @@ export default {
 
 <style scoped>
 .card-3{
+  cursor: pointer;
     box-sizing: border-box;
     width: 100%;
     background: #FFFFFF;
     border: none;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border-radius: 12px;
+    border-radius: 7px;
     text-align: center;
     padding: 20px 0px;
     color: black;
     font-size: 18px;
 }
 .card-4 {
+  cursor: pointer;
     box-sizing: border-box;
     width: 100%;
     background: #FFFFFF;
     border: none;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border-radius: 12px;
+    border-radius: 7px;
     text-align: center;
     padding: 0px 18px;
     color: black;
@@ -159,12 +161,13 @@ export default {
     justify-content: space-between;
 }
 .card-5 {
+  cursor: pointer;
   box-sizing: border-box;
     width: 100%;
     background: #FFFFFF;
     border: none;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border-radius: 12px;
+    border-radius: 7px;
     text-align: center;
     padding: 8px 0px;
     color: black;
