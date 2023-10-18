@@ -331,6 +331,12 @@ let router = new Router({
         layout: AdminLayout
     }
     },
+    {path: '/NewCampaignfalx', component: require("./views/admin/NewCampaignfalx.vue").default,
+    meta: {
+
+        layout: AdminLayout
+    }
+    },
     {path: "/transactions/create", component: require("./views/admin/transactions_form.vue").default,
         meta: {
 
