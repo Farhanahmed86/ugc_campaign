@@ -9,78 +9,77 @@
 
 <!-- </div> -->
 <div>
-   <div class="panel-heading">
+   <!-- <div class="panel-heading">
        <h3 class="panel-title" style="color: black; margin-left: 50px;">Campaigns Influencers</h3>
 
        <br>
-   </div>
+   </div> -->
    <div class="panel-body">
     <div class="row">
-        <div class="col-6">
+        <div class="col-4">
+
+        <div class="col text-left">
             <!-- <button style="color: black;">
                         hello
             </button> -->
-            <button class="buttons" style="margin-left: 70px;"> <span style="font-size: large;"> Organization</span>
-                <p>i want to hire Creators</p>
-</button>
+            <div class="buttons"> <h2 style="    font-size: larger;
+    margin-left: 30px;
+    margin-top: 15px;
+    font-weight: bold;
+    color: black;
+">Create a Campaign</h2>
+            <!-- <button class="buttons" style="margin-left: 70px;"> <span style="font-size: large;"> Create a Campaign</span> -->
+                <p style="font-size: smaller;
+    margin-left: 30px;
+    margin-top: 15px;">fill out a brief and review creators to get started on your content compaign</p>
+    <button style=" margin-left: 30px;
+    border: none;
+    color: white;
+    background-color: rgb(42, 44, 118);
+    border-radius: 7px;
+    font-size: smaller;
+    padding: 5px 10px;" @click="brief">Fill Out a Brief</button>
+            </div>
+<!-- </button> -->
         </div>
-        <div class="col-6">
-            <button class="buttons" style="margin-left: 70px;">
-                      <span style="font-size: large;">UCG Creator</span>
-                        <p>i want to sell UCGs</p>
-
-            </button>
+    </div>
+        <div class="col-6" style=" padding-left: 30px;">
+            <div class="col-6 text-left">
+            <!-- <button style="color: black;">
+                        hello
+            </button> -->
+            <div class="buttons"> <h2 style="    font-size: larger;
+    margin-left: 30px;
+    margin-top: 15px;
+    font-weight: bold;
+    color: black;
+">Creators MarketPlace</h2>
+            <!-- <button class="buttons" style="margin-left: 70px;"> <span style="font-size: large;"> Create a Campaign</span> -->
+                <p style="    font-size: smaller;
+    margin-left: 30px;
+    margin-top: 15px;">fill out a brief and review creators to get started on your content compaign</p>
+    <button style="     margin-left: 30px;
+    border: none;
+    color: white;
+    background-color: rgb(42, 44, 118);
+    border-radius: 7px;
+    font-size: smaller;
+    padding: 5px 10px;">Find Creators</button>
+            </div>
+<!-- </button> -->
+        </div>
         </div>
 
 
 
     </div>
-<br>
-<br>
-    <div class="col-4 mt-12" style="margin-left: 55px;">
-                    <div class="form-group">
-                        <label style="color: black;">Country</label>
-                        <typehead :url="countriesURL" :initialize="form.countries"
-                            @input="oncountries" />
+    <br>
+    <br>
+    <div class="col">
+        <h5 style="color: black;">UCG Campaign Running</h5>
+    </div>
 
-                            <small >
-                            PLease select the  country where you and your business legally operate.
-                        </small>
-
-                    </div>
-                </div>
-
-
-
-    <div class="col-4 " style="margin-left: 55px;">
-                    <div class="form-group">
-                        <label style="color: black;">Birthday</label>
-                        <input type="date" class="form-control" v-model="form.birth">
-                        <small >
-                            PLease select your birth date.
-                        </small>
-                    </div>
-                </div>
-
-                <div class="col-4 mt-12" style="margin-left: 55px;">
-                    <div class="form-group">
-                        <label style="color: black;">How did you hear about us?</label>
-                        <typehead :url="aboutURL" :initialize="form.about"
-                            @input="onabout" />
-
-
-
-                    </div>
-                </div>
-                <br>
-
-                <div class="col-4 mt-12" style="margin-left: 55px;">
-                    <button style="background-color: black; color: white; border-radius: 5px; height: 30px;
-    width: 110px">
-                        Continue
-                    </button>
-                </div>
-   </div>
+    </div>
 
 </div>
 </div>
@@ -131,22 +130,12 @@ export default {
 
         methods: {
 
-
-            onabout(e) {
-                const about = e.target.value
-                Vue.set(this.$data.form, 'about', about)
-                Vue.set(this.$data.form, 'about_id', about.id)
-                Vue.set(this.$data.form, 'about_title', about.title)
-
+            brief(){
+                this.$router.push('/brief')
             },
 
-            oncountries(e) {
-                const countries = e.target.value
-                Vue.set(this.$data.form, 'countries', countries)
-                Vue.set(this.$data.form, 'countries_id', countries.id)
-                Vue.set(this.$data.form, 'countries_title', countries.title)
 
-            },
+           
             detailsPage(item) {
                 this.$router.push(`/dashboard/${item.id}`)
             },
@@ -166,7 +155,7 @@ export default {
 .buttons {
     background-color: #ffffff;
  width: 24em;
- height: 6em;
+ height: 10em;
  border-radius: 15px;
  font-size: 15px;
  font-family: inherit;
@@ -178,21 +167,9 @@ export default {
              -6px -6px 12px #ffffff;
 }
 
-.buttons::before {
- content: '';
- width: 0;
- height: 3em;
- border-radius: 10em;
- position: absolute;
- top: 0;
- left: 0;
- background-image: linear-gradient(to right, #b5beb8 0%, #52717e 100%);
- transition: .5s ease;
- display: block;
- z-index: -1;
-}
 
-.buttons:hover::before {
- width: 9em;
-}
+
+
+
+
 </style>

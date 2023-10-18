@@ -355,6 +355,16 @@ let router = new Router({
 
                 },
 
+                {path: '/brief', component: require('./views/admin/brief.vue').default,
+                meta: {
+
+                    layout: AdminLayout
+                }
+
+
+
+                },
+
                 {path: '/contract', component: require('./views/admin/contract.vue').default,
                 meta: {
 
