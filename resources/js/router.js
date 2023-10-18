@@ -294,6 +294,36 @@ let router = new Router({
         layout: AdminLayout
     }
     },
+    {path: '/ugc_porduct', component: require("./views/admin/ugc_porduct.vue").default,
+    meta: {
+
+        layout: AdminLayout
+    }
+    },
+    {path: '/DashboardBrand', component: require("./views/admin/DashboardBrand.vue").default,
+    meta: {
+
+        layout: AdminLayout
+    }
+    },
+    {path: '/ProductDelivery', component: require("./views/admin/ProductDelivery.vue").default,
+    meta: {
+
+        layout: AdminLayout
+    }
+    },
+    {path: '/MediaType', component: require("./views/admin/MediaType.vue").default,
+    meta: {
+
+        layout: AdminLayout
+    }
+    },
+    {path: '/NewCampaign', component: require("./views/admin/NewCampaign.vue").default,
+    meta: {
+
+        layout: AdminLayout
+    }
+    },
     {path: "/transactions/create", component: require("./views/admin/transactions_form.vue").default,
         meta: {
 
