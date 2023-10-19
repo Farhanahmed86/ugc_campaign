@@ -2,41 +2,54 @@
     <div class="contanir">
       <div class="col text-center" style="padding: 10px 0px 50px 0px;">
                 <img
-            src="/images/dline-3.png" style="width: 90%;height: 20px;"/>
+            src="/images/id2line.png" style="width: 90%;height: 20px;"/>
             </div>  
       <div class="row" style="    display: flex; flex-direction: column; align-items: flex-start;">
         <div class="col">
-          <h4 style="color: #000; font-weight:400px;">Product Delivery</h4>
-          <p style="font-size: 14px; color: #000;">Choose how you want Creators to receive the product.</p>
+          <h4 style="color: #000; font-weight:400px;">Action Type</h4>
         </div>
         <div class="col-8">
-          <div class="row">
+          <div class="row" style="display: flex;flex-wrap: wrap;align-items: center;gap: 20px 0px">
             <div class="col-4">
               <div class="card">
-                Not Required
+                Testimonial
               </div>  
             </div>
             <div class="col-4">
               <div class="card">
-                 Shipment
+                Unboxing
               </div>
             </div>
             <div class="col-4">
               <div class="card">
-                Reimbursement
+                Product Demo
               </div>
+            </div>
+            <div class="col-4">
+              <div class="card">
+                Product Review
+              </div>  
+            </div>
+            <div class="col-4">
+              <div class="card">
+                How-to
+              </div>  
+            </div>
+            <div class="col-4">
+              <div class="card">
+                Custom
+              </div>  
             </div>
           </div>
         </div>
       </div>
       <div class="row" style="display: flex; flex-direction: column; align-items: flex-start; padding-top: 30px;">
         <div class="col-7">
-          <h5 style="color: #000;">Description and  Instructions</h5>
-          <p style="font-size: 14px; color: #000;">Give creator more details about the product of services to be promoted. as well as general guidelines
-of what's expected from this collaboration</p>
+          <h5 style="color: #000;">What should creators do ?</h5>
+          <p style="font-size: 14px; color: #000;">Give clear instructions on how you expect your content to look like. The more detail the better! </p>
         </div>
         <div class="col-8">
-            <div class="row" style="display: flex; flex-direction: column;padding-left: 30px; gap: 20px;">
+            <div class="row" style="display: flex; flex-direction: column; gap: 20px;">
               <textarea class="form-control" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;border: none; border-radius: 10px; width:100%%"
                               id="textarea"
                               v-model="text"
@@ -48,8 +61,19 @@ of what's expected from this collaboration</p>
       </div>
       <div class="row" style="display: flex; flex-direction: column; justify-content: center; padding-top: 30px;">
         <div class="col">
-          <h6 style="color: #000;">Product URL ( optional )</h6>
-          <p style="color: #000;">Insert the product URL here so the Creator can discover more about it.</p>
+          <h6 style="color: #000;">What should creators avoid ? ( optional)</h6>
+          <p style="color: #000;">Is there any thing specific that you don't want the Creator to do ?</p>
+        </div>
+        <div class="col-4">
+          <div class="form-group">
+            <input type="name" class="form-control" id="name" aria-describedby="" placeholder="" style="border: none;box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; border-radius: 10px;">
+          </div>
+        </div>
+      </div>
+      <div class="row" style="display: flex; flex-direction: column; justify-content: center; padding-top: 30px;">
+        <div class="col">
+          <h6 style="color: #000;">Caption (optinal)</h6>
+          <p style="color: #000;">Do you want the Creator to add a Specific caption?</p>
         </div>
         <div class="col-4">
           <div class="form-group">

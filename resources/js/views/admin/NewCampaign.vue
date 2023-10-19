@@ -111,7 +111,4 @@ methods: {}
 </script>
 
 <style scoped>
-.new1:hover{
-  background-color: #ECEC4F;
-}
 </style>
