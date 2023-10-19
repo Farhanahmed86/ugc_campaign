@@ -299,7 +299,7 @@ let router = new Router({
         layout: AdminLayout
     }
     },
-    {path: '/ugc_porduct', component: require("./views/admin/ugc_porduct.vue").default,
+    {path: '/ugc_porduct/:id', component: require("./views/admin/ugc_porduct.vue").default,
     meta: {
 
         layout: AdminLayout
@@ -311,44 +311,44 @@ let router = new Router({
         layout: AdminLayout
     }
     },
-    {path: '/ProductDelivery', component: require("./views/admin/ProductDelivery.vue").default,
+    {path: '/ProductDelivery/:id', component: require("./views/admin/ProductDelivery.vue").default,
     meta: {
 
         layout: AdminLayout
     }
     },
-    {path: '/MediaType', component: require("./views/admin/MediaType.vue").default,
+    {path: '/MediaType/:id', component: require("./views/admin/MediaType.vue").default,
     meta: {
 
         layout: AdminLayout
     }
     },
 
-    {path: '/actiontype', component: require("./views/admin/new_ActionType.vue").default,
+    {path: '/actiontype/:id', component: require("./views/admin/new_ActionType.vue").default,
     meta: {
 
         layout: AdminLayout
     }
     },
-    {path: '/NewCampaign', component: require("./views/admin/NewCampaign.vue").default,
+    {path: '/NewCampaign/:id', component: require("./views/admin/NewCampaign.vue").default,
     meta: {
 
         layout: AdminLayout
     }
     },
-    {path: '/NewCampaignfalx', component: require("./views/admin/NewCampaignfalx.vue").default,
+    {path: '/NewCampaignfalx/:id', component: require("./views/admin/NewCampaignfalx.vue").default,
     meta: {
 
         layout: AdminLayout
     }
     },
-    {path: '/Newid', component: require("./views/admin/Newid.vue").default,
+    {path: '/Newid/:id', component: require("./views/admin/Newid.vue").default,
     meta: {
 
         layout: AdminLayout
     }
     },
-    {path: '/ActionType', component: require("./views/admin/ActionType.vue").default,
+    {path: '/ActionTypes/:id', component: require("./views/admin/ActionType.vue").default,
     meta: {
 
         layout: AdminLayout

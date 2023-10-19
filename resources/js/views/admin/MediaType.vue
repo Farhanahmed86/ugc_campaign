@@ -14,12 +14,12 @@
             <div class="col-7">
               <div class="row">
                 <div class="col-6">
-                  <div class="card-3">
+                  <div class="card-3" @click="media('Video')">
                     Video
                   </div>
                 </div>
                 <div class="col-6">
-                  <div class="card-3">
+                  <div class="card-3" @click="media('Photo')">
                     Photo
                   </div>
                 </div>
@@ -36,12 +36,12 @@
             <div class="col-7">
               <div class="row">
                 <div class="col-6">
-                  <div class="card-3">
+                  <div class="card-3" @click="socail('Posting')">
                     Posting
                   </div>
                 </div>
                 <div class="col-6">
-                  <div class="card-3">
+                  <div class="card-3" @click="socail('No Posting')">
                     No Posting
                   </div>
                 </div>
@@ -58,14 +58,14 @@
             <div class="col-5">
               <div class="row">
                 <div class="col-6">
-                  <div class="card-4">
+                  <div class="card-4" @click="lenght('20')">
                     <h6 style="padding: 8px 0px 0px 0px;">20</h6>
                     <p style="padding: 10px 0px 0px 0px ;">Sec</p>
                   </div>
                 </div>
                 <div class="col-6">
-                  <div class="card-4">
-                    <h6 style="padding: 8px 0px 0px 0px;">20</h6>
+                  <div class="card-4" @click="lenght('40')">
+                    <h6 style="padding: 8px 0px 0px 0px;">40</h6>
                     <p style="padding: 10px 0px 0px 0px;">Sec</p>
                   </div>
                 </div>
@@ -83,17 +83,17 @@ or maybe both!</p>
             <div class="col-8">
               <div class="row">
                 <div class="col-4">
-                  <div class="card-3">
+                  <div class="card-3" @click="raw('Raw Footage')">
                     Raw Footage
                   </div>
                 </div>
                 <div class="col-4">
-                  <div class="card-3">
+                  <div class="card-3"  @click="raw('Ready to use Ad')">
                     Ready to use Ad
                   </div>
                 </div>
                 <div class="col-4">
-                  <div class="card-5">
+                  <div class="card-5" @click="raw('Ready to use Ad + Raw Footage')">
                     Ready to use Ad
                     + Raw Footage
                   </div>
@@ -102,6 +102,14 @@ or maybe both!</p>
             </div>
           </div>
         </div>
+
+        
+    
+      <div class="col">
+                      <button class="button2" @click="save">
+                          SEND
+                      </button>
+                  </div>
       </div>
     </div>
 </template>
@@ -122,15 +130,75 @@ export default {
                 users_data:{},
                 model: {
                     data: []
-                }
+                },
+                method:'POST',
             }
         },
   name: "Dashboard",
-  methods: {}
+
+  created() {
+    console.log(this.$route.params.id);
+    this.id = this.$route.params.id;
+    
+
+  },
+  methods: {
+          media(e){
+            this.form.media_type = e;
+          },
+
+          socail(e){
+            this.form.media_type_socail = e;
+          },
+
+          lenght(e){
+            this.form.media_type_videolenght = e;
+          },
+          raw(e){
+            this.form.media_type_raw = e;
+          },
+
+
+          save(){
+     
+     this.form.id = this.id;
+     byMethod(this.method, '/api/ugc_product_media' , this.form)
+                     .then((res) => {
+                       
+                         if(res.data && res.data.saved) {
+                           this.$router.push(`/actiontype/${res.data.id}`)
+                             // this.success(res)
+                         }
+                     })
+                     .catch((error) => {
+                         if(error.response.status === 422) {
+                             this.errors = error.response.data.errors
+                         }
+                         this.isProcessing = false
+                     })
+                 }
+  }
 };
 </script>
 
 <style scoped>
+
+.button2 {
+display: inline-block;
+transition: all 0.2s ease-in;
+position: relative;
+overflow: hidden;
+z-index: 1;
+color: #ffffff;
+font-size: 16px;
+font-weight: 200;
+padding: 5px 30px ;
+border-radius: 0.5em;
+background:#2A2C76;
+border: 1px solid #e8e8e8;
+box-shadow: 6px 6px 12px #c5c5c5,
+           -6px -6px 12px #ffffff;
+}
 .card-3{
   cursor: pointer;
     box-sizing: border-box;

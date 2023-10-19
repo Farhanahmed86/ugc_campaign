@@ -11,38 +11,38 @@
                 <div class="form-type" style="width: 40%; padding-bottom: 25px;">
                   <h4 style="font-weight: 400;color: #000;border-bottom: 1px solid #2A2C76;">Add UGC Product</h4>
                 </div>
-                  <form>
+                  
                      <div class="form-group">
-                          <label for="Product Name*" style="color: #000; font-size: 18px;">Product Name*</label>
-                          <input type="name" class="form-control" id="name" aria-describedby="" placeholder="" style= "border: none;box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; border-radius: 5px;">
+                          <label for="Product Name*"  style="color: #000; font-size: 18px;" >Product Name*</label>
+                          <input type="name" class="form-control" v-model="form.product_name" id="name" aria-describedby="" placeholder="" style= "border: none;box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; border-radius: 5px;">
                       </div>
                       <div class="form-group">
                           <label for="Product Name*" style="color: #000; font-size: 18px;">Product Description*</label>
                           <textarea class="form-control" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;border: none; border-radius: 10px; width:100%%"
                               id="textarea"
-                              v-model="text"
+                              v-model="form.product_description"
                               rows="4"
                               cols="50"
                           placeholder=""></textarea>
                       </div>
                       <div class="form-group">
                           <label for="Product Name*" style="color: #000; font-size: 18px;">Start of Application*</label>
-                          <input type="name" class="form-control" id="name" aria-describedby="" placeholder="" style="border: none;box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; border-radius: 5px;">
+                          <input type="name" class="form-control" v-model="form.start_of_application" id="name" aria-describedby="" placeholder="" style="border: none;box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; border-radius: 5px;">
                       </div>
                       <div class="form-group">
                           <label for="Product Name*" style="color: #000; font-size: 18px;">End of Application*</label>
-                          <input type="name" class="form-control" id="name" aria-describedby="" placeholder="" style="border: none;box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; border-radius: 5px;">
+                          <input type="name" class="form-control" v-model="form.end_of_application" id="name" aria-describedby="" placeholder="" style="border: none;box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; border-radius: 5px;">
                       </div>
                       <div class="form-group">
                       <label for="Product Name*" style="color: #000; font-size: 18px;">Number of products you would like to offer*</label>
-                          <input type="name" class="form-control" id="name" aria-describedby="" placeholder="" style="border: none;box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; border-radius: 5px;">
+                          <input type="name" class="form-control" v-model="form.number_of_product" id="name" aria-describedby="" placeholder="" style="border: none;box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; border-radius: 5px;">
                       </div>
                       <div class="col">
-                      <button class="button2">
+                      <button class="button2" @click="save">
                           SEND
                       </button>
                   </div>
-                  </form>
+                  
               </div>
               <div class="col-6">
                 <br>
@@ -84,6 +84,7 @@ export default {
   components: { Typehead },
 data () {
           return {
+            method: 'POST',
             imageUrl: null,
                 file: null,
               form: {},
@@ -94,6 +95,13 @@ data () {
           }
       },
 name: "Dashboard",
+
+created() {
+    console.log(this.$route.params.id);
+    this.id = this.$route.params.id;
+    
+
+  },
 methods: {
 
     handleFileChange(event) {
@@ -113,6 +121,37 @@ methods: {
     //   document.getElementById('file-input').click();
     this.$refs.fileInput.click();
     },
+
+    save(){
+      const formData = new FormData();
+    formData.append('image', this.file); // 'image' should match the field name in your Laravel controller
+    formData.append('product_name', this.form.product_name);
+    formData.append('product_description', this.form.product_description);
+    formData.append('start_of_application', this.form.start_of_application);
+    formData.append('end_of_application', this.form.end_of_application);
+    formData.append('number_of_product', this.form.number_of_product);
+    formData.append('id', this.id);
+
+
+
+
+
+    // this.form.id = this.id;
+    byMethod(this.method, '/api/ugc_product' , formData)
+                    .then((res) => {
+                      
+                        if(res.data && res.data.saved) {
+                          this.$router.push(`/ProductDelivery/${res.data.id}`)
+                            // this.success(res)
+                        }
+                    })
+                    .catch((error) => {
+                        if(error.response.status === 422) {
+                            this.errors = error.response.data.errors
+                        }
+                        this.isProcessing = false
+                    })
+                }
 }
 };
 </script>

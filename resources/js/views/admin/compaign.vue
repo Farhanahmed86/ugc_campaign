@@ -76,8 +76,50 @@
     <br>
     <br>
     <div class="col">
-        <h5 style="color: black;">UCG Campaign Running</h5>
+        <h5 style="color: black; font-weight: bold;">UCG Campaign Running</h5>
     </div>
+    
+    <table  class="table table-link" style="color:#212F3D ">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Campaign</th>
+
+                        <th>Marketing Objective</th>
+                        <th>Country</th>
+                        <th>Campaign Type</th>
+                        <th>Gender</th>
+                        <th>Plateform </th>
+                        <th>Action Type</th>
+                        <th>Add UGC</th>
+
+
+
+                        
+                       
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(item , index) in model" :key="index" >
+              
+
+                        <td class="w-1">{{index +1}}</td>
+                        <td class="w-1">{{item.campaign ? item.campaign : ''}}</td>
+                        <td class="w-1">{{item.marketing_objective ? item.marketing_objective : ''}}</td>
+                        <td class="w-3">{{item.country ? item.country : ''}}</td>
+                        <td class="w-3">{{item.campaign_type ? item.campaign_type : ''}}</td>
+                        <td class="w-3">{{item.gender ? item.gender : ''}}</td>
+                        <td class="w-3">{{item.plateform ? item.plateform : ''}}</td>
+
+
+                        <td class="w-3">{{item.action_type ? item.action_type : 'none'}}</td>
+                        <td class="w-3" style="cursor: pointer;"> <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512" style="fill:#4da037; font-size: xx-large;" @click="ugc_porduct(item.id)"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M429.6 92.1c4.9-11.9 2.1-25.6-7-34.7s-22.8-11.9-34.7-7l-352 144c-14.2 5.8-22.2 20.8-19.3 35.8s16.1 25.8 31.4 25.8H224V432c0 15.3 10.8 28.4 25.8 31.4s30-5.1 35.8-19.3l144-352z"/></svg></td>
+
+                       
+                   
+                    </tr>
+                </tbody>
+            </table>
 
     </div>
 
@@ -105,28 +147,28 @@ export default {
                 countries:{},
                 users_data:{},
                 model: {
-                    data: []
+                    
                 }
             }
         },
   name: "Dashboard",
 
 
-//   beforeRouteEnter(to, from, next) {
-//             get('/api/dashboard', to.query)
-//                 .then((res) => {
-//                     next(vm => vm.setData(res))
+  beforeRouteEnter(to, from, next) {
+            get('/api/get_campaigns', to.query)
+                .then((res) => {
+                    next(vm => vm.setData(res))
 
-//                 })
-//         },
-//         beforeRouteUpdate(to, from, next) {
-//             get('/api/dashboard', to.query)
-//                 .then((res) => {
-//                     this.setData(res)
-//                     next()
+                })
+        },
+        beforeRouteUpdate(to, from, next) {
+            get('/api/get_campaigns', to.query)
+                .then((res) => {
+                    this.setData(res)
+                    next()
 
-//                 })
-//         },
+                })
+        },
 
         methods: {
 
@@ -140,11 +182,16 @@ export default {
                 this.$router.push(`/dashboard/${item.id}`)
             },
             setData(res) {
-                Vue.set(this.$data, 'model', res.data.results)
+                console.log(res.data.data);
+                Vue.set(this.$data, 'model', res.data.data)
                 //this.page = this.model.current_page
 
                 // console.log(res.data)
             },
+
+            ugc_porduct(e){
+                this.$router.push(`/ugc_porduct/${e}`)
+            }
 
 
         }

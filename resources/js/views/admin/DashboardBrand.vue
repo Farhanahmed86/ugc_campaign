@@ -12,7 +12,7 @@
                       <h5 class="card-title" >Influencer Campaign</h5>
                       <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
                       <div class="col text-center">
-                      <button class="button2">
+                      <button class="button2" @click="ugc('Influencer Campaign')">
                           To Start
                       </button>
                   </div>
@@ -25,7 +25,7 @@
                       <h5 class="card-title">UGC Campaign</h5>
                       <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
                       <div class="col text-center">
-                      <button class="button2">
+                      <button class="button2" @click="ugc('UGC Campaign')">
                           To Start
                       </button>
                   </div>
@@ -64,11 +64,35 @@ data () {
               users_data:{},
               model: {
                   data: []
-              }
+              },
+              method: 'POST',
           }
       },
 name: "Dashboard",
-methods: {}
+methods: {
+    ugc(e){
+        this.form.campaign = e;
+        // this.$router.push('/NewCampaign')
+
+        byMethod(this.method, 'api/campaigns' , this.form)
+                    .then((res) => {
+                        console.log(res.data.id)
+                      
+                        if(res.data && res.data.saved) {
+                          this.$router.push(`/NewCampaign/${res.data.id}`)
+                          
+                          
+                        }
+                    })
+                    .catch((error) => {
+                        if(error.response.status === 422) {
+                            this.errors = error.response.data.errors
+                        }
+                        this.isProcessing = false
+                    })
+                
+    }
+}
 };
 </script>
 <style scoped>
@@ -86,11 +110,13 @@ box-shadow: inset 0 -3em 3em rgba(0,0,0,0.1),
 .card-title{
   color: #000;
   text-align: center;
+  font-weight: bold;
 }
 .card-text{
   color: #000;
   text-align: center;
   padding-top: px;
+  font-size: smaller;
 }
 .button2 {
 display: inline-block;

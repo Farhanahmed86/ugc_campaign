@@ -12,17 +12,17 @@
         <div class="col-8">
           <div class="row">
             <div class="col-4">
-              <div class="card">
+              <div class="card" @click="delivery('Not Required')">
                 Not Required
               </div>  
             </div>
             <div class="col-4">
-              <div class="card">
+              <div class="card" @click="delivery('Shipment')">
                  Shipment
               </div>
             </div>
             <div class="col-4">
-              <div class="card">
+              <div class="card" @click="delivery('Reimbursement')">
                 Reimbursement
               </div>
             </div>
@@ -36,10 +36,10 @@
 of what's expected from this collaboration</p>
         </div>
         <div class="col-8">
-            <div class="row" style="display: flex; flex-direction: column;padding-left: 30px; gap: 20px;">
+            <div class="row" style="display: flex; flex-direction: column;padding-left: 15px; gap: 20px;">
               <textarea class="form-control" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;border: none; border-radius: 10px; width:100%%"
                               id="textarea"
-                              v-model="text"
+                              v-model="form.delivery_description"
                               rows="4"
                               cols="50"
                           placeholder=""></textarea>
@@ -53,10 +53,17 @@ of what's expected from this collaboration</p>
         </div>
         <div class="col-4">
           <div class="form-group">
-            <input type="name" class="form-control" id="name" aria-describedby="" placeholder="" style="border: none;box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; border-radius: 5px;">
+            <input type="name" class="form-control" v-model="form.delivery_product_url" id="name" aria-describedby="" placeholder="" style="border: none;box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; border-radius: 5px;">
           </div>
         </div>
       </div>
+      <br>
+      <br>
+      <div class="col">
+                      <button class="button2" @click="save">
+                          SEND
+                      </button>
+                  </div>
     </div>
 </template>
 <script>
@@ -69,6 +76,7 @@ export default {
     components: { Typehead },
   data () {
             return {
+              method: 'POST',
                 form: {},
                 users_data:{},
                 model: {
@@ -77,10 +85,56 @@ export default {
             }
         },
   name: "Dashboard",
-  methods: {}
+  created() {
+    console.log(this.$route.params.id);
+    this.id = this.$route.params.id;
+    
+
+  },
+  methods: {
+
+    delivery(e){
+      this.form.product_receive = e;
+    },
+
+    save(){
+     
+    this.form.id = this.id;
+    byMethod(this.method, '/api/ugc_product_delivery' , this.form)
+                    .then((res) => {
+                      
+                        if(res.data && res.data.saved) {
+                          this.$router.push(`/MediaType/${res.data.id}`)
+                            // this.success(res)
+                        }
+                    })
+                    .catch((error) => {
+                        if(error.response.status === 422) {
+                            this.errors = error.response.data.errors
+                        }
+                        this.isProcessing = false
+                    })
+                }
+  }
 };
 </script>
 <style scoped>
+.button2 {
+display: inline-block;
+transition: all 0.2s ease-in;
+position: relative;
+overflow: hidden;
+z-index: 1;
+color: #ffffff;
+font-size: 16px;
+font-weight: 200;
+padding: 5px 30px ;
+border-radius: 0.5em;
+background:#2A2C76;
+border: 1px solid #e8e8e8;
+box-shadow: 6px 6px 12px #c5c5c5,
+           -6px -6px 12px #ffffff;
+}
 .card{
   cursor: pointer;
     box-sizing: border-box;

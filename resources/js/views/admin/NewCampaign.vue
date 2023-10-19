@@ -15,7 +15,7 @@
       <div class="col">
         <div class="row" style="display: flex;flex-wrap: wrap;align-items: center;gap: 30px 0px;">
           <div class="col-4">
-            <div class="card new1" style="width: 85%; transition: 0.3s; border: none;border-radius: 15px;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+            <div class="card new1" style="cursor: pointer; width: 85%; transition: 0.3s; border: none;border-radius: 15px;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;" @click="pushnew('Brand Awareness')">
               <div class="card-body" style="display: flex;flex-direction: column;align-items: center;gap: 15px;padding: 25px 20px;">
                 <div class="img">
                   <img src="/images/new1.png" style="width: 75%;"/>
@@ -26,29 +26,29 @@
             </div>
           </div>
           <div class="col-4">
-            <div class="card new1" style="width: 85%; transition: 0.3s; border: none;border-radius: 15px;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+            <div class="card new1" style=" cursor: pointer; width: 85%; transition: 0.3s; border: none;border-radius: 15px;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;" @click="pushnew('Commitent')">
               <div class="card-body" style="display: flex;flex-direction: column;align-items: center;gap: 15px;padding: 25px 20px;">
                 <div class="img">
                   <img src="/images/new2.png" style="width: 75%;"/>
                 </div>
-               <h5 class="card-title" style="font-size: 18px;color: #000;font-weight: 200;">Commitent</h5>
+               <h5 class="card-title" style=" cursor: pointer; font-size: 18px;color: #000;font-weight: 200;">Commitent</h5>
                  <p class="card-text" style="font-size: 15px;color: #000;font-weight: 200;text-align: center;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                 </div>
             </div>
           </div>
           <div class="col-4">
-            <div class="card new1" style="width: 85%;  transition: 0.3s;border: none;border-radius: 15px;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+            <div class="card new1" style=" cursor: pointer; width: 85%;  transition: 0.3s;border: none;border-radius: 15px;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;" @click="pushnew('Interactions')">
               <div class="card-body" style="display: flex;flex-direction: column;align-items: center;gap: 15px;padding: 25px 20px;">
                 <div class="img">
                   <img src="/images/new3.png" style="width: 75%;"/>
                 </div>
-               <h5 class="card-title" style="font-size: 18px;color: #000;font-weight: 200;">Interactionss</h5>
+               <h5 class="card-title" style="font-size: 18px;color: #000;font-weight: 200;">Interactions</h5>
                  <p class="card-text" style="font-size: 15px;color: #000;font-weight: 200;text-align: center;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                 </div>
             </div>
           </div>
           <div class="col-4">
-            <div class="card new1" style="width: 85%; transition: 0.3s;border: none;border-radius: 15px;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+            <div class="card new1" style=" cursor: pointer; width: 85%; transition: 0.3s;border: none;border-radius: 15px;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;" @click="pushnew('Traffic')">
               <div class="card-body" style="display: flex;flex-direction: column;align-items: center;gap: 15px;padding: 25px 20px;">
                 <div class="img">
                   <img src="/images/new4.png" style="width: 75%;"/>
@@ -59,7 +59,7 @@
             </div>
           </div>
           <div class="col-4">
-            <div class="card new1" style="width: 85%; transition: 0.3s;border: none;border-radius: 15px;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+            <div class="card new1" style=" cursor: pointer; width: 85%; transition: 0.3s;border: none;border-radius: 15px;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;" @click="pushnew('Conversion')">
               <div class="card-body" style="display: flex;flex-direction: column;align-items: center;gap: 15px;padding: 25px 20px;">
                 <div class="img">
                   <img src="/images/new5.png" style="width: 75%;"/>
@@ -70,7 +70,7 @@
             </div>
           </div>
           <div class="col-4">
-            <div class="card new1" style="width: 85%; transition: 0.3s;border: none;border-radius: 15px;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+            <div class="card new1" style=" cursor: pointer; width: 85%; transition: 0.3s;border: none;border-radius: 15px;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;" @click="pushnew('Point of sale visit')">
               <div class="card-body" style="display: flex;flex-direction: column;align-items: center;gap: 15px;padding: 25px 20px;">
                 <div class="img">
                   <img src="/images/new6.png" style="width: 75%;"/>
@@ -100,15 +100,44 @@ data () {
           return {
               form: {},
               users_data:{},
-              model: {
-                  data: []
-              }
+            
+              method: 'POST',
           }
       },
 name: "Dashboard",
-methods: {}
+created() {
+    console.log(this.$route.params.id);
+    this.campaign = this.$route.params.id;
+    
+
+  },
+methods: {
+
+  pushnew(e){
+    this.form.title = e;
+    this.form.id = this.campaign;
+
+    byMethod(this.method,  '/api/objective' , this.form)
+                    .then((res) => {
+                      
+                        if(res.data && res.data.saved) {
+                          this.$router.push(`/NewCampaignfalx/${res.data.id}`)
+                            // this.success(res)
+                        }
+                    })
+                    .catch((error) => {
+                        if(error.response.status === 422) {
+                            this.errors = error.response.data.errors
+                        }
+                        this.isProcessing = false
+                    })
+                }
+    // this.$router.push()
+  
+}
 };
 </script>
 
 <style scoped>
+
 </style>

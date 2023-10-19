@@ -25,10 +25,10 @@
         <div class="row">
     
 
-    <div class="col-4"><button class="but">Upto 15 days </button></div>
-    <div class="col-4"><button class="but">Upto 60 days</button></div>
+    <div class="col-4"><button class="but" @click="whitelist('Upto 15 days')">Upto 15 days </button></div>
+    <div class="col-4"><button class="but" @click="whitelist('Upto 60 days')">Upto 60 days</button></div>
 
-    <div class="col-4"><button class="but">Upto 90 days</button></div>
+    <div class="col-4"><button class="but" @click="whitelist('Upto 90 days')">Upto 90 days</button></div>
 <br>
 </div>
     </div>
@@ -43,18 +43,18 @@
             <div class="col-7">
               <div class="row">
                 <div class="col-4">
-                  <div class="card-3">
+                  <div class="card-3" @click="video('Testmonial')">
                     Testmonial
                   </div>
                 </div>
                 <div class="col-4">
-                  <div class="card-3">
+                  <div class="card-3" @click="video('Unboxing')">
                     Unboxing
                   </div>
                 </div>
 
                 <div class="col-4">
-                  <div class="card-3">
+                  <div class="card-3" @click="video('Product Demo')">
                     Product Demo
                   </div>
                 </div>
@@ -68,18 +68,18 @@
             <div class="col-7">
               <div class="row">
                 <div class="col-4">
-                  <div class="card-3">
+                  <div class="card-3" @click="video('Product Review')">
                     Product Review
                   </div>
                 </div>
                 <div class="col-4">
-                  <div class="card-3">
+                  <div class="card-3" @click="video('How-to')">
                     How-to  
                   </div>
                 </div>
 
                 <div class="col-4">
-                  <div class="card-3">
+                  <div class="card-3" @click="video('Custom')">
                     Custom
                   </div>
                 </div>
@@ -95,7 +95,7 @@
             </div>
             <div class="col">
     <textarea class="areas"
-      v-model="text"
+      v-model="form.action_type_instruction"
       rows="5"
       cols="30"
       placeholder=""
@@ -112,28 +112,28 @@
             <div class="col-8">
               <div class="row">
                 <div class="col-3">
-                  <div class="cardsss">
+                  <div class="cardsss" @click="plateform('Instagram')">
                     <img src="/images/instagram.png" style="width: 30%; margin-top: 10px;">
 
                     <p style="padding: 10px 0px 0px 0px ;">Instagram</p>
                   </div>
                 </div>
                 <div class="col-3">
-                  <div class="cardsss">
+                  <div class="cardsss" @click="plateform('Tiktok')">
                     <img src="/images/tiktok.png" style="width: 30%; margin-top: 10px;">
                     <p style="padding: 10px 0px 0px 0px;">Tiktok</p>
                   </div>
                 </div>
 
                 <div class="col-3">
-                  <div class="cardsss">
+                  <div class="cardsss" @click="plateform('Facebook')">
                     <img src="/images/facebook (1).png" style="width: 30%; margin-top: 10px;">
                     <p style="padding: 10px 0px 0px 0px;">Facebook</p>
                   </div>
                 </div>
 
                 <div class="col-3">
-                  <div class="cardsss">
+                  <div class="cardsss" @click="plateform('Other')">
                     <img src="/images/f3.png" style="width: 30%; margin-top: 10px;">
                     <p style="padding: 10px 0px 0px 0px;">Other </p>
                   </div>
@@ -155,23 +155,23 @@
             <div class="col-8">
               <div class="row">
                 <div class="col-3">
-                  <div class="card-3">
+                  <div class="card-3" @click="hire('<< 5')">
                   << 5
                   </div>
                 </div>
                 <div class="col-3">
-                  <div class="card-3">
+                  <div class="card-3" @click="hire('5-10')">
                     5-10
                   </div>
                 </div>
                 <div class="col-3">
-                  <div class="card-3">
+                  <div class="card-3" @click="hire('10-20')">
                    10-20
                   </div>
                 </div>
 
                 <div class="col-3">
-                  <div class="card-3">
+                  <div class="card-3" @click="hire('>> 20')">
                  >> 20
                   </div>
                 </div>
@@ -182,7 +182,7 @@
       </div>
       <br>
       <br>
-      <div class="col"><button class="button2">Next</button></div>
+      <div class="col"><button class="button2" @click="save">Next</button></div>
       <br>
     </div>
 </template>
@@ -203,11 +203,48 @@ export default {
                 users_data:{},
                 model: {
                     data: []
-                }
+                },
+                method:'POST'
             }
         },
   name: "Dashboard",
-  methods: {}
+  methods: {
+
+    whitelist(e){
+      this.form.action_type_whitelist = e;
+    },
+
+    video(e){
+      this.form.action_type_video = e;
+    },
+    plateform(e){
+      this.form.action_type_plateform = e;
+    },
+
+    hire(e){
+      this.form.action_type_hiring = e;
+    },
+
+
+    save(){
+     
+     this.form.id = this.id;
+     byMethod(this.method, '/api/ugc_product_action' , this.form)
+                     .then((res) => {
+                       
+                         if(res.data && res.data.saved) {
+                          this.$router.push('/creators')
+                             // this.success(res)
+                         }
+                     })
+                     .catch((error) => {
+                         if(error.response.status === 422) {
+                             this.errors = error.response.data.errors
+                         }
+                         this.isProcessing = false
+                     })
+                 }
+  }
 };
 </script>
 

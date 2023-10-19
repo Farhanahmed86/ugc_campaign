@@ -17,6 +17,11 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\LedgerController;
 use App\Http\Controllers\BalanceController;
 use App\Http\Controllers\CountriesController;
+use App\Http\Controllers\UgcControllere;
+use App\Http\Controllers\UgcproductController;
+
+
+
 
 
 
@@ -81,6 +86,26 @@ Route::get('/api/pl', [VoucherController::class,'pl']);
 Route::get('/api/balance', [VoucherController::class,'balance']);
 Route::get('/api/sheet', [BalanceController::class,'index']);
 Route::post('api/import', [VoucherController::class, 'importView']);
+Route::post('api/objective', [UgcControllere::class, 'objective']);
+Route::post('api/flages', [UgcControllere::class, 'flages']);
+Route::post('api/platefrom', [UgcControllere::class, 'platefrom']);
+Route::post('api/action_type', [UgcControllere::class, 'action_type']);
+Route::post('api/campaigns', [UgcControllere::class, 'campaigns']);
+Route::post('api/ugc_product', [UgcproductController::class, 'ugcproduct']);
+Route::post('api/ugc_product_delivery', [UgcproductController::class, 'ugcproductdelivery']);
+Route::post('api/ugc_product_media', [UgcproductController::class, 'ugcproductmedia']);
+Route::post('api/ugc_product_action', [UgcproductController::class, 'ugcproductaction']);
+
+
+
+
+Route::get('api/get_campaigns', [UgcControllere::class, 'getcampaign']);
+
+
+
+
+
+
 // Route::post('api/register_company', [VoucherController::class, 'company']);
 Route::post('api/register_company', [Api\RegisterController::class, 'company']);
 

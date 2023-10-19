@@ -11,32 +11,32 @@
         <div class="col-8">
           <div class="row" style="display: flex;flex-wrap: wrap;align-items: center;gap: 20px 0px">
             <div class="col-4">
-              <div class="card">
+              <div class="card" @click="action_type('Testimonial')">
                 Testimonial
               </div>  
             </div>
-            <div class="col-4">
-              <div class="card">
+            <div class="col-4" >
+              <div class="card" @click="action_type('Unboxing')">
                 Unboxing
               </div>
             </div>
-            <div class="col-4">
-              <div class="card">
+            <div class="col-4" >
+              <div class="card" @click="action_type('Product Demo')">
                 Product Demo
               </div>
             </div>
-            <div class="col-4">
-              <div class="card">
+            <div class="col-4" >
+              <div class="card" @click="action_type('Product Review')">
                 Product Review
               </div>  
             </div>
             <div class="col-4">
-              <div class="card">
+              <div class="card" @click="action_type('How-to')">
                 How-to
               </div>  
             </div>
             <div class="col-4">
-              <div class="card">
+              <div class="card" @click="action_type('Custom')">
                 Custom
               </div>  
             </div>
@@ -52,7 +52,7 @@
             <div class="row" style="display: flex; flex-direction: column; gap: 20px;">
               <textarea class="form-control" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;border: none; border-radius: 10px; width:100%%"
                               id="textarea"
-                              v-model="text"
+                              v-model="form.instruction"
                               rows="4"
                               cols="50"
                           placeholder=""></textarea>
@@ -66,7 +66,7 @@
         </div>
         <div class="col-4">
           <div class="form-group">
-            <input type="name" class="form-control" id="name" aria-describedby="" placeholder="" style="border: none;box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; border-radius: 10px;">
+            <input type="name" class="form-control" id="name" aria-describedby="" placeholder="" v-model="form.avoid" style="border: none;box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; border-radius: 10px;">
           </div>
         </div>
       </div>
@@ -77,9 +77,14 @@
         </div>
         <div class="col-4">
           <div class="form-group">
-            <input type="name" class="form-control" id="name" aria-describedby="" placeholder="" style="border: none;box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; border-radius: 10px;">
+            <input type="name" class="form-control" id="name" aria-describedby="" placeholder="" v-model="form.specific_caption" style="border: none;box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; border-radius: 10px;">
           </div>
         </div>
+        <br>
+        <br>
+        <div class="col" style="display: flex;justify-content: center;align-items: center;">
+        <button style="padding: 8px 40px;border: none;background-color: #2A2c76;color: #fff;border-radius: 10px;" @click="save">Next</button>
+      </div>
       </div>
     </div>
 </template>
@@ -97,11 +102,42 @@ export default {
                 users_data:{},
                 model: {
                     data: []
-                }
+                },   method: 'POST',
+
             }
         },
   name: "Dashboard",
-  methods: {}
+
+  created() {
+    console.log(this.$route.params.id);
+    this.campaign = this.$route.params.id;
+    
+
+  },
+  methods: {
+
+    action_type(e){
+      this.form.action_type = e;
+    },
+
+    save(){
+      this.form.id = this.campaign;
+    byMethod(this.method, 'api/action_type' , this.form)
+                    .then((res) => {
+                      
+                        if(res.data && res.data.saved) {
+                          this.$router.push('/ActionTypes')
+                            // this.success(res)
+                        }
+                    })
+                    .catch((error) => {
+                        if(error.response.status === 422) {
+                            this.errors = error.response.data.errors
+                        }
+                        this.isProcessing = false
+                    })
+                }
+  }
 };
 </script>
 <style scoped>
