@@ -342,6 +342,18 @@ let router = new Router({
         layout: AdminLayout
     }
     },
+    {path: '/Newid', component: require("./views/admin/Newid.vue").default,
+    meta: {
+
+        layout: AdminLayout
+    }
+    },
+    {path: '/ActionType', component: require("./views/admin/ActionType.vue").default,
+    meta: {
+
+        layout: AdminLayout
+    }
+    },
     {path: "/transactions/create", component: require("./views/admin/transactions_form.vue").default,
         meta: {
 
