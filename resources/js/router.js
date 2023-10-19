@@ -354,6 +354,12 @@ let router = new Router({
         layout: AdminLayout
     }
     },
+    {path: '/CreatorCampaign', component: require("./views/admin/CreatorCampaign.vue").default,
+    meta: {
+
+        layout: AdminLayout
+    }
+    },
     {path: "/transactions/create", component: require("./views/admin/transactions_form.vue").default,
         meta: {
 
