@@ -64,24 +64,34 @@
             <img src="/images/influencer.jpg" style="width: 99%;
     border-radius: 20px;">
         </div>
-      <div class="image-container ">
+        <div class="image-container ">
 
-        <img src="/images/Ellipse.jpg" alt="Illustration Image">
-      </div>
-      <div class="content">
-        <!-- <div class="category"> Illustration </div> -->
-        <div class="row">
-            <div class="col-6" style="font-weight: bold; color: black;">Brand Name</div>
-            <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div>
+<!-- <img src="/images/Ellipse.jpg" alt="Illustration Image"> -->
+</div>
+<div class="content">
+<!-- <div class="category"> Illustration </div> -->
+<div class="row">
+    <div class="col-6" style="font-weight: bold; color: black;">Mobile Phones</div>
+    <!-- <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div> -->
 
-        </div>
-        <div class="row">
-            <div class="col-6" style="font-size: 12px;">United States</div>
-            <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div>
+</div>
+<div class="row">
+    <div class="col-6" style="font-size: 12px;">Apple</div>
+    <!-- <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div> -->
 
-        </div>
+</div>
 
-      </div>
+<div class="row">
+    <div class="col-6" style="font-size: 12px;"><img src="/images/instagram.png" style="width: 20%; margin-right: 2px;" alt="Illustration Image"></div>
+    <div class="col-6 text-right" ><button class="butt">view all</button></div>
+
+</div>
+<br>
+<div class="row">
+   
+</div>
+
+</div>
     </div>
 
 
@@ -98,24 +108,34 @@
             <img src="/images/influencer_2.jpg" style="width: 99%;
     border-radius: 20px;">
         </div>
-      <div class="image-container ">
+        <div class="image-container ">
 
-        <img src="/images/Ellipse.jpg" alt="Illustration Image">
-      </div>
-      <div class="content">
-        <!-- <div class="category"> Illustration </div> -->
-        <div class="row">
-            <div class="col-6" style="font-weight: bold; color: black;">Brand Name</div>
-            <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div>
+<!-- <img src="/images/Ellipse.jpg" alt="Illustration Image"> -->
+</div>
+<div class="content">
+<!-- <div class="category"> Illustration </div> -->
+<div class="row">
+    <div class="col-6" style="font-weight: bold; color: black;">Hand Bag</div>
+    <!-- <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div> -->
 
-        </div>
-        <div class="row">
-            <div class="col-6" style="font-size: 12px;">United States</div>
-            <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div>
+</div>
+<div class="row">
+    <div class="col-6" style="font-size: 12px;">Gucci</div>
+    <!-- <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div> -->
 
-        </div>
+</div>
 
-      </div>
+<div class="row">
+    <div class="col-6" style="font-size: 12px;"><img src="/images/instagram.png" style="width: 20%; margin-right: 2px;" alt="Illustration Image"></div>
+    <div class="col-6 text-right" ><button class="butt">view all</button></div>
+
+</div>
+<br>
+<div class="row">
+   
+</div>
+
+</div>
     </div>
 
     <div class="card">
@@ -123,24 +143,34 @@
             <img src="/images/influencer_3.jpg" style="width: 99%;
     border-radius: 20px;">
         </div>
-      <div class="image-container ">
+        <div class="image-container ">
 
-        <img  src="/images/Ellipse.jpg" alt="Illustration Image">
-      </div>
-      <div class="content">
-        <!-- <div class="category"> Illustration </div> -->
-        <div class="row">
-            <div class="col-6" style="font-weight: bold; color: black;">Brand Name</div>
-            <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div>
+<!-- <img src="/images/Ellipse.jpg" alt="Illustration Image"> -->
+</div>
+<div class="content">
+<!-- <div class="category"> Illustration </div> -->
+<div class="row">
+    <div class="col-6" style="font-weight: bold; color: black;">Beauty Product</div>
+    <!-- <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div> -->
 
-        </div>
-        <div class="row">
-            <div class="col-6" style="font-size: 12px;">United States</div>
-            <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div>
+</div>
+<div class="row">
+    <div class="col-6" style="font-size: 12px;">Dior</div>
+    <!-- <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div> -->
 
-        </div>
+</div>
 
-      </div>
+<div class="row">
+    <div class="col-6" style="font-size: 12px;"><img src="/images/instagram.png" style="width: 20%; margin-right: 2px;" alt="Illustration Image"></div>
+    <div class="col-6 text-right" ><button class="butt">view all</button></div>
+
+</div>
+<br>
+<div class="row">
+   
+</div>
+
+</div>
     </div>
 
 
@@ -149,24 +179,34 @@
             <img src="/images/influencer_4.jpg" style="width: 99%;
     border-radius: 20px;">
         </div>
-      <div class="image-container ">
+        <div class="image-container ">
 
-        <img src="/images/Ellipse.jpg" alt="Illustration Image">
-      </div>
-      <div class="content">
-        <!-- <div class="category"> Illustration </div> -->
-        <div class="row">
-            <div class="col-6" style="font-weight: bold; color: black;">Brand Name</div>
-            <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div>
+<!-- <img src="/images/Ellipse.jpg" alt="Illustration Image"> -->
+</div>
+<div class="content">
+<!-- <div class="category"> Illustration </div> -->
+<div class="row">
+    <div class="col-6" style="font-weight: bold; color: black;">Mens Shoes</div>
+    <!-- <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div> -->
 
-        </div>
-        <div class="row">
-            <div class="col-6" style="font-size: 12px;">United States</div>
-            <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div>
+</div>
+<div class="row">
+    <div class="col-6" style="font-size: 12px;">Nike</div>
+    <!-- <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div> -->
 
-        </div>
+</div>
 
-      </div>
+<div class="row">
+    <div class="col-6" style="font-size: 12px;"><img src="/images/instagram.png" style="width: 20%; margin-right: 2px;" alt="Illustration Image"></div>
+    <div class="col-6 text-right" ><button class="butt">view all</button></div>
+
+</div>
+<br>
+<div class="row">
+   
+</div>
+
+</div>
     </div>
 
     <div class="card">
@@ -174,24 +214,34 @@
             <img src="/images/influencer_5.jpg" style="width: 99%;
     border-radius: 20px;">
         </div>
-      <div class="image-container ">
+        <div class="image-container ">
 
-        <img src="/images/Ellipse.jpg" alt="Illustration Image">
-      </div>
-      <div class="content">
-        <!-- <div class="category"> Illustration </div> -->
-        <div class="row">
-            <div class="col-6" style="font-weight: bold; color: black;">Brand Name</div>
-            <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div>
+<!-- <img src="/images/Ellipse.jpg" alt="Illustration Image"> -->
+</div>
+<div class="content">
+<!-- <div class="category"> Illustration </div> -->
+<div class="row">
+    <div class="col-6" style="font-weight: bold; color: black;">Leather Jacket</div>
+    <!-- <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div> -->
 
-        </div>
-        <div class="row">
-            <div class="col-6" style="font-size: 12px;">United States</div>
-            <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div>
+</div>
+<div class="row">
+    <div class="col-6" style="font-size: 12px;">levi's</div>
+    <!-- <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div> -->
 
-        </div>
+</div>
 
-      </div>
+<div class="row">
+    <div class="col-6" style="font-size: 12px;"><img src="/images/instagram.png" style="width: 20%; margin-right: 2px;" alt="Illustration Image"></div>
+    <div class="col-6 text-right" ><button class="butt">view all</button></div>
+
+</div>
+<br>
+<div class="row">
+   
+</div>
+
+</div>
     </div>
 
     <div class="card">
@@ -199,24 +249,34 @@
             <img src="/images/influencer_6.jpg" style="width: 99%;
     border-radius: 20px;">
         </div>
-      <div class="image-container ">
+        <div class="image-container ">
 
-        <img src="/images/Ellipse.jpg" alt="Illustration Image">
-      </div>
-      <div class="content">
-        <!-- <div class="category"> Illustration </div> -->
-        <div class="row">
-            <div class="col-6" style="font-weight: bold; color: black;">Brand Name</div>
-            <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div>
+<!-- <img src="/images/Ellipse.jpg" alt="Illustration Image"> -->
+</div>
+<div class="content">
+<!-- <div class="category"> Illustration </div> -->
+<div class="row">
+    <div class="col-6" style="font-weight: bold; color: black;">Glasess</div>
+    <!-- <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div> -->
 
-        </div>
-        <div class="row">
-            <div class="col-6" style="font-size: 12px;">United States</div>
-            <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div>
+</div>
+<div class="row">
+    <div class="col-6" style="font-size: 12px;">Gucci</div>
+    <!-- <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div> -->
 
-        </div>
+</div>
 
-      </div>
+<div class="row">
+    <div class="col-6" style="font-size: 12px;"><img src="/images/instagram.png" style="width: 20%; margin-right: 2px;" alt="Illustration Image"></div>
+    <div class="col-6 text-right" ><button class="butt">view all</button></div>
+
+</div>
+<br>
+<div class="row">
+   
+</div>
+
+</div>
     </div>
 
     <div class="card">
@@ -224,48 +284,68 @@
             <img src="/images/influencer_2.jpg" style="width: 99%;
     border-radius: 20px;">
         </div>
-      <div class="image-container ">
+        <div class="image-container ">
 
-        <img src="/images/Ellipse.jpg" alt="Illustration Image">
-      </div>
-      <div class="content">
-        <!-- <div class="category"> Illustration </div> -->
-        <div class="row">
-            <div class="col-6" style="font-weight: bold; color: black;">Brand Name</div>
-            <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div>
+<!-- <img src="/images/Ellipse.jpg" alt="Illustration Image"> -->
+</div>
+<div class="content">
+<!-- <div class="category"> Illustration </div> -->
+<div class="row">
+    <div class="col-6" style="font-weight: bold; color: black;">Headphones</div>
+    <!-- <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div> -->
 
-        </div>
-        <div class="row">
-            <div class="col-6" style="font-size: 12px;">United States</div>
-            <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div>
+</div>
+<div class="row">
+    <div class="col-6" style="font-size: 12px;">sony</div>
+    <!-- <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div> -->
 
-        </div>
+</div>
 
-      </div>
+<div class="row">
+    <div class="col-6" style="font-size: 12px;"><img src="/images/instagram.png" style="width: 20%; margin-right: 2px;" alt="Illustration Image"></div>
+    <div class="col-6 text-right" ><button class="butt">view all</button></div>
+
+</div>
+<br>
+<div class="row">
+   
+</div>
+
+</div>
     </div>
     <div class="card">
         <div class="card-image">
             <img src="/images/influencer_4.jpg" style="width: 99%;
     border-radius: 20px;">
         </div>
-      <div class="image-container ">
+        <div class="image-container ">
 
-        <img src="/images/Ellipse.jpg" alt="Illustration Image">
-      </div>
-      <div class="content">
-        <!-- <div class="category"> Illustration </div> -->
-        <div class="row">
-            <div class="col-6" style="font-weight: bold; color: black;">Brand Name</div>
-            <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div>
+<!-- <img src="/images/Ellipse.jpg" alt="Illustration Image"> -->
+</div>
+<div class="content">
+<!-- <div class="category"> Illustration </div> -->
+<div class="row">
+    <div class="col-6" style="font-weight: bold; color: black;">Smart watch</div>
+    <!-- <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div> -->
 
-        </div>
-        <div class="row">
-            <div class="col-6" style="font-size: 12px;">United States</div>
-            <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div>
+</div>
+<div class="row">
+    <div class="col-6" style="font-size: 12px;">samsung</div>
+    <!-- <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div> -->
 
-        </div>
+</div>
 
-      </div>
+<div class="row">
+    <div class="col-6" style="font-size: 12px;"><img src="/images/instagram.png" style="width: 20%; margin-right: 2px;" alt="Illustration Image"></div>
+    <div class="col-6 text-right" ><button class="butt">view all</button></div>
+
+</div>
+<br>
+<div class="row">
+   
+</div>
+
+</div>
     </div>
   </div>
 </div>
@@ -361,6 +441,13 @@ export default {
 </script>
 
 <style scoped>
+.butt{
+  border: none;
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    padding: 2px 20px;
+}
 .buttons {
     background-color: #ffffff;
  width: 8em;

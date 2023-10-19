@@ -44,159 +44,153 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _utils_notify_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/notify.js */ "./resources/js/utils/notify.js");
-/* harmony import */ var _components_Nav__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/Nav */ "./resources/js/components/Nav.vue");
-/* harmony import */ var _components_LoadingButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/LoadingButton */ "./resources/js/components/LoadingButton.vue");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utils_notify_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utils/notify.js */ "./resources/js/utils/notify.js");
+/* harmony import */ var _components_Nav__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/Nav */ "./resources/js/components/Nav.vue");
+/* harmony import */ var _components_LoadingButton__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/LoadingButton */ "./resources/js/components/LoadingButton.vue");
+/* harmony import */ var _admin_components_lib_api__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../admin/components/lib/api */ "./resources/js/views/admin/components/lib/api.js");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
-
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -204,11 +198,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Register",
   components: {
-    Nav: _components_Nav__WEBPACK_IMPORTED_MODULE_3__.default,
-    LoadingButton: _components_LoadingButton__WEBPACK_IMPORTED_MODULE_4__.default
+    Nav: _components_Nav__WEBPACK_IMPORTED_MODULE_2__.default,
+    LoadingButton: _components_LoadingButton__WEBPACK_IMPORTED_MODULE_3__.default
   },
   data: function data() {
     return {
+      form: {},
+      method: 'POST',
       first_name: "",
       last_name: "",
       email: "",
@@ -217,67 +213,71 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       location: "",
       company: "",
       website: "",
+      phone: "",
       isLoading: false
     };
   },
+  created: function created() {
+    // console.log(this.$route.params.id);
+    this.company_id = this.$route.params.id;
+    var companyId = this.$route.params.id;
+  },
   methods: {
-    register: function register() {
+    save: function save() {
       var _this = this;
 
-      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-        var response, message, toast;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                _this.isLoading = true;
-                _context.prev = 1;
-                _context.next = 4;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default().post("register", {
-                  first_name: _this.first_name,
-                  last_name: _this.last_name,
-                  email: _this.email,
-                  password: _this.password,
-                  password_confirm: _this.password_confirm,
-                  location: _this.location,
-                  website: _this.website,
-                  company: _this.company
-                });
+      this.form.id = this.company_id;
+      this.form.first_name = this.first_name;
+      this.form.last_name = this.last_name;
+      this.form.location = this.location;
+      this.form.website = this.website;
+      this.form.company = this.company;
+      this.form.phone = this.phone;
+      this.form.id = this.company_id;
+      console.log(this.form);
+      (0,_admin_components_lib_api__WEBPACK_IMPORTED_MODULE_4__.byMethod)(this.method, 'registered', this.form).then(function (res) {
+        if (res.data && res.data.saved) {
+          _this.$router.push("/register/company/".concat(_this.company_id));
+        }
+      })["catch"](function (error) {
+        if (error.response.status === 422) {
+          _this.errors = error.response.data.errors;
+        }
 
-              case 4:
-                response = _context.sent;
-                _this.isLoading = false;
+        _this.isProcessing = false;
+      });
+    } // async register() {
+    //   this.isLoading = true;
+    //   try {
+    //     var response = await axios.post("registered", {
+    //       first_name: this.first_name,
+    //       last_name: this.last_name,
+    //       email: this.email,
+    //       password: this.password,
+    //       password_confirm: this.password_confirm,
+    //       location: this.location,
+    //       website: this.website,
+    //       company: this.company,
+    //     });
+    //     this.isLoading = false;
+    //     if (response.data.must_verify_email) {
+    //       this.$router.push(`/verify/user/${response.data.id}`);
+    //     } else {
+    //       let message =
+    //         "Your account has been created successfully.";
+    //       let toast = Vue.toasted.show(message, {
+    //         theme: "toasted-primary",
+    //         position: "top-right",
+    //         duration: 5000,
+    //       });
+    //       this.$router.push(`/register/company/${response.data.id}`);
+    //     }
+    //   } catch (error) {
+    //     notify.authError(error);
+    //     this.isLoading = false;
+    //   }
+    // },
 
-                if (response.data.must_verify_email) {
-                  _this.$router.push("/verify/user/".concat(response.data.id));
-                } else {
-                  message = "Your account has been created successfully.";
-                  toast = Vue.toasted.show(message, {
-                    theme: "toasted-primary",
-                    position: "top-right",
-                    duration: 5000
-                  });
-
-                  _this.$router.push("/register/company/".concat(response.data.id));
-                }
-
-                _context.next = 13;
-                break;
-
-              case 9:
-                _context.prev = 9;
-                _context.t0 = _context["catch"](1);
-                _utils_notify_js__WEBPACK_IMPORTED_MODULE_2__.authError(_context.t0);
-                _this.isLoading = false;
-
-              case 13:
-              case "end":
-                return _context.stop();
-            }
-          }
-        }, _callee, null, [[1, 9]]);
-      }))();
-    }
   }
 });
 
@@ -779,7 +779,9 @@ var render = function() {
           _vm._v(" "),
           _vm._m(1),
           _vm._v(" "),
-          _c("button", { staticClass: "submit" }, [_vm._v("Suivant")])
+          _c("button", { staticClass: "submit", on: { click: _vm.save } }, [
+            _vm._v("Suivant")
+          ])
         ]
       )
     ])

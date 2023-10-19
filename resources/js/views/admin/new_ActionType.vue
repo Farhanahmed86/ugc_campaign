@@ -109,32 +109,33 @@
               <h5 style="color: #000;">Plateform</h5>
               <p style="color: #000;">Select the Plateform that your plan to use the content for. </p>
             </div>
-            <div class="col-5">
+            <div class="col-8">
               <div class="row">
                 <div class="col-3">
-                  <div class="card-3">
-                    <h6 style="padding: 8px 0px 0px 0px;">20</h6>
-                    <p style="padding: 10px 0px 0px 0px ;">Sec</p>
+                  <div class="cardsss">
+                    <img src="/images/instagram.png" style="width: 30%; margin-top: 10px;">
+
+                    <p style="padding: 10px 0px 0px 0px ;">Instagram</p>
                   </div>
                 </div>
                 <div class="col-3">
-                  <div class="card-3">
-                    <h6 style="padding: 8px 0px 0px 0px;">20</h6>
-                    <p style="padding: 10px 0px 0px 0px;">Sec</p>
+                  <div class="cardsss">
+                    <img src="/images/tiktok.png" style="width: 30%; margin-top: 10px;">
+                    <p style="padding: 10px 0px 0px 0px;">Tiktok</p>
                   </div>
                 </div>
 
                 <div class="col-3">
-                  <div class="card-3">
-                    <h6 style="padding: 8px 0px 0px 0px;">20</h6>
-                    <p style="padding: 10px 0px 0px 0px;">Sec</p>
+                  <div class="cardsss">
+                    <img src="/images/facebook (1).png" style="width: 30%; margin-top: 10px;">
+                    <p style="padding: 10px 0px 0px 0px;">Facebook</p>
                   </div>
                 </div>
 
                 <div class="col-3">
-                  <div class="card-3">
-                    <h6 style="padding: 8px 0px 0px 0px;">20</h6>
-                    <p style="padding: 10px 0px 0px 0px;">Sec</p>
+                  <div class="cardsss">
+                    <img src="/images/f3.png" style="width: 30%; margin-top: 10px;">
+                    <p style="padding: 10px 0px 0px 0px;">Other </p>
                   </div>
                 </div>
               </div>
@@ -179,6 +180,10 @@
           </div>
         </div>
       </div>
+      <br>
+      <br>
+      <div class="col"><button class="button2">Next</button></div>
+      <br>
     </div>
 </template>
 
@@ -238,6 +243,24 @@ export default {
     font-size: 18px;
     font-weight: bold;
 }
+
+.cardsss{
+  cursor: pointer;
+    box-sizing: border-box;
+    width: 100%;
+    background: #FFFFFF;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 7px;
+    text-align: center;
+    padding: 5px;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+
 .card-4 {
   cursor: pointer;
     box-sizing: border-box;
@@ -293,4 +316,22 @@ export default {
     z-index: 1;
     box-shadow: 2px 2px 4px #c5c5c5, -2px -2px 4px #efeded;
 }
+
+.button2 {
+display: inline-block;
+transition: all 0.2s ease-in;
+position: relative;
+overflow: hidden;
+z-index: 1;
+color: #ffffff;
+font-size: 16px;
+font-weight: 200;
+padding: 5px 30px ;
+border-radius: 0.5em;
+background:#2A2C76;
+border: 1px solid #e8e8e8;
+box-shadow: 6px 6px 12px #c5c5c5,
+           -6px -6px 12px #ffffff;
+}
+
 </style>

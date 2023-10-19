@@ -47,7 +47,7 @@
                           </div>
                           </div>
 
-    <button class="submit">Suivant</button>
+    <button class="submit" @click="save">Suivant</button>
 
 </form>
 
@@ -143,6 +143,7 @@ import axios from "axios";
 import * as notify from "../../utils/notify.js";
 import Nav from "../../components/Nav";
 import LoadingButton from "../../components/LoadingButton";
+import { get , byMethod} from '../admin/components/lib/api'
 
 export default {
   name: "Register",
@@ -152,6 +153,8 @@ export default {
   },
   data() {
     return {
+      form: {},
+      method: 'POST',
       first_name: "",
       last_name: "",
       email: "",
@@ -160,48 +163,90 @@ export default {
       location: "",
       company: "",
       website: "",
+      phone:"",
 
 
 
       isLoading: false,
     };
   },
+  created() {
+    // console.log(this.$route.params.id);
+    this.company_id = this.$route.params.id;
+   
+    const companyId = this.$route.params.id;
+
+  },
   methods: {
-    async register() {
-      this.isLoading = true;
-      try {
-        var response = await axios.post("register", {
-          first_name: this.first_name,
-          last_name: this.last_name,
-          email: this.email,
-          password: this.password,
-          password_confirm: this.password_confirm,
-          location: this.location,
-          website: this.website,
-          company: this.company,
+
+    save(){
+
+this.form.id = this.company_id;
+this.form.first_name = this.first_name;
+this.form.last_name = this.last_name;
+this.form.location = this.location;
+this.form.website = this.website;
+this.form.company = this.company;
+this.form.phone = this.phone;
+this.form.id = this.company_id;
+
+
+console.log(this.form);
 
 
 
-        });
 
-        this.isLoading = false;
+        byMethod(this.method, 'registered' , this.form)
+            .then((res) => {
 
-        if (response.data.must_verify_email) {
-          this.$router.push(`/verify/user/${response.data.id}`);
-        } else {
-          let message =
-            "Your account has been created successfully.";
-          let toast = Vue.toasted.show(message, {
-            theme: "toasted-primary",
-            position: "top-right",
-            duration: 5000,
-          });
-          this.$router.push(`/register/company/${response.data.id}`);
-        }
-      } catch (error) {
-        notify.authError(error);
-        this.isLoading = false;
-      }
+
+                if(res.data && res.data.saved) {
+                    this.$router.push(`/register/company/${this.company_id}`);
+                }
+            })
+            .catch((error) => {
+                if(error.response.status === 422) {
+                    this.errors = error.response.data.errors
+                }
+                this.isProcessing = false
+            })
+
+},
+    // async register() {
+    //   this.isLoading = true;
+    //   try {
+    //     var response = await axios.post("registered", {
+    //       first_name: this.first_name,
+    //       last_name: this.last_name,
+    //       email: this.email,
+    //       password: this.password,
+    //       password_confirm: this.password_confirm,
+    //       location: this.location,
+    //       website: this.website,
+    //       company: this.company,
+
+
+
+    //     });
+
+    //     this.isLoading = false;
+
+    //     if (response.data.must_verify_email) {
+    //       this.$router.push(`/verify/user/${response.data.id}`);
+    //     } else {
+    //       let message =
+    //         "Your account has been created successfully.";
+    //       let toast = Vue.toasted.show(message, {
+    //         theme: "toasted-primary",
+    //         position: "top-right",
+    //         duration: 5000,
+    //       });
+    //       this.$router.push(`/register/company/${response.data.id}`);
+    //     }
+    //   } catch (error) {
+    //     notify.authError(error);
+    //     this.isLoading = false;
+    //   }
 
 
 
@@ -209,7 +254,7 @@ export default {
 
 
       
-    },
+    // },
   },
 };
 </script>

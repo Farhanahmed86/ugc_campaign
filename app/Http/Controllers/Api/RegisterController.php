@@ -14,15 +14,15 @@ class RegisterController extends Controller
 {
     public function register(RegisterRequest $request)
     {
-        // dd($request->all());
+        // dd($request->all())
         try {
             $user = User::create([
                 'first_name' => $request->input('first_name'),
                 'last_name' => $request->input('last_name'),
                 'email' => $request->input('email'),
-                'company' => $request->input('company'),
-                'location' => $request->input('location'),
-                'website' => $request->input('website'),
+                // 'company' => $request->input('company'),
+                // 'location' => $request->input('location'),
+                // 'website' => $request->input('website'),
                 'password' => Hash::make($request->input('password')),
 
 
@@ -44,10 +44,29 @@ class RegisterController extends Controller
     }
 
 
+    public function registered(Request $request){
+        // dd($request->all());
+        $user = User::where('id' , $request->id)->first();
+        $user->company = $request->company;
+        $user->first_name = $request->first_name;
+        $user->last_name = $request->last_name;
+        $user->location = $request->location;
+        $user->website = $request->website;
+        $user->phone = $request->phone;
+
+        $user->save();
+        return response()->json(['saved' => true]);
+    }
+
     public function company(Request $request){
         // dd($request->id);
         $user = User::where('id' , $request->id)->first();
         $user->company_type = $request->company;
+       
+
+
+
+
         $user->save();
         return response()->json(['saved' => true]);
     }

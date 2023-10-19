@@ -38,6 +38,8 @@ use App\Http\Controllers\CountriesController;
 Route::post('login', [Api\AuthController::class, 'login']);
 Route::get('/api/dashboard', [DashboardControler::class,'index']);
 Route::post('register', [Api\RegisterController::class, 'register']);
+Route::post('registered', [Api\RegisterController::class, 'registered']);
+
 Route::post('company_register', [Api\RegisterController::class, 'company']);
 Route::post('company_types', [Api\RegisterController::class, 'company_type']);
 Route::post('company_category', [Api\RegisterController::class, 'category']);

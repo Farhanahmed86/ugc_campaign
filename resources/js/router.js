@@ -21,7 +21,12 @@ let router = new Router({
             component: () => import("./views/login/index.vue")
         },
         {
-            path: "/register",
+            path: "/signup",
+            name: "register",
+            component: () => import("./views/register/register.vue")
+        },
+        {
+            path: "/register/:id",
             name: "register",
             component: () => import("./views/register/index.vue")
         },

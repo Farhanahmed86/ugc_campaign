@@ -197,7 +197,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   methods: _defineProperty({
     register: function register() {
-      this.$router.push("/register");
+      this.$router.push("/signup");
     },
     login: function login() {
       this.$router.push("/dashboard"); // this.$router.push("/forgot-password")

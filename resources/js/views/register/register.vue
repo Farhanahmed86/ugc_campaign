@@ -30,8 +30,8 @@
 
       <form class="form" @submit.prevent="login">
         <h2 class="text-center mb-4 mt-4">YALLAD</h2>
-    <p style="font-size: x-large; font-weight: bold; color: black;">Welcome </p>
-    <p class="message">Sign in to Your account in insense</p>
+    <p style="font-size: x-large; font-weight: bold; color: black;">Get Start </p>
+    <p class="message">Register your account</p>
 
 
     <label>
@@ -60,10 +60,22 @@
         <span>Password</span> -->
     </label>
 
-    <p style="color: black; font-weight: bolder;">Forgot Password ?</p>
+    <label>
+        <input
+                          type="password"
+                          class="input"
+                          id="exampleInputPassword"
+                          placeholder="Confirm Password"
+                          v-model="password_confirm"
+                        />
+        <!-- <input required="" placeholder="" type="password" class="input">
+        <span>Password</span> -->
+    </label>
 
-    <button class="submit" @click = "login()">Sign In</button>
-    <p style="color: black; font-weight: bolder;">Don't have an acount ? <a @click="register" style="color:gray; font-weight: bold;cursor: pointer; ;">SignUp</a> </p>
+ 
+
+    <button class="submit" @click = "registers()">Sign up</button>
+    <p style="color: black; font-weight: bolder;">if you have an acount ? <a @click="register" style="color:gray; font-weight: bold;cursor: pointer; ;">SignIn</a> </p>
 </form>
       <!-- <div class="row justify-content-center">
         <div class="col-xl-6 col-lg-6 col-md-9 color">
@@ -153,46 +165,58 @@ export default {
     return {
       email: "",
       password: "",
-      verificationStatus: this.$route.query.verification_status ? true : false,
-      verificationMessage: '',
-      verificationAlertClasses: {
-        'alert-success': false,
-        'alert-danger': false
-      }
+      password_confirm:"",
+      first_name:"aaaa",
+      last_name:"bbbb",
+    
     };
   },
-  created: function () {
-    if (this.$route.query.verification_status === "success") {
-      this.verificationMessage = "Your account has been verified. Please log in.";
-      this.verificationAlertClasses['alert-success'] = true;
-    } else if (this.$route.query.verification_status === "error") {
-      this.verificationMessage = "Your account could not be verified.";
-      this.verificationAlertClasses['alert-danger'] = true;
-    }
-  },
+ 
   methods: {
     register(){
-        this.$router.push("/signup")
+        this.$router.push("/login")
     },
-    login() {
-                this.$router.push("/dashboard")
-                // this.$router.push("/forgot-password")
-
-            },
-    async login() {
+    async registers() {
+      this.isLoading = true;
       try {
-        const response = await axios.post("login", {
+        var response = await axios.post("register", {
+        
           email: this.email,
           password: this.password,
+          password_confirm: this.password_confirm,
+          first_name: this.first_name,
+          last_name: this.last_name,
+       
+
+
+
         });
 
-        localStorage.setItem("token", response.data.token);
-        this.$store.dispatch("user", response.data.user);
-        this.$router.push("/dashboard");
-        // this.$router.push("/forgot-password")
+        this.isLoading = false;
+
+        if (response.data.must_verify_email) {
+          this.$router.push(`/verify/user/${response.data.id}`);
+        } else {
+          let message =
+            "Your account has been created successfully.";
+          let toast = Vue.toasted.show(message, {
+            theme: "toasted-primary",
+            position: "top-right",
+            duration: 5000,
+          });
+          this.$router.push(`/register/${response.data.id}`);
+        }
       } catch (error) {
         notify.authError(error);
+        this.isLoading = false;
       }
+
+
+
+
+
+
+      
     },
   },
 };

@@ -85,19 +85,29 @@
         </div>
       <div class="image-container ">
 
-        <img src="/images/Ellipse.jpg" alt="Illustration Image">
+        <!-- <img src="/images/Ellipse.jpg" alt="Illustration Image"> -->
       </div>
       <div class="content">
         <!-- <div class="category"> Illustration </div> -->
         <div class="row">
-            <div class="col-6" style="font-weight: bold; color: black;">Brand Name</div>
-            <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div>
+            <div class="col-6" style="font-weight: bold; color: black;">Mila Peterson</div>
+            <!-- <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div> -->
 
         </div>
         <div class="row">
-            <div class="col-6" style="font-size: 12px;">United States</div>
-            <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div>
+            <div class="col-6" style="font-size: 12px;">Influncer</div>
+            <!-- <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div> -->
 
+        </div>
+
+        <div class="row">
+            <div class="col-6" style="font-size: 12px;"><img src="/images/instagram.png" style="width: 20%; margin-right: 2px;" alt="Illustration Image">10.2k like per post</div>
+            <div class="col-6 text-right" ><button class="butt">Invite</button></div>
+
+        </div>
+        <br>
+        <div class="row">
+           
         </div>
 
       </div>
@@ -111,24 +121,34 @@
             <img src="/images/creator2.jpg" style="width: 99%;
     border-radius: 20px;">
         </div>
-      <div class="image-container ">
+        <div class="image-container ">
 
-        <img src="/images/Ellipse.jpg" alt="Illustration Image">
-      </div>
-      <div class="content">
-        <!-- <div class="category"> Illustration </div> -->
-        <div class="row">
-            <div class="col-6" style="font-weight: bold; color: black;">Brand Name</div>
-            <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div>
+<!-- <img src="/images/Ellipse.jpg" alt="Illustration Image"> -->
+</div>
+<div class="content">
+<!-- <div class="category"> Illustration </div> -->
+<div class="row">
+    <div class="col-6" style="font-weight: bold; color: black;">Kemblay Ramos</div>
+    <!-- <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div> -->
 
-        </div>
-        <div class="row">
-            <div class="col-6" style="font-size: 12px;">United States</div>
-            <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div>
+</div>
+<div class="row">
+    <div class="col-6" style="font-size: 12px;">Influncer</div>
+    <!-- <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div> -->
 
-        </div>
+</div>
 
-      </div>
+<div class="row">
+    <div class="col-6" style="font-size: 12px;"><img src="/images/tiktok.png" style="width: 20%; margin-right: 2px;" alt="Illustration Image">10.2k like per post</div>
+    <div class="col-6 text-right" ><button class="butt">Invite</button></div>
+
+</div>
+<br>
+<div class="row">
+   
+</div>
+
+</div>
     </div>
 
     <div class="card">
@@ -136,24 +156,34 @@
             <img src="/images/creator3.jpg" style="width: 99%;
     border-radius: 20px;">
         </div>
-      <div class="image-container ">
+        <div class="image-container ">
 
-        <img  src="/images/Ellipse.jpg" alt="Illustration Image">
-      </div>
-      <div class="content">
-        <!-- <div class="category"> Illustration </div> -->
-        <div class="row">
-            <div class="col-6" style="font-weight: bold; color: black;">Brand Name</div>
-            <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div>
+<!-- <img src="/images/Ellipse.jpg" alt="Illustration Image"> -->
+</div>
+<div class="content">
+<!-- <div class="category"> Illustration </div> -->
+<div class="row">
+    <div class="col-6" style="font-weight: bold; color: black;">Mila Peterson</div>
+    <!-- <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div> -->
 
-        </div>
-        <div class="row">
-            <div class="col-6" style="font-size: 12px;">United States</div>
-            <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div>
+</div>
+<div class="row">
+    <div class="col-6" style="font-size: 12px;">Influncer</div>
+    <!-- <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div> -->
 
-        </div>
+</div>
 
-      </div>
+<div class="row">
+    <div class="col-6" style="font-size: 12px;"><img src="/images/instagram.png" style="width: 20%; margin-right: 2px;" alt="Illustration Image">10.2k like per post</div>
+    <div class="col-6 text-right" ><button class="butt">Invite</button></div>
+
+</div>
+<br>
+<div class="row">
+   
+</div>
+
+</div>
     </div>
 
 
@@ -162,24 +192,34 @@
             <img src="/images/creator4.jpg" style="width: 99%;
     border-radius: 20px;">
         </div>
-      <div class="image-container ">
+        <div class="image-container ">
 
-        <img src="/images/Ellipse.jpg" alt="Illustration Image">
-      </div>
-      <div class="content">
-        <!-- <div class="category"> Illustration </div> -->
-        <div class="row">
-            <div class="col-6" style="font-weight: bold; color: black;">Brand Name</div>
-            <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div>
+<!-- <img src="/images/Ellipse.jpg" alt="Illustration Image"> -->
+</div>
+<div class="content">
+<!-- <div class="category"> Illustration </div> -->
+<div class="row">
+    <div class="col-6" style="font-weight: bold; color: black;">Jhon</div>
+    <!-- <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div> -->
 
-        </div>
-        <div class="row">
-            <div class="col-6" style="font-size: 12px;">United States</div>
-            <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div>
+</div>
+<div class="row">
+    <div class="col-6" style="font-size: 12px;">Influncer</div>
+    <!-- <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div> -->
 
-        </div>
+</div>
 
-      </div>
+<div class="row">
+    <div class="col-6" style="font-size: 12px;"><img src="/images/facebook (1).png" style="width: 20%; margin-right: 2px;" alt="Illustration Image">10.2k like per post</div>
+    <div class="col-6 text-right" ><button class="butt">Invite</button></div>
+
+</div>
+<br>
+<div class="row">
+   
+</div>
+
+</div>
     </div>
 
     <div class="card">
@@ -187,24 +227,34 @@
             <img src="/images/creator5.jpg" style="width: 99%;
     border-radius: 20px;">
         </div>
-      <div class="image-container ">
+        <div class="image-container ">
 
-        <img src="/images/Ellipse.jpg" alt="Illustration Image">
-      </div>
-      <div class="content">
-        <!-- <div class="category"> Illustration </div> -->
-        <div class="row">
-            <div class="col-6" style="font-weight: bold; color: black;">Brand Name</div>
-            <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div>
+<!-- <img src="/images/Ellipse.jpg" alt="Illustration Image"> -->
+</div>
+<div class="content">
+<!-- <div class="category"> Illustration </div> -->
+<div class="row">
+    <div class="col-6" style="font-weight: bold; color: black;">Angela</div>
+    <!-- <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div> -->
 
-        </div>
-        <div class="row">
-            <div class="col-6" style="font-size: 12px;">United States</div>
-            <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div>
+</div>
+<div class="row">
+    <div class="col-6" style="font-size: 12px;">Influncer</div>
+    <!-- <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div> -->
 
-        </div>
+</div>
 
-      </div>
+<div class="row">
+    <div class="col-6" style="font-size: 12px;"><img src="/images/tiktok.png" style="width: 20%; margin-right: 2px;" alt="Illustration Image">10.2k like per post</div>
+    <div class="col-6 text-right" ><button class="butt">Invite</button></div>
+
+</div>
+<br>
+<div class="row">
+   
+</div>
+
+</div>
     </div>
 
     <div class="card">
@@ -212,24 +262,34 @@
             <img src="/images/creator6.jpg" style="width: 99%;
     border-radius: 20px;">
         </div>
-      <div class="image-container ">
+        <div class="image-container ">
 
-        <img src="/images/Ellipse.jpg" alt="Illustration Image">
-      </div>
-      <div class="content">
-        <!-- <div class="category"> Illustration </div> -->
-        <div class="row">
-            <div class="col-6" style="font-weight: bold; color: black;">Brand Name</div>
-            <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div>
+<!-- <img src="/images/Ellipse.jpg" alt="Illustration Image"> -->
+</div>
+<div class="content">
+<!-- <div class="category"> Illustration </div> -->
+<div class="row">
+    <div class="col-6" style="font-weight: bold; color: black;">Mila Peterson</div>
+    <!-- <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div> -->
 
-        </div>
-        <div class="row">
-            <div class="col-6" style="font-size: 12px;">United States</div>
-            <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div>
+</div>
+<div class="row">
+    <div class="col-6" style="font-size: 12px;">Influncer</div>
+    <!-- <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div> -->
 
-        </div>
+</div>
 
-      </div>
+<div class="row">
+    <div class="col-6" style="font-size: 12px;"><img src="/images/instagram.png" style="width: 20%; margin-right: 2px;" alt="Illustration Image">10.2k like per post</div>
+    <div class="col-6 text-right" ><button class="butt">Invite</button></div>
+
+</div>
+<br>
+<div class="row">
+   
+</div>
+
+</div>
     </div>
 
     <div class="card">
@@ -237,48 +297,68 @@
             <img src="/images/creator7.jpg" style="width: 99%;
     border-radius: 20px;">
         </div>
-      <div class="image-container ">
+        <div class="image-container ">
 
-        <img src="/images/Ellipse.jpg" alt="Illustration Image">
-      </div>
-      <div class="content">
-        <!-- <div class="category"> Illustration </div> -->
-        <div class="row">
-            <div class="col-6" style="font-weight: bold; color: black;">Brand Name</div>
-            <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div>
+<!-- <img src="/images/Ellipse.jpg" alt="Illustration Image"> -->
+</div>
+<div class="content">
+<!-- <div class="category"> Illustration </div> -->
+<div class="row">
+    <div class="col-6" style="font-weight: bold; color: black;">Mila Peterson</div>
+    <!-- <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div> -->
 
-        </div>
-        <div class="row">
-            <div class="col-6" style="font-size: 12px;">United States</div>
-            <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div>
+</div>
+<div class="row">
+    <div class="col-6" style="font-size: 12px;">Influncer</div>
+    <!-- <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div> -->
 
-        </div>
+</div>
 
-      </div>
+<div class="row">
+    <div class="col-6" style="font-size: 12px;"><img src="/images/instagram.png" style="width: 20%; margin-right: 2px;" alt="Illustration Image">10.2k like per post</div>
+    <div class="col-6 text-right" ><button class="butt">Invite</button></div>
+
+</div>
+<br>
+<div class="row">
+   
+</div>
+
+</div>
     </div>
     <div class="card">
         <div class="card-image">
             <img src="/images/creator8.jpg" style="width: 99%;
     border-radius: 20px;">
         </div>
-      <div class="image-container ">
+        <div class="image-container ">
 
-        <img src="/images/Ellipse.jpg" alt="Illustration Image">
-      </div>
-      <div class="content">
-        <!-- <div class="category"> Illustration </div> -->
-        <div class="row">
-            <div class="col-6" style="font-weight: bold; color: black;">Brand Name</div>
-            <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div>
+<!-- <img src="/images/Ellipse.jpg" alt="Illustration Image"> -->
+</div>
+<div class="content">
+<!-- <div class="category"> Illustration </div> -->
+<div class="row">
+    <div class="col-6" style="font-weight: bold; color: black;">Margaret</div>
+    <!-- <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div> -->
 
-        </div>
-        <div class="row">
-            <div class="col-6" style="font-size: 12px;">United States</div>
-            <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div>
+</div>
+<div class="row">
+    <div class="col-6" style="font-size: 12px;">Influncer</div>
+    <!-- <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div> -->
 
-        </div>
+</div>
 
-      </div>
+<div class="row">
+    <div class="col-6" style="font-size: 12px;"><img src="/images/facebook (1).png" style="width: 20%; margin-right: 2px;" alt="Illustration Image">10.2k like per post</div>
+    <div class="col-6 text-right" ><button class="butt">Invite</button></div>
+
+</div>
+<br>
+<div class="row">
+   
+</div>
+
+</div>
     </div>
   </div>
 </div>
@@ -446,7 +526,13 @@ export default {
   gap: 20px; /* Adjust the gap between cards */
 }
 
-
+.butt{
+  border: none;
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    padding: 2px 20px;
+}
 
 .card {
   flex: 0 0 calc(25% - 20px); /* Adjust the width (33.33% for 3 cards in a row) and gap */
