@@ -348,6 +348,12 @@ let router = new Router({
         layout: AdminLayout
     }
     },
+    {path: '/doyou', component: require("./views/admin/doyou.vue").default,
+    meta: {
+
+        layout: AdminLayout
+    }
+    },
     {path: '/ActionType', component: require("./views/admin/ActionType.vue").default,
     meta: {
 
