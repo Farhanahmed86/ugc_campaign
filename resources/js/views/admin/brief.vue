@@ -29,11 +29,13 @@
 </div>
 <div class="col mt-2">
 
-    <select class="form-control" placeholder="Socail media" v-model="selectedOption" style="width: 300px;">
+    <select class="form-control" placeholder="Socail media" v-model="form.brand" style="width: 300px;">
 
-      <option value="option1">Option 1</option>
-      <option value="option2">Option 2</option>
-      <option value="option3">Option 3</option>
+      <option value="Apple">Apple</option>
+      <option value="Samsung">Samsung</option>
+      <option value="Gucci">Gucci</option>
+      <option value="Levis">Levis</option>
+
     </select>
    
 </div>
@@ -51,7 +53,7 @@
     <div class="col-8">
         <label>
          Campaign Name
-        <input required="" placeholder="Enter a short name for your campaign.this is what creator will see" type="text" class="form-control" v-model="email" style="width: 700px;">
+        <input required="" placeholder="Enter a short name for your campaign.this is what creator will see" type="text" class="form-control" v-model="form.campaign_name" style="width: 700px;">
        
     </label>
     </div>
@@ -60,11 +62,11 @@
         <label>
             Campaign Privacy
         <!-- <input required="" placeholder="" type="text" class="form-control" v-model="email"> -->
-        <select class="form-control" placeholder="Socail media" v-model="selectedOption" style="width: 300px;">
+        <select class="form-control" placeholder="Socail media" v-model="form.campaign_privacy" style="width: 300px;">
 
-<option value="option1">Option 1</option>
-<option value="option2">Option 2</option>
-<option value="option3">Option 3</option>
+<option value="Public">Public</option>
+<option value="Private">Private</option>
+
 </select>
        
     </label>
@@ -115,11 +117,11 @@
         <label>
             <span style="color: black; margin-bottom: 10px; font-weight: 600;">Campaign type</span>
         <!-- <input required="" placeholder="" type="text" class="form-control" v-model="email"> -->
-        <select class="form-control" placeholder="Socail media" v-model="selectedOption" style="width: 300px;">
+        <select class="form-control" placeholder="Socail media" v-model="form.campaign_type" style="width: 300px;">
 
-<option value="option1">Option 1</option>
-<option value="option2">Option 2</option>
-<option value="option3">Option 3</option>
+<option value="Influnencer partnership">Influnencer partnership</option>
+<option value="Marketing">Marketing</option>
+
 </select>
        
     </label>
@@ -129,11 +131,13 @@
         <label>
             <span style="color: black; margin-bottom: 10px; font-weight: 600;">Plateform</span>
         <!-- <input required="" placeholder="" type="text" class="form-control" v-model="email"> -->
-        <select class="form-control" placeholder="Socail media" v-model="selectedOption" style="width: 300px;">
+        <select class="form-control" placeholder="Socail media" v-model="form.plateform" style="width: 300px;">
 
-<option value="option1">Option 1</option>
-<option value="option2">Option 2</option>
-<option value="option3">Option 3</option>
+<option value="Instagram">Instagram</option>
+<option value="Facebook">Facebook</option>
+<option value="Tiktok">Tiktok</option>
+<option value="Tiktok">linkedin</option>
+
 </select>
        
     </label>
@@ -142,7 +146,7 @@
         <label>
             <span style="color: black; margin-bottom: 10px; font-weight: 600;">Campaign objective</span>
         <!-- <input required="" placeholder="" type="text" class="form-control" v-model="email"> -->
-        <select class="form-control" placeholder="Socail media" v-model="selectedOption" style="width: 300px;">
+        <select class="form-control" placeholder="Socail media" v-model="form.campaign_objective" style="width: 300px;">
 
 <option value="option1">Option 1</option>
 <option value="option2">Option 2</option>
@@ -167,10 +171,10 @@
         <div class="row">
     
 
-    <div class="col-4"><button class="but">Upto 15 days </button></div>
-    <div class="col-4"><button class="but">Upto 60 days</button></div>
+    <div class="col-4"><button class="but" @click="whitelist('Upto 15 days')">Upto 15 days </button></div>
+    <div class="col-4"><button class="but" @click="whitelist('Upto 60 days')">Upto 60 days</button></div>
 
-    <div class="col-4"><button class="but">Upto 90 days</button></div>
+    <div class="col-4"><button class="but" @click="whitelist('Upto 90 days')">Upto 90 days</button></div>
 <br>
 </div>
     </div>
@@ -186,11 +190,11 @@
         <label>
             <span style="color: black; margin-bottom: 10px; font-weight: 600;">Payment method</span>
         <!-- <input required="" placeholder="" type="text" class="form-control" v-model="email"> -->
-        <select class="form-control" placeholder="Socail media" v-model="selectedOption" style="width: 300px;">
+        <select class="form-control" placeholder="Socail media" v-model="form.payment_method" style="width: 300px;">
 
-<option value="option1">Option 1</option>
-<option value="option2">Option 2</option>
-<option value="option3">Option 3</option>
+<option value="option1">Money</option>
+<option value="option2">Bitcoin</option>
+<!-- <option value="option3">Option 3</option> -->
 </select>
        
     </label>
@@ -200,9 +204,9 @@
         <label>
             <span style="color: black; margin-bottom: 10px; font-weight: 600;">How many creators do you want to hire</span>
             <div class="row">
-                <div class="col-6"><input required="" placeholder="Min" type="number" class="form-control" v-model="email"></div>
+                <div class="col-6"><input required="" placeholder="Min" type="number" class="form-control" v-model="form.hire_min"></div>
                 
-                <div class="col-6"><input required="" placeholder="Max" type="number" class="form-control" v-model="email"></div>
+                <div class="col-6"><input required="" placeholder="Max" type="number" class="form-control" v-model="form.hire_max"></div>
             </div>
         <!-- <input required="" placeholder="" type="text" class="form-control" v-model="email"> -->
       
@@ -212,7 +216,7 @@
     <div class="col-4">
         <label>
             <span style="color: black; margin-bottom: 10px; font-weight: 600;">Payment</span>
-        <input required="" placeholder="Enter price " type="text" class="form-control" v-model="email" style="width: 300px;">
+        <input required="" placeholder="Enter price " type="text" class="form-control" v-model="form.payment" style="width: 300px;">
       
        
     </label>
@@ -224,11 +228,11 @@
         <label>
             <span style="color: black; margin-bottom: 10px; font-weight: 600;">Campaign timming</span>
         <!-- <input required="" placeholder="" type="text" class="form-control" v-model="email"> -->
-        <select class="form-control" placeholder="Socail media" v-model="selectedOption" style="width: 300px;">
+        <select class="form-control" placeholder="Socail media" v-model="form.campaign_timing" style="width: 300px;">
 
-<option value="option1">Option 1</option>
-<option value="option2">Option 2</option>
-<option value="option3">Option 3</option>
+<option value="option1">Limited</option>
+<option value="option2">6 Month</option>
+<option value="option3">1 Year</option>
 </select>
        
     </label>
@@ -237,7 +241,7 @@
     <div class="col-4">
         <label>
             <span style="color: black; margin-bottom: 10px; font-weight: 600;">Start Date</span>
-        <input required="" placeholder="" type="date" class="form-control" v-model="email" style="width: 300px;">
+        <input required="" placeholder="" type="date" class="form-control" v-model="form.start_date" style="width: 300px;">
       
        
     </label>
@@ -245,7 +249,7 @@
     <div class="col-4">
         <label>
             <span style="color: black; margin-bottom: 10px; font-weight: 600;">End Date</span>
-        <input required="" placeholder="" type="date" class="form-control" v-model="email" style="width: 300px;">
+        <input required="" placeholder="" type="date" class="form-control" v-model="form.end_date" style="width: 300px;">
         
        
     </label>
@@ -255,7 +259,7 @@
 <span style="color: black; margin-bottom: 10px; font-weight: 600;   margin-left: 20px;">Product Description</span>
 <div class="col">
     <textarea class="area"
-      v-model="text"
+      v-model="form.description"
       rows="5"
       cols="30"
       placeholder="    Describe the product you promoting."
@@ -313,7 +317,7 @@
     background-color: rgb(43, 40, 40);
     padding: 5px;
     width: 100px;
-    border-radius: 7px;">Send</button>
+    border-radius: 7px;" @click="save">Send</button>
 </div> 
 <br>
     </div>
@@ -334,6 +338,7 @@ export default {
     components: { Typehead },
   data () {
             return {
+                method:'POST',
                 imageUrl: null,
                 file: null,
                 form: {},
@@ -390,6 +395,10 @@ export default {
                 this.$router.push('')
             },
 
+            whitelist(e){
+                this.form.whitelist = e;
+            },
+
 
            
             detailsPage(item) {
@@ -401,6 +410,55 @@ export default {
 
                 // console.log(res.data)
             },
+
+            save(){
+                const formData = new FormData();
+    formData.append('image', this.file); 
+    formData.append('brand', this.form.brand);
+    formData.append('campaign_name', this.form.campaign_name);
+    formData.append('campaign_privacy', this.form.campaign_privacy);
+    formData.append('campaign_type', this.form.campaign_type);
+    formData.append('plateform', this.form.plateform);
+    formData.append('campaign_objective', this.form.campaign_objective);
+    formData.append('payment_method', this.form.payment_method);
+    formData.append('hire_min', this.form.hire_min);
+    formData.append('hire_max', this.form.hire_max);
+    formData.append('payment', this.form.payment);
+    formData.append('campaign_timing', this.form.campaign_timing);
+    formData.append('start_date', this.form.start_date);
+    formData.append('end_date', this.form.end_date);
+    formData.append('description', this.form.description);
+    formData.append('whitelist', this.form.whitelist);
+
+   
+
+
+
+
+
+    
+
+
+
+    
+    
+    
+                
+                byMethod(this.method, '/api/brief' , formData)
+                     .then((res) => {
+                       
+                         if(res.data && res.data.saved) {
+                            this.$router.push('/brands');
+                             // this.success(res)
+                         }
+                     })
+                     .catch((error) => {
+                         if(error.response.status === 422) {
+                             this.errors = error.response.data.errors
+                         }
+                         this.isProcessing = false
+                     })
+            }
 
 
         }

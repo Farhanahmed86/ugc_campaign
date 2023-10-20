@@ -407,6 +407,20 @@ let router = new Router({
         }
     },
 
+    {path: '/details/:id', component: require('./views/admin/campaign_detail.vue').default,
+    meta: {
+
+        layout: AdminLayout
+    }
+},
+
+{path: '/user_details/:id', component: require('./views/admin/user_detail.vue').default,
+meta: {
+
+    layout: AdminLayout
+}
+},
+
 
     {path: '/trail', component: require('./views/admin/trailbalance.vue').default,
     meta: {

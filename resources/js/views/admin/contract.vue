@@ -37,40 +37,40 @@ justify-content: center; background-color: #ECEC4F;
     width: 65%;
     border-radius: 20px; padding: 30px 0px 30px 0px;">
 
-<form class="form">
+<div class="form">
 
         <p style="font-size: 20px; font-weight: bolder; color: black; margin-bottom: 20px;" class="text-center">Influencers</p>
 
 
         <div class="flex">
         <label>
-            <input required="" placeholder="" type="text" class="input" v-model="first_name">
+            <input required="" placeholder="" type="text" class="input" v-model="form.firstname">
             <span>Firstname</span>
         </label>
 
         <label>
-            <input required="" placeholder="" type="text" class="input" v-model="last_name">
+            <input required="" placeholder="" type="text" class="input" v-model="form.lastname">
             <span>Lastname</span>
         </label>
     </div>
 
     <label>
-        <input required="" placeholder="" type="email" class="input" v-model="email">
+        <input required="" placeholder="" type="email" class="input" v-model="form.email">
         <span>Email</span>
     </label>
 
     <label>
-        <input required="" placeholder="" type="number" class="input" v-model="email">
+        <input required="" placeholder="" type="number" class="input" v-model="form.phone">
         <span>Phone Number</span>
     </label>
 
     <label>
-        <input required="" placeholder="" type="text" class="input" v-model="email">
+        <input required="" placeholder="" type="text" class="input" v-model="form.address">
         <span>Address</span>
     </label>
 
     <label>
-    <select class="input" placeholder="Socail media" v-model="selectedOption">
+    <select class="input" placeholder="Socail media" v-model="form.option">
 
       <option value="option1">Option 1</option>
       <option value="option2">Option 2</option>
@@ -80,9 +80,9 @@ justify-content: center; background-color: #ECEC4F;
 
 
 
-    <button class="submit text-center">Send</button>
+    <button class="submit text-center" @click="save">Send</button>
 
-</form>
+</div>
 </div>
 </div>
 
@@ -120,7 +120,8 @@ export default {
                 users_data:{},
                 model: {
                     data: []
-                }
+                },
+                method:'POST'
             }
         },
   name: "Dashboard",
@@ -145,7 +146,16 @@ export default {
         methods: {
 
 
-
+          save(){
+            byMethod(this.method, 'api/contract', this.form)
+                    .then((res) => {
+                      
+                       
+                        if(res.data && res.data.saved) {
+                           this.$router.go(-1)
+                        }
+                    })
+          },
 
             setData(res) {
                 Vue.set(this.$data, 'model', res.data.results)

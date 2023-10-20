@@ -64,7 +64,7 @@
     background-color: rgb(42, 44, 118);
     border-radius: 7px;
     font-size: smaller;
-    padding: 5px 10px;">Find Creators</button>
+    padding: 5px 10px;" @click="creators">Find Creators</button>
             </div>
 <!-- </button> -->
         </div>
@@ -171,6 +171,10 @@ export default {
         },
 
         methods: {
+
+            creators(){
+                this.$router.push('/creators')
+            },
 
             brief(){
                 this.$router.push('/brief')
