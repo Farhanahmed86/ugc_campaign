@@ -2,7 +2,7 @@
   <div class="contanir">
     <div class="col text-center" style="padding: 10px 0px 50px 0px;">
               <img
-          src="/images/id_line.png" style="width: 90%;height: 20px;"/>
+          src="/images/dgs-line.png" style="width: 90%;height: 20px;"/>
     </div>
     <div class="row" style="display: flex;flex-direction: column;justify-content: center;align-content: center; gap: 40px;">
       <div class="col">
