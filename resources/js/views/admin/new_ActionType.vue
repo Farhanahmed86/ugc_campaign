@@ -507,6 +507,12 @@ export default {
   padding:20px;
   border-radius: 10px;
 }
+.but{
+  transition:0.3s;
+}
+.but:hover{
+  background-color:#ECEC4F;
+}
 .areas{
     background-color: #ffffff;
     width: 58%;
