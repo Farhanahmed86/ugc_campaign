@@ -44,19 +44,25 @@
               <div class="row">
                 <div class="col-4">
                   <div class="card-3" @click="video('Testmonial')">
+                    <div class="mini-card" @click="mini('ivory-coast' , 1)" :style="{ backgroundColor: miColor1 }">
                     Testmonial
                   </div>
                 </div>
+                </div>
                 <div class="col-4">
                   <div class="card-3" @click="video('Unboxing')">
+                    <div class="mini-card" @click="mini('ivory-coast' , 2)" :style="{ backgroundColor: miColor2 }">
                     Unboxing
                   </div>
+                </div>
                 </div>
 
                 <div class="col-4">
                   <div class="card-3" @click="video('Product Demo')">
+                    <div class="mini-card" @click="mini('ivory-coast' , 3)" :style="{ backgroundColor: miColor3 }">
                     Product Demo
                   </div>
+                </div>
                 </div>
               </div>
             </div>
@@ -69,19 +75,24 @@
               <div class="row">
                 <div class="col-4">
                   <div class="card-3" @click="video('Product Review')">
+                    <div class="mini-card" @click="mini('ivory-coast' , 4)" :style="{ backgroundColor: miColor4 }">
                     Product Review
                   </div>
                 </div>
+                </div>
                 <div class="col-4">
                   <div class="card-3" @click="video('How-to')">
+                    <div class="mini-card" @click="mini('ivory-coast' , 5)" :style="{ backgroundColor: miColor5 }">
                     How-to  
                   </div>
                 </div>
-
+                </div>
                 <div class="col-4">
                   <div class="card-3" @click="video('Custom')">
+                    <div class="mini-card" @click="mini('ivory-coast' , 6)" :style="{ backgroundColor: miColor6 }">
                     Custom
                   </div>
+                </div>
                 </div>
               </div>
             </div>
@@ -113,30 +124,38 @@
               <div class="row">
                 <div class="col-3">
                   <div class="cardsss" @click="plateform('Instagram')">
+                    <div class="social-card" @click="social('ivory-coast' , 1)" :style="{ backgroundColor: siColor1 }">
                     <img src="/images/instagram.png" style="width: 30%; margin-top: 10px;">
 
                     <p style="padding: 10px 0px 0px 0px ;">Instagram</p>
                   </div>
                 </div>
+                </div>
                 <div class="col-3">
                   <div class="cardsss" @click="plateform('Tiktok')">
+                    <div class="social-card" @click="social('ivory-coast' , 2)" :style="{ backgroundColor: siColor2 }">
                     <img src="/images/tiktok.png" style="width: 30%; margin-top: 10px;">
                     <p style="padding: 10px 0px 0px 0px;">Tiktok</p>
                   </div>
                 </div>
+                </div>
 
                 <div class="col-3">
                   <div class="cardsss" @click="plateform('Facebook')">
+                    <div class="social-card" @click="social('ivory-coast' , 3)" :style="{ backgroundColor: siColor3 }">
                     <img src="/images/facebook (1).png" style="width: 30%; margin-top: 10px;">
                     <p style="padding: 10px 0px 0px 0px;">Facebook</p>
                   </div>
                 </div>
+                </div>
 
                 <div class="col-3">
                   <div class="cardsss" @click="plateform('Other')">
+                    <div class="social-card" @click="social('ivory-coast' , 4)" :style="{ backgroundColor: siColor4 }">
                     <img src="/images/f3.png" style="width: 30%; margin-top: 10px;">
                     <p style="padding: 10px 0px 0px 0px;">Other </p>
                   </div>
+                </div>
                 </div>
               </div>
             </div>
@@ -156,24 +175,32 @@
               <div class="row">
                 <div class="col-3">
                   <div class="card-3" @click="hire('<< 5')">
+                    <div class="short-card" @click="short('ivory-coast' , 1)" :style="{ backgroundColor: shColor1 }">
                   << 5
                   </div>
                 </div>
+                </div>
                 <div class="col-3">
                   <div class="card-3" @click="hire('5-10')">
+                    <div class="short-card" @click="short('ivory-coast' , 2)" :style="{ backgroundColor: shColor2 }">
                     5-10
                   </div>
                 </div>
+                </div>
                 <div class="col-3">
                   <div class="card-3" @click="hire('10-20')">
+                    <div class="short-card" @click="short('ivory-coast' , 3)" :style="{ backgroundColor: shColor3 }">
                    10-20
                   </div>
+                </div>
                 </div>
 
                 <div class="col-3">
                   <div class="card-3" @click="hire('>> 20')">
+                    <div class="short-card" @click="short('ivory-coast' , 4)" :style="{ backgroundColor: shColor4 }">
                  >> 20
                   </div>
+                </div>
                 </div>
               </div>
             </div>
@@ -199,6 +226,25 @@ export default {
     components: { Typehead },
   data () {
             return {
+
+            miColor1:'white',
+            miColor2:'white',
+            miColor3:'white',
+            miColor4:'white',
+            miColor5:'white',
+            miColor6:'white',
+          
+            siColor1:'white',
+            siColor2:'white',
+            siColor3:'white',
+            siColor4:'white',
+
+
+            shColor1:'white',
+            shColor2:'white',
+            shColor3:'white',
+            shColor4:'white',
+
                 form: {},
                 users_data:{},
                 model: {
@@ -209,6 +255,125 @@ export default {
         },
   name: "Dashboard",
   methods: {
+    short(e , num){
+        if(num == 1){
+            this.shColor1 = '#ECEC4F'
+            this.shColor2 = 'white'
+            this.shColor3 = 'white'
+            this.shColor4 = 'white'
+          
+
+        }
+        if(num == 2){
+            this.shColor1 = 'white'
+            this.shColor2 = '#ECEC4F'
+            this.shColor3 = 'white'
+            this.shColor4 = 'white'
+            
+           
+        }
+        if(num == 3){
+            this.shColor1 = 'white'
+            this.shColor2 = 'white'
+            this.shColor3 = '#ECEC4F'
+            this.shColor4 = 'white'
+           
+        }
+        if(num == 4){
+            this.shColor1 = 'white'
+            this.shColor2 = 'white'
+            this.shColor3 = 'white'
+            this.shColor4 = '#ECEC4F'
+   
+        }
+    
+      },
+    social(e , num){
+        if(num == 1){
+            this.siColor1 = '#ECEC4F'
+            this.siColor2 = 'white'
+            this.siColor3 = 'white'
+            this.siColor4 = 'white'
+          
+
+        }
+        if(num == 2){
+            this.siColor1 = 'white'
+            this.siColor2 = '#ECEC4F'
+            this.siColor3 = 'white'
+            this.siColor4 = 'white'
+            
+           
+        }
+        if(num == 3){
+            this.siColor1 = 'white'
+            this.siColor2 = 'white'
+            this.siColor3 = '#ECEC4F'
+            this.siColor4 = 'white'
+           
+        }
+        if(num == 4){
+            this.siColor1 = 'white'
+            this.siColor2 = 'white'
+            this.siColor3 = 'white'
+            this.siColor4 = '#ECEC4F'
+   
+        }
+    
+      },
+
+    mini(e , num){
+        if(num == 1){
+            this.miColor1 = '#ECEC4F'
+            this.miColor2 = 'white'
+            this.miColor3 = 'white'
+            this.miColor4 = 'white'
+            this.miColor5 = 'white'
+            this.miColor6 = 'white'
+
+        }
+        if(num == 2){
+            this.miColor1 = 'white'
+            this.miColor2 = '#ECEC4F'
+            this.miColor3 = 'white'
+            this.miColor4 = 'white'
+            this.miColor5 = 'white'
+            this.miColor6 = 'white'
+           
+        }
+        if(num == 3){
+            this.miColor1 = 'white'
+            this.miColor2 = 'white'
+            this.miColor3 = '#ECEC4F'
+            this.miColor4 = 'white'
+            this.miColor5 = 'white'
+            this.miColor6 = 'white'
+        }
+        if(num == 4){
+            this.miColor1 = 'white'
+            this.miColor2 = 'white'
+            this.miColor3 = 'white'
+            this.miColor4 = '#ECEC4F'
+            this.miColor5 = 'white'
+            this.miColor6 = 'white'
+        }
+        if(num == 5){
+            this.miColor1 = 'white'
+            this.miColor2 = 'white'
+            this.miColor3 = 'white'
+            this.miColor4 = 'white'
+            this.miColor5 = '#ECEC4F'
+            this.miColor6 = 'white'
+        }
+        if(num == 6){
+            this.miColor1 = 'white'
+            this.miColor2 = 'white'
+            this.miColor3 = 'white'
+            this.miColor4 = 'white'
+            this.miColor5 = 'white'
+            this.miColor6 = '#ECEC4F'
+        }
+      },
 
     whitelist(e){
       this.form.action_type_whitelist = e;
@@ -249,7 +414,10 @@ export default {
 </script>
 
 <style scoped>
-
+.short-card{
+  padding: 20px;
+  border-radius: 10px;
+}
 .card {
     background-color: #ffffff;
  width: 70%;
@@ -275,7 +443,6 @@ export default {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 7px;
     text-align: center;
-    padding: 20px 0px;
     color: black;
     font-size: 18px;
     font-weight: bold;
@@ -290,7 +457,6 @@ export default {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 7px;
     text-align: center;
-    padding: 5px;
     color: black;
     font-size: 18px;
     font-weight: bold;
@@ -337,7 +503,10 @@ export default {
     font-size: small;
     font-weight: 600;
 }
-
+.mini-card{
+  padding:20px;
+  border-radius: 10px;
+}
 .areas{
     background-color: #ffffff;
     width: 58%;
@@ -353,7 +522,10 @@ export default {
     z-index: 1;
     box-shadow: 2px 2px 4px #c5c5c5, -2px -2px 4px #efeded;
 }
-
+.social-card{
+  padding: 5px;
+    border-radius: 10px;
+}
 .button2 {
 display: inline-block;
 transition: all 0.2s ease-in;
@@ -370,5 +542,4 @@ border: 1px solid #e8e8e8;
 box-shadow: 6px 6px 12px #c5c5c5,
            -6px -6px 12px #ffffff;
 }
-
 </style>

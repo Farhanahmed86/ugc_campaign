@@ -519,7 +519,7 @@ padding-top: 8px;
     display: flex;
     gap: 0px 15px;
     align-items: center;
-
+       
 }
 .li_img  p{
   font-size: 18px;

@@ -330,6 +330,12 @@ let router = new Router({
         layout: AdminLayout
     }
     },
+    {path: '/doyou/:id', component: require("./views/admin/doyou.vue").default,
+    meta: {
+
+        layout: AdminLayout
+    }
+    },
     {path: '/NewCampaign/:id', component: require("./views/admin/NewCampaign.vue").default,
     meta: {
 
@@ -348,6 +354,7 @@ let router = new Router({
         layout: AdminLayout
     }
     },
+    
     {path: '/ActionTypes/:id', component: require("./views/admin/ActionType.vue").default,
     meta: {
 

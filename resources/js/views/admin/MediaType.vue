@@ -15,14 +15,22 @@
               <div class="row">
                 <div class="col-6">
                   <div class="card-3" @click="media('Video')">
+                    <div class="md-card" @click="roduct('ivory-coast' ,1)" :style="{ backgroundColor: dbColor1 }">
                     Video
                   </div>
-                </div>
-                <div class="col-6">
-                  <div class="card-3" @click="media('Photo')">
-                    Photo
                   </div>
                 </div>
+
+
+                <div class="col-6">
+                  <div class="card-3" @click="media('Photo')">
+                    <div class="md-card" @click="roduct('ivory-coast' ,2)" :style="{ backgroundColor: dbColor2 }">
+                    Photo
+                  </div>
+                  </div>
+                </div>
+
+
               </div>
             </div>
           </div>
@@ -37,13 +45,17 @@
               <div class="row">
                 <div class="col-6">
                   <div class="card-3" @click="socail('Posting')">
+                    <div class="md-card" @click="oduct('ivory-coast' ,1)" :style="{ backgroundColor: dgColor1 }">
                     Posting
                   </div>
                 </div>
+                </div>
                 <div class="col-6">
                   <div class="card-3" @click="socail('No Posting')">
+                    <div class="md-card" @click="oduct('ivory-coast' ,2)" :style="{ backgroundColor: dgColor2 }">
                     No Posting
                   </div>
+                </div>
                 </div>
               </div>
             </div>
@@ -59,15 +71,19 @@
               <div class="row">
                 <div class="col-6">
                   <div class="card-4" @click="lenght('20')">
+                    <div class="no-card" @click="duct('ivory-coast' ,1)" :style="{ backgroundColor: dsColor1 }">
                     <h6 style="padding: 8px 0px 0px 0px;">20</h6>
                     <p style="padding: 10px 0px 0px 0px ;">Sec</p>
                   </div>
                 </div>
+                </div>
                 <div class="col-6">
                   <div class="card-4" @click="lenght('40')">
+                    <div class="no-card" @click="duct('ivory-coast' ,2)" :style="{ backgroundColor: dsColor2 }">
                     <h6 style="padding: 8px 0px 0px 0px;">40</h6>
                     <p style="padding: 10px 0px 0px 0px;">Sec</p>
                   </div>
+                </div>
                 </div>
               </div>
             </div>
@@ -84,20 +100,28 @@ or maybe both!</p>
               <div class="row">
                 <div class="col-4">
                   <div class="card-3" @click="raw('Raw Footage')">
+                    <div class="lg-card" @click="last('ivory-coast' ,1)" :style="{ backgroundColor: lgColor1 }">
                     Raw Footage
                   </div>
                 </div>
+                </div>
                 <div class="col-4">
                   <div class="card-3"  @click="raw('Ready to use Ad')">
+                    <div class="lg-card" @click="last('ivory-coast' ,2)" :style="{ backgroundColor: lgColor2 }">
                     Ready to use Ad
                   </div>
                 </div>
+                </div>
                 <div class="col-4">
                   <div class="card-5" @click="raw('Ready to use Ad + Raw Footage')">
+                    <div class="lg-5-card" @click="last('ivory-coast' ,3)" :style="{ backgroundColor: lgColor3 }">
                     Ready to use Ad
                     + Raw Footage
                   </div>
                 </div>
+                </div>
+
+
               </div>
             </div>
           </div>
@@ -126,6 +150,24 @@ export default {
     components: { Typehead },
   data () {
             return {
+
+
+              dbColor1:'white',
+              dbColor2:'white',
+
+
+              dgColor1:'white',
+              dgColor2:'white',
+
+              
+
+              dsColor1:'white',
+              dsColor2:'white',
+
+              lgColor1:'white',
+              lgColor2:'white',
+              lgColor3:'white',
+
                 form: {},
                 users_data:{},
                 model: {
@@ -143,6 +185,93 @@ export default {
 
   },
   methods: {
+
+    last(e , num){
+        if(num == 1){
+            this.lgColor1 = '#ECEC4F'
+            this.lgColor2 = 'white'
+            this.lgColor3 = 'white'
+         
+          
+
+        }
+        if(num == 2){
+            this.lgColor1 = 'white'
+            this.lgColor2 = '#ECEC4F'
+            this.lgColor3 = 'white'
+          
+      
+           
+        }
+        if(num == 3){
+            this.lgColor1 = 'white'
+            this.lgColor2 = 'white'
+            this.lgColor3 = '#ECEC4F'
+          
+      
+           
+        }
+      },
+        
+    
+    duct(e , num){
+        if(num == 1){
+            this.dsColor1 = '#ECEC4F'
+            this.dsColor2 = 'white'
+        
+         
+          
+
+        }
+        if(num == 2){
+            this.dsColor1 = 'white'
+            this.dsColor2 = '#ECEC4F'
+          
+      
+           
+        }
+        
+    
+      },
+    
+    oduct(e , num){
+        if(num == 1){
+            this.dgColor1 = '#ECEC4F'
+            this.dgColor2 = 'white'
+        
+         
+          
+
+        }
+        if(num == 2){
+            this.dgColor1 = 'white'
+            this.dgColor2 = '#ECEC4F'
+          
+      
+           
+        }
+        
+    
+      },
+    roduct(e , num){
+        if(num == 1){
+            this.dbColor1 = '#ECEC4F'
+            this.dbColor2 = 'white'
+        
+         
+          
+
+        }
+        if(num == 2){
+            this.dbColor1 = 'white'
+            this.dbColor2 = '#ECEC4F'
+          
+      
+           
+        }
+        
+    
+      },
           media(e){
             this.form.media_type = e;
           },
@@ -199,7 +328,8 @@ border: 1px solid #e8e8e8;
 box-shadow: 6px 6px 12px #c5c5c5,
            -6px -6px 12px #ffffff;
 }
-.card-3{
+
+.lg-card{
   cursor: pointer;
     box-sizing: border-box;
     width: 100%;
@@ -212,7 +342,7 @@ box-shadow: 6px 6px 12px #c5c5c5,
     color: black;
     font-size: 18px;
 }
-.card-4 {
+.no-card {
   cursor: pointer;
     box-sizing: border-box;
     width: 100%;
@@ -228,7 +358,7 @@ box-shadow: 6px 6px 12px #c5c5c5,
     align-items: center;
     justify-content: space-between;
 }
-.card-5 {
+.lg-5-card {
   cursor: pointer;
   box-sizing: border-box;
     width: 100%;
@@ -240,5 +370,18 @@ box-shadow: 6px 6px 12px #c5c5c5,
     padding: 8px 0px;
     color: black;
     font-size: 18px;
+}
+.md-card{
+  cursor: pointer;
+    box-sizing: border-box;
+    width: 100%;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 7px;
+    text-align: center;
+    padding: 20px 0px;
+    color: black;
+    font-size: 18px;
+
 }
 </style>

@@ -12,19 +12,25 @@
         <div class="col-8">
           <div class="row">
             <div class="col-4">
-              <div class="card" @click="delivery('Not Required')">
+              <div class="card-5" @click="delivery('Not Required')">
+                <div class="product-card" @click="product('ivory-coast' , 1)" :style="{ backgroundColor: dpColor1 }">
                 Not Required
-              </div>  
+              </div> 
+            </div> 
             </div>
             <div class="col-4">
-              <div class="card" @click="delivery('Shipment')">
+              <div class="card-5" @click="delivery('Shipment')">
+                <div class="product-card" @click="product('ivory-coast' ,2)" :style="{ backgroundColor: dpColor2 }">
                  Shipment
               </div>
             </div>
+            </div>
             <div class="col-4">
-              <div class="card" @click="delivery('Reimbursement')">
+              <div class="card-5" @click="delivery('Reimbursement')">
+                <div class="product-card" @click="product('ivory-coast' , 3)" :style="{ backgroundColor: dpColor3 }">
                 Reimbursement
               </div>
+            </div>
             </div>
           </div>
         </div>
@@ -76,6 +82,13 @@ export default {
     components: { Typehead },
   data () {
             return {
+              
+            dpColor1:'white',
+            dpColor2:'white',
+            dpColor3:'white',
+
+
+
               method: 'POST',
                 form: {},
                 users_data:{},
@@ -93,6 +106,32 @@ export default {
   },
   methods: {
 
+    product(e , num){
+        if(num == 1){
+            this.dpColor1 = '#ECEC4F'
+            this.dpColor2 = 'white'
+            this.dpColor3 = 'white'
+
+          
+
+        }
+        if(num == 2){
+            this.dpColor1 = 'white'
+            this.dpColor2 = '#ECEC4F'
+            this.dpColor3 = 'white'
+      
+            
+           
+        }
+        if(num == 3){
+            this.dpColor1 = 'white'
+            this.dpColor2 = 'white'
+            this.dpColor3 = '#ECEC4F'
+            
+           
+        }
+    
+      },
     delivery(e){
       this.form.product_receive = e;
     },
@@ -158,5 +197,18 @@ box-shadow: 6px 6px 12px #c5c5c5,
     color: black;
     padding: 25px 0px ;
     font-size: 18px;
+}
+.product-card{
+  cursor: pointer;
+    box-sizing: border-box;
+    width: 100%;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 12px;
+    text-align: center;
+    padding: 20px 0px;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
 }
 </style>
