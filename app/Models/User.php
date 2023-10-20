@@ -56,4 +56,11 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return config('auth.must_verify_email');
     }
+
+    public function campaign()
+    {
+        return $this->hasMany(Ugccampaign::class , 'auth_id' ,'id');
+    
+    }
+    
 }

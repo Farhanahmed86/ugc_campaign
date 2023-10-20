@@ -1,5 +1,5 @@
 <template>
-    <ul
+    <ul v-if="users_data.auth_type == 'admin'"
       class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
       id="accordionSidebar"
     >
@@ -19,7 +19,63 @@
       <hr class="sidebar-divider my-0" />
 
       <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
+    
+
+      <li class="nav-item active" >
+        <router-link class="nav-link" to="/CreatorCampaign">
+          <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
+          <span class="text-center" style=" font-weight: bold;">Dashboard</span></router-link
+        >
+      </li>
+
+      
+
+      <!-- Divider -->
+      <hr class="sidebar-divider" />
+
+      <!-- Heading -->
+      <!-- <div class="sidebar-heading">Campaigns</div> -->
+
+      <!-- Nav Item - Pages Collapse Menu -->
+     
+      <!-- <button>
+    <a>Hover me</a>
+</button> -->
+      <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block" />
+
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+    </ul>
+
+
+    <ul v-else
+      class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+      id="accordionSidebar"
+    >
+      <!-- Sidebar - Brand -->
+      <router-link
+        class="sidebar-brand d-flex align-items-center justify-content-center" style="background-color: white;"
+        to="/"
+      >
+        <div class="sidebar-brand-icon rotate-n-15" >
+          <!-- <i class="fas fa-laugh-wink"></i> -->
+          <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
+        </div>
+        <div class="sidebar-brand-text mx-3" style="color: black;">YALLAD</div>
+      </router-link>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0" />
+
+      <!-- Nav Item - Dashboard -->
+    
+
+    
+
+      <li class="nav-item active" >
         <router-link class="nav-link" to="/dashboard">
           <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
           <span class="text-center" style=" font-weight: bold;">Dashboard</span></router-link
@@ -33,7 +89,7 @@
       <!-- <div class="sidebar-heading">Campaigns</div> -->
 
       <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
+      <li class="nav-item" >
         <router-link class="nav-link" to="/compaigns">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Campaigns Influencers</span>
@@ -44,7 +100,7 @@
       </li>
 
 
-      <li class="nav-item">
+      <li class="nav-item" >
         <router-link class="nav-link" to="/compaigns_ucg">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Campaigns UCG</span></router-link
@@ -141,7 +197,7 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
 
-      <li class="nav-item">
+      <li class="nav-item" >
         <router-link class="nav-link" to="/brands/">
           <i class="fas fa-fw fa-folder"></i>
           <span>Ma marque</span></router-link
@@ -149,7 +205,7 @@
       </li>
 
 
-      <li class="nav-item">
+      <li class="nav-item" >
         <router-link class="nav-link" to="/contract/">
           <i class="fas fa-fw fa-folder"></i>
           <span>Contrats</span></router-link
@@ -173,8 +229,8 @@
       </li> -->
 
 
-      <li class="nav-item">
-        <router-link class="nav-link" to="/libraries/">
+      <li class="nav-item" >
+        <router-link class="nav-link" to="/DashboardBrand/">
           <i class="fas fa-fw fa-table"></i>
           <span>Mes contenus</span></router-link
         >

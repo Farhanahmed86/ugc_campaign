@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Ugcproduct;
+use App\Models\Brief;
+use App\Models\Contract;
+
 
 class UgcproductController extends Controller
 {
@@ -85,6 +88,97 @@ class UgcproductController extends Controller
 
 
      }
+
+     public function brief(Request $request){
+        // dd($request->all());
+
+
+        
+        $request->validate([
+            'brand' => 'required|string',
+            'campaign_name' => 'required|string',
+
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Adjust the file types and size as needed
+        ]);
+    
+        // Store the uploaded image in the storage folder
+        // $imagePath = $request->file('image')->store('your-storage-folder');
+        $filename = $request->file('image')->getClientOriginalName();
+        $imagePath =  $request->file('image')->move(public_path('uploads'), $filename);
+        // $imagePath = $request->file('image')->storeAs('public/uploads', $filename);
+       
+
+        // $imagePath = $request->file('image')->store('uploads', 'public');
+    
+        // Create a new database record to save form data
+        $product = new Brief();
+        $product->brand = $request->input('brand');
+        $product->campaign_name = $request->input('campaign_name');
+        $product->campaign_privacy = $request->input('campaign_privacy');
+        $product->campaign_type = $request->input('campaign_type');
+        $product->plateform = $request->input('plateform');
+        $product->campaign_objective = $request->input('campaign_objective');
+        $product->payment_method = $request->input('payment_method');
+        $product->hire_min = $request->input('hire_min');
+        $product->hire_max = $request->input('hire_max');
+        $product->payment = $request->input('payment');
+        $product->campaign_timing = $request->input('campaign_timing');
+        $product->start_date = $request->input('start_date');
+        $product->end_date = $request->input('end_date');
+        $product->description = $request->input('description');
+        $product->whitelist = $request->input('whitelist');
+
+
+
+
+
+
+
+
+
+        $product->auth_id = auth()->user()->id;
+
+
+
+
+
+
+        $product->image = $filename; // Save the image path in the database
+        $product->save();
+
+        return response()->json(['saved' => true]);
+     }
+
+
+     public function brand(){
+        $data = Brief::where('auth_id' , auth()->user()->id)->get();
+        // dd($data[0]['image']);
+        // $path = storage_path('app/images/' . $filename);
+
+        return response()->json(['data' => $data]);
+     }
+
+
+     public function contract(Request $request){
+      // dd($request->all());
+     $product = new Contract;
+      $product->firstname = $request->firstname;
+      $product->lastname = $request->lastname;
+      $product->email = $request->email;
+      $product->phone = $request->phone;
+      $product->address = $request->address;
+      $product->options = $request->option;
+      $product->auth_id = auth()->user()->id;
+
+
+
+
+      $product->save();
+
+      return response()->json(['saved' => true , 'id' =>$request->id]);
+
+
+   }
 
      
 }

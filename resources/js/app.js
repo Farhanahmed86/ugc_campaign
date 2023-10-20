@@ -20,7 +20,12 @@ Vue.use(excel)
 import JsonExcel from "vue-json-excel";
  
 Vue.component("downloadExcel", JsonExcel);
+import ApexCharts from "apexcharts";
 
+// Vue.component("apexchart", VueApexCharts);
+Vue.component("apexchart", ApexCharts);
+// import VueApexCharts from "vue3-apexcharts";
+// Vue.use(VueApexCharts)
  
 // Vue.component("downloadExcel", JsonExcel);
 // import bar from './components/typehead';

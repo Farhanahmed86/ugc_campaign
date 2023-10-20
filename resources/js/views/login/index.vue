@@ -188,7 +188,26 @@ export default {
 
         localStorage.setItem("token", response.data.token);
         this.$store.dispatch("user", response.data.user);
-        this.$router.push("/dashboard");
+        if(response.data.user.auth_type == 'admin'){
+          // this.$router.push("/CreatorCampaign");
+
+          this.$router.push("/CreatorCampaign").then(() => {
+  // Use the setTimeout function to refresh the page after a short delay
+  setTimeout(() => {
+    location.reload();
+  }, 100);
+});
+          
+        }
+        else{
+          this.$router.push("/dashboard").then(() => {
+  // Use the setTimeout function to refresh the page after a short delay
+  setTimeout(() => {
+    location.reload();
+  }, 100);
+})
+          // this.$router.push("/dashboard");
+        }
         // this.$router.push("/forgot-password")
       } catch (error) {
         notify.authError(error);

@@ -6,10 +6,11 @@
         <div class="row">
             <div class="col-6 text-left">
                 <h4 style="color:black">Ma marque</h4>
+                <!-- <span>{{ model }}</span> -->
             </div>
             <div class="col-6 text-right">
                 <button style="background-color: black; color: white; border-radius: 5px; height: 30px;
-    ">
+    " @click="contract">
                         Nouveau contrat
                     </button>
             </div>
@@ -37,6 +38,7 @@
         <button style="background-color: black; color: white; border-radius: 5px; height: 30px;
     ">
                         Ajouter une autre marque
+                        
                     </button>
 </div>
 </div>
@@ -55,304 +57,52 @@
 
 
 
-
 <div class="row">
-  <div class="card-container">
-
+  <div class="card-container" >
+<div class="col-3" style="margin-bottom: 20px" v-for="item in model">
     <div class="card">
         <div class="card-image">
-            <img src="/images/influencer.jpg" style="width: 99%;
-    border-radius: 20px;">
+            <img :src="'/uploads/' + item.image" style="width: 99%; height: 100%; border-radius: 20px;">
+
+  
+
         </div>
-        <div class="image-container ">
-
-<!-- <img src="/images/Ellipse.jpg" alt="Illustration Image"> -->
-</div>
+      
 <div class="content">
-<!-- <div class="category"> Illustration </div> -->
+
 <div class="row">
-    <div class="col-6" style="font-weight: bold; color: black;">Mobile Phones</div>
-    <!-- <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div> -->
+    <div class="col-6" style="font-weight: bold; color: black;">{{ item.campaign_name }}</div>
+  
 
 </div>
 <div class="row">
-    <div class="col-6" style="font-size: 12px;">Apple</div>
-    <!-- <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div> -->
+    <div class="col-6" style="font-size: 12px;">{{ item.brand }}</div>
+   
 
 </div>
 
 <div class="row">
-    <div class="col-6" style="font-size: 12px;"><img src="/images/instagram.png" style="width: 20%; margin-right: 2px;" alt="Illustration Image"></div>
+    <div class="col-6" v-if="item.plateform == 'linkedin'" style="font-size: 12px;"><img src="/images/linkedin.png" style="width: 20%; margin-right: 2px;" alt="Illustration Image"></div>
+
+    <div class="col-6" v-if="item.plateform == 'Tiktok'" style="font-size: 12px;"><img src="/images/tiktok.png" style="width: 20%; margin-right: 2px;" alt="Illustration Image"></div>
+
+    <div class="col-6" v-if="item.plateform == 'Facebook'" style="font-size: 12px;"><img src="/images/facebook (1).png" style="width: 20%; margin-right: 2px;" alt="Illustration Image"></div>
+
+    <div class="col-6" v-if="item.plateform == 'Instagram'" style="font-size: 12px;"><img src="/images/instagram.png" style="width: 20%; margin-right: 2px;" alt="Illustration Image"></div>
     <div class="col-6 text-right" ><button class="butt">view all</button></div>
 
 </div>
-<br>
-<div class="row">
+
+
+</div>
+    </div>
+</div>
+
+
+
    
-</div>
-
-</div>
-    </div>
-
-
-    <!-- <div class="card">
-        <div class="card-image"></div>
-    <div class="category"> Illustration </div>
-    <div class="heading"> A heading that must span over two lines
-        <div class="author"> By <span class="name">Abi</span> 4 days ago</div>
-    </div>
-    </div> -->
-
-    <div class="card">
-        <div class="card-image">
-            <img src="/images/influencer_2.jpg" style="width: 99%;
-    border-radius: 20px;">
-        </div>
-        <div class="image-container ">
-
-<!-- <img src="/images/Ellipse.jpg" alt="Illustration Image"> -->
-</div>
-<div class="content">
-<!-- <div class="category"> Illustration </div> -->
-<div class="row">
-    <div class="col-6" style="font-weight: bold; color: black;">Hand Bag</div>
-    <!-- <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div> -->
-
-</div>
-<div class="row">
-    <div class="col-6" style="font-size: 12px;">Gucci</div>
-    <!-- <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div> -->
-
-</div>
-
-<div class="row">
-    <div class="col-6" style="font-size: 12px;"><img src="/images/instagram.png" style="width: 20%; margin-right: 2px;" alt="Illustration Image"></div>
-    <div class="col-6 text-right" ><button class="butt">view all</button></div>
-
-</div>
-<br>
-<div class="row">
-   
-</div>
-
-</div>
-    </div>
-
-    <div class="card">
-        <div class="card-image">
-            <img src="/images/influencer_3.jpg" style="width: 99%;
-    border-radius: 20px;">
-        </div>
-        <div class="image-container ">
-
-<!-- <img src="/images/Ellipse.jpg" alt="Illustration Image"> -->
-</div>
-<div class="content">
-<!-- <div class="category"> Illustration </div> -->
-<div class="row">
-    <div class="col-6" style="font-weight: bold; color: black;">Beauty Product</div>
-    <!-- <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div> -->
-
-</div>
-<div class="row">
-    <div class="col-6" style="font-size: 12px;">Dior</div>
-    <!-- <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div> -->
-
-</div>
-
-<div class="row">
-    <div class="col-6" style="font-size: 12px;"><img src="/images/instagram.png" style="width: 20%; margin-right: 2px;" alt="Illustration Image"></div>
-    <div class="col-6 text-right" ><button class="butt">view all</button></div>
-
-</div>
-<br>
-<div class="row">
-   
-</div>
-
-</div>
-    </div>
-
-
-    <div class="card">
-        <div class="card-image">
-            <img src="/images/influencer_4.jpg" style="width: 99%;
-    border-radius: 20px;">
-        </div>
-        <div class="image-container ">
-
-<!-- <img src="/images/Ellipse.jpg" alt="Illustration Image"> -->
-</div>
-<div class="content">
-<!-- <div class="category"> Illustration </div> -->
-<div class="row">
-    <div class="col-6" style="font-weight: bold; color: black;">Mens Shoes</div>
-    <!-- <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div> -->
-
-</div>
-<div class="row">
-    <div class="col-6" style="font-size: 12px;">Nike</div>
-    <!-- <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div> -->
-
-</div>
-
-<div class="row">
-    <div class="col-6" style="font-size: 12px;"><img src="/images/instagram.png" style="width: 20%; margin-right: 2px;" alt="Illustration Image"></div>
-    <div class="col-6 text-right" ><button class="butt">view all</button></div>
-
-</div>
-<br>
-<div class="row">
-   
-</div>
-
-</div>
-    </div>
-
-    <div class="card">
-        <div class="card-image">
-            <img src="/images/influencer_5.jpg" style="width: 99%;
-    border-radius: 20px;">
-        </div>
-        <div class="image-container ">
-
-<!-- <img src="/images/Ellipse.jpg" alt="Illustration Image"> -->
-</div>
-<div class="content">
-<!-- <div class="category"> Illustration </div> -->
-<div class="row">
-    <div class="col-6" style="font-weight: bold; color: black;">Leather Jacket</div>
-    <!-- <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div> -->
-
-</div>
-<div class="row">
-    <div class="col-6" style="font-size: 12px;">levi's</div>
-    <!-- <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div> -->
-
-</div>
-
-<div class="row">
-    <div class="col-6" style="font-size: 12px;"><img src="/images/instagram.png" style="width: 20%; margin-right: 2px;" alt="Illustration Image"></div>
-    <div class="col-6 text-right" ><button class="butt">view all</button></div>
-
-</div>
-<br>
-<div class="row">
-   
-</div>
-
-</div>
-    </div>
-
-    <div class="card">
-        <div class="card-image">
-            <img src="/images/influencer_6.jpg" style="width: 99%;
-    border-radius: 20px;">
-        </div>
-        <div class="image-container ">
-
-<!-- <img src="/images/Ellipse.jpg" alt="Illustration Image"> -->
-</div>
-<div class="content">
-<!-- <div class="category"> Illustration </div> -->
-<div class="row">
-    <div class="col-6" style="font-weight: bold; color: black;">Glasess</div>
-    <!-- <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div> -->
-
-</div>
-<div class="row">
-    <div class="col-6" style="font-size: 12px;">Gucci</div>
-    <!-- <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div> -->
-
-</div>
-
-<div class="row">
-    <div class="col-6" style="font-size: 12px;"><img src="/images/instagram.png" style="width: 20%; margin-right: 2px;" alt="Illustration Image"></div>
-    <div class="col-6 text-right" ><button class="butt">view all</button></div>
-
-</div>
-<br>
-<div class="row">
-   
-</div>
-
-</div>
-    </div>
-
-    <div class="card">
-        <div class="card-image">
-            <img src="/images/influencer_2.jpg" style="width: 99%;
-    border-radius: 20px;">
-        </div>
-        <div class="image-container ">
-
-<!-- <img src="/images/Ellipse.jpg" alt="Illustration Image"> -->
-</div>
-<div class="content">
-<!-- <div class="category"> Illustration </div> -->
-<div class="row">
-    <div class="col-6" style="font-weight: bold; color: black;">Headphones</div>
-    <!-- <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div> -->
-
-</div>
-<div class="row">
-    <div class="col-6" style="font-size: 12px;">sony</div>
-    <!-- <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div> -->
-
-</div>
-
-<div class="row">
-    <div class="col-6" style="font-size: 12px;"><img src="/images/instagram.png" style="width: 20%; margin-right: 2px;" alt="Illustration Image"></div>
-    <div class="col-6 text-right" ><button class="butt">view all</button></div>
-
-</div>
-<br>
-<div class="row">
-   
-</div>
-
-</div>
-    </div>
-    <div class="card">
-        <div class="card-image">
-            <img src="/images/influencer_4.jpg" style="width: 99%;
-    border-radius: 20px;">
-        </div>
-        <div class="image-container ">
-
-<!-- <img src="/images/Ellipse.jpg" alt="Illustration Image"> -->
-</div>
-<div class="content">
-<!-- <div class="category"> Illustration </div> -->
-<div class="row">
-    <div class="col-6" style="font-weight: bold; color: black;">Smart watch</div>
-    <!-- <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div> -->
-
-</div>
-<div class="row">
-    <div class="col-6" style="font-size: 12px;">samsung</div>
-    <!-- <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div> -->
-
-</div>
-
-<div class="row">
-    <div class="col-6" style="font-size: 12px;"><img src="/images/instagram.png" style="width: 20%; margin-right: 2px;" alt="Illustration Image"></div>
-    <div class="col-6 text-right" ><button class="butt">view all</button></div>
-
-</div>
-<br>
-<div class="row">
-   
-</div>
-
-</div>
-    </div>
   </div>
 </div>
-
-
-
-
 
 
 </div>
@@ -383,31 +133,44 @@ export default {
 
                 countries:{},
                 users_data:{},
-                model: {
-                    data: []
-                }
+                model: []
             }
         },
   name: "Dashboard",
 
 
-//   beforeRouteEnter(to, from, next) {
-//             get('/api/dashboard', to.query)
-//                 .then((res) => {
-//                     next(vm => vm.setData(res))
+  beforeRouteEnter(to, from, next) {
+            get('/api/brand', to.query)
+                .then((res) => {
+                    next(vm => vm.setData(res))
 
-//                 })
-//         },
-//         beforeRouteUpdate(to, from, next) {
-//             get('/api/dashboard', to.query)
-//                 .then((res) => {
-//                     this.setData(res)
-//                     next()
+                })
+        },
+        beforeRouteUpdate(to, from, next) {
+            get('/api/brand', to.query)
+                .then((res) => {
+                    this.setData(res)
+                    next()
 
-//                 })
-//         },
+                })
+        },
+
+        computed: {
+    storageBaseUrl() {
+      // Adjust this base URL to match your Laravel storage configuration
+      return '/storage/app/';
+    },
+  },
 
         methods: {
+            getImageUrl(image) {
+      // Construct the full image URL
+      return this.storageBaseUrl + image;
+    },
+
+    contract(){
+      this.$router.push('/contract');
+    },
 
 
             onabout(e) {
@@ -429,7 +192,8 @@ export default {
                 this.$router.push(`/dashboard/${item.id}`)
             },
             setData(res) {
-                Vue.set(this.$data, 'model', res.data.results)
+                console.log(res.data.data)
+                Vue.set(this.$data, 'model', res.data.data)
                 //this.page = this.model.current_page
 
                 // console.log(res.data)
@@ -499,7 +263,8 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between; /* Adjust alignment as needed */
-  gap: 20px; /* Adjust the gap between cards */
+  gap: 0px; 
+  padding: 0px 0px 20px 30px;
 }
 
 

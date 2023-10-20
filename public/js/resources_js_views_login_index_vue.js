@@ -224,7 +224,23 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
               _this.$store.dispatch("user", response.data.user);
 
-              _this.$router.push("/dashboard"); // this.$router.push("/forgot-password")
+              if (response.data.user.auth_type == 'admin') {
+                // this.$router.push("/CreatorCampaign");
+                _this.$router.push("/CreatorCampaign").then(function () {
+                  // Use the setTimeout function to refresh the page after a short delay
+                  setTimeout(function () {
+                    location.reload();
+                  }, 100);
+                });
+              } else {
+                _this.$router.push("/dashboard").then(function () {
+                  // Use the setTimeout function to refresh the page after a short delay
+                  setTimeout(function () {
+                    location.reload();
+                  }, 100);
+                }); // this.$router.push("/dashboard");
+
+              } // this.$router.push("/forgot-password")
 
 
               _context.next = 12;

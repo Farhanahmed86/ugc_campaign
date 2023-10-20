@@ -19,6 +19,8 @@ use App\Http\Controllers\BalanceController;
 use App\Http\Controllers\CountriesController;
 use App\Http\Controllers\UgcControllere;
 use App\Http\Controllers\UgcproductController;
+use App\Http\Controllers\AdminController;
+
 
 
 
@@ -95,6 +97,24 @@ Route::post('api/ugc_product', [UgcproductController::class, 'ugcproduct']);
 Route::post('api/ugc_product_delivery', [UgcproductController::class, 'ugcproductdelivery']);
 Route::post('api/ugc_product_media', [UgcproductController::class, 'ugcproductmedia']);
 Route::post('api/ugc_product_action', [UgcproductController::class, 'ugcproductaction']);
+Route::post('api/brief', [UgcproductController::class, 'brief']);
+Route::get('api/brand', [UgcproductController::class, 'brand']);
+Route::get('api/query', [AdminController::class, 'get_user']);
+Route::get('api/camp', [AdminController::class, 'camp']);
+Route::get('api/use', [AdminController::class, 'users']);
+Route::get('api/campaignss', [AdminController::class, 'campaign']);
+Route::get('api/details', [AdminController::class, 'details']);
+Route::get('api/user_details', [AdminController::class, 'userdetails']);
+Route::post('api/contract', [UgcproductController::class, 'contract']);
+
+
+
+
+
+
+
+
+
 
 
 
