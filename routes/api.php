@@ -92,6 +92,8 @@ Route::post('api/objective', [UgcControllere::class, 'objective']);
 Route::post('api/flages', [UgcControllere::class, 'flages']);
 Route::post('api/platefrom', [UgcControllere::class, 'platefrom']);
 Route::post('api/action_type', [UgcControllere::class, 'action_type']);
+Route::post('api/hire', [UgcControllere::class, 'hire']);
+
 Route::post('api/campaigns', [UgcControllere::class, 'campaigns']);
 Route::post('api/ugc_product', [UgcproductController::class, 'ugcproduct']);
 Route::post('api/ugc_product_delivery', [UgcproductController::class, 'ugcproductdelivery']);

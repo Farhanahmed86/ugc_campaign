@@ -140,6 +140,45 @@ class UgcControllere extends Controller
     }
 
 
+    public function hire(Request $request){
+        // dd($request->all());
+        $exist = Ugccampaign::where('id' , $request->id)->first();
+        if($exist){
+            $exist->hire = $request->hire;
+            $exist->hire_date = $request->hire_date;
+            $exist->hire_offer = $request->hire_offer;
+            $exist->followers = $request->followers;
+            $exist->hire_budget = $request->hire_budget;
+
+
+          
+
+
+
+
+            $exist->save();
+
+        }
+        else{
+
+            $object = new  Ugccampaign;
+          
+            $object->hire = $request->hire;
+            $object->hire_date = $request->hire_date;
+            $object->hire_offer = $request->hire_offer;
+            $object->followers = $request->followers;
+            $object->hire_budget = $request->hire_budget;
+
+            
+            $object->auth_id = auth()->user()->id;
+            $object->save();
+        }
+
+        return response()->json(['saved' => true , 'id' => $request->id]);
+    }
+
+
+
     public function getcampaign(){
         $data = Ugccampaign::where('auth_id' , auth()->user()->id)->get();
 

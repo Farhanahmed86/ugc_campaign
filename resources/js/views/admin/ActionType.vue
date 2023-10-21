@@ -212,7 +212,7 @@ export default {
                     .then((res) => {
                       
                         if(res.data && res.data.saved) {
-                          this.$router.push('/ActionTypes')
+                          this.$router.push(`/doyou/${this.campaign}`)
                             // this.success(res)
                         }
                     })
