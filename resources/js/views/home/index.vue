@@ -34,7 +34,7 @@
     <div class="container">
       <svg viewBox="0 0 960 300">
         <symbol id="s-text">
-          <text text-anchor="middle" x="50%" y="80%">tester</text>
+          <text text-anchor="middle" x="50%" y="80%">Yallad</text>
         </symbol>
         <g class="g-ants">
           <use xlink:href="#s-text" class="text-copy"></use>
@@ -52,7 +52,7 @@
 
     <div class="text-center py-5 min-vh-50" >
       <router-link to="/login" class="btn btn-primary" style="background: linear-gradient(49deg, rgba(0,0,0,1) 0%, rgba(0,0,1,1) 7%, rgba(7,11,34,1) 32%, rgba(11,37,37,1) 73%, rgba(116,32,96,1) 100%);">
-        Go to dashboard <i class="fas fa-chevron-right"></i>
+        Go to Login <i class="fas fa-chevron-right"></i>
       </router-link>
     </div>
   </div>

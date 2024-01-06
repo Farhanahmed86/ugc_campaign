@@ -21,7 +21,9 @@ class UgcproductController extends Controller
     
         // Store the uploaded image in the storage folder
         // $imagePath = $request->file('image')->store('your-storage-folder');
-        $imagePath = $request->file('image')->store('images', 'local');
+      //   $imagePath = $request->file('image')->store('images', 'local');
+      $filename = $request->file('image')->getClientOriginalName();
+        $imagePath =  $request->file('image')->move(public_path('uploads'), $filename);
     
         // Create a new database record to save form data
         $product = new Ugcproduct();
@@ -38,7 +40,7 @@ class UgcproductController extends Controller
 
 
 
-        $product->product_image = $imagePath; // Save the image path in the database
+        $product->product_image = $filename; 
         $product->save();
     
         return response()->json(['saved' => true , 'id' =>$request->input('id')]);
@@ -73,18 +75,17 @@ class UgcproductController extends Controller
 
 
      public function ugcproductaction(Request $request){
-        // dd($request->all());
-        $product = Ugcproduct::where('campaign_id' , $request->id)->first();
+      //   dd($request->all());
+        $product = Ugcproduct::with('ugc')->where('campaign_id' , $request->id)->first();
         $product->action_type_whitelist = $request->action_type_whitelist;
         $product->action_type_video = $request->action_type_video;
         $product->action_type_instruction = $request->action_type_instruction;
         $product->action_type_plateform = $request->action_type_plateform;
         $product->action_type_hiring = $request->action_type_hiring;
 
-
         $product->save();
 
-        return response()->json(['saved' => true , 'id' =>$request->id]);
+        return response()->json(['saved' => true , 'id' =>$product->id , 'data' => $product]);
 
 
      }
@@ -151,12 +152,55 @@ class UgcproductController extends Controller
 
 
      public function brand(){
-        $data = Brief::where('auth_id' , auth()->user()->id)->get();
+        $data = Ugcproduct::with('user')->where('auth_id' , auth()->user()->id)->get();
         // dd($data[0]['image']);
         // $path = storage_path('app/images/' . $filename);
 
         return response()->json(['data' => $data]);
      }
+
+
+     public function influencer_brand(){
+      // dd(request()->all());
+      // dd(now()->subDays(15)->toDateTimeString());
+      // dd(auth()->user()->influencer_id);
+      $data= Ugcproduct::with('user')->where('influencer_id' , auth()->user()->influencer_id)->when((request('q') == 'newest'), function ($q) {
+//   dd('avd');
+         $q->where('created_at', '>', now()->subDays(15)->toDateTimeString());
+           
+            
+     })->when((request('q') == 'one month'), function ($q) {
+      //   dd('avd');
+               $q->where('created_at', '<', now()->subDays(15)->toDateTimeString())->where('created_at', '>', now()->subDays(30)->toDateTimeString());
+                 
+                  
+           })->when((request('q') == 'two month'), function ($q) {
+            //   dd('avd');
+                     $q->where('created_at', '<', now()->subDays(30)->toDateTimeString())->where('created_at', '>', now()->subDays(60)->toDateTimeString());
+                       
+                        
+                 })
+                 ->when(request('bios') , function ($q) {
+                  //   dd('avd');
+                           $q->where('product_name', 'like', '%'.request('bios').'%');
+                             
+                              
+                       })
+     ->paginate(15);
+      // $data = Ugcproduct::with('user')->get();
+      // dd($data[0]['image']);
+      // $path = storage_path('app/images/' . $filename);
+
+      return response()->json(['data' => $data]);
+   }
+
+
+     public function brand_details(){
+      $data = Ugcproduct::with('ugc')->where('id' , request('id'))->first();
+     
+
+      return response()->json(['data' => $data]);
+   }
 
 
      public function contract(Request $request){

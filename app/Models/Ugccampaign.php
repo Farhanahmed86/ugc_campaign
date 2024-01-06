@@ -15,4 +15,9 @@ class Ugccampaign extends Model
         return $this->belongsTo(User::class ,'auth_id', 'id');
     
     }
+     public function objective()
+    {
+        return $this->hasMany(Objective::class,'campaign_id','id');
+    
+    }
 }

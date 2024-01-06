@@ -1,19 +1,19 @@
 <template>
-    <div class="contanir">
+    <div class="container text-center">
       <div class="col text-center" style="padding: 10px 0px 50px 0px;">
                 <img
             src="/images/id2line.png" style="width: 90%;height: 20px;"/>
             </div>  
-      <div class="row" style="    display: flex; flex-direction: column; align-items: flex-start;">
+      <div class="row " style="    display: flex; flex-direction: column; align-items: center;">
         <div class="col">
-          <h4 style="color: #000; font-weight:400px;">Action Type</h4>
+          <h4 style="color: #000; font-weight:400px;">Type d'action</h4>
         </div>
         <div class="col-8">
           <div class="row" style="display: flex;flex-wrap: wrap;align-items: center;gap: 20px 0px">
             <div class="col-4">
-              <div class="card" @click="action_type('Testimonial')">
+              <div class="card" @click="action_type('Témoignage')">
                 <div class="action-card" @click="action('ivory-coast' , 1)" :style="{ backgroundColor: atColor1 }">
-                Testimonial
+                  Témoignage
               </div>
               </div>  
             </div>
@@ -29,17 +29,17 @@
 
 
             <div class="col-4" >
-              <div class="card" @click="action_type('Product Demo')">
+              <div class="card" @click="action_type('Démo produit')">
                 <div class="action-card" @click="action('ivory-coast' , 3)" :style="{ backgroundColor: atColor3 }">
-                Product Demo
+                Démo produit
               </div>
             </div>
             </div>
 
             <div class="col-4" >
-              <div class="card" @click="action_type('Product Review')">
+              <div class="card" @click="action_type('Revue du produit')">
                 <div class="action-card" @click="action('ivory-coast' , 4)" :style="{ backgroundColor: atColor4 }">
-                Product Review
+                Revue du produit
               </div>
               </div>  
             </div>
@@ -55,9 +55,9 @@
 
 
             <div class="col-4">
-              <div class="card" @click="action_type('Custom')">
+              <div class="card" @click="action_type('Customiser l action')">
                 <div class="action-card" @click="action('ivory-coast' , 6)" :style="{ backgroundColor: atColor6 }">
-                Custom
+                  Customiser l'action
               </div>
               </div>  
             </div>
@@ -67,10 +67,10 @@
           </div>
         </div>
       </div>
-      <div class="row" style="display: flex; flex-direction: column; align-items: flex-start; padding-top: 30px;">
+      <div class="row" v-if="input_type" style="display: flex; flex-direction: column; align-items: center; padding-top: 30px;">
         <div class="col-7">
-          <h5 style="color: #000;">What should creators do ?</h5>
-          <p style="font-size: 14px; color: #000;">Give clear instructions on how you expect your content to look like. The more detail the better! </p>
+          <h5 style="color: #000;">Quel action souhaitez-vous que le créateurs effectue ?</h5>
+          <p style="font-size: 14px; color: #000;">Donnez des directives claires pour le contenu. Plus de détails sont préférables. </p>
         </div>
         <div class="col-8">
             <div class="row" style="display: flex; flex-direction: column; gap: 20px;">
@@ -83,21 +83,28 @@
             </div> 
         </div>
       </div>
-      <div class="row" style="display: flex; flex-direction: column; justify-content: center; padding-top: 30px;">
+      <div class="row" style="display: flex; flex-direction: column; align-items: center; padding-top: 30px;">
         <div class="col">
-          <h6 style="color: #000;">What should creators avoid ? ( optional)</h6>
-          <p style="color: #000;">Is there any thing specific that you don't want the Creator to do ?</p>
+          <h6 style="color: #000;">Ce que doivent éviter les créateurs ? (option)</h6>
+          
+         
         </div>
+        <div class="col-4">
+          <div class="form-group">
+            <input type="name" class="form-control" id="name" aria-describedby="" placeholder=""  style="border: none;box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; border-radius: 10px;">
+          </div>
+        </div>
+        <p style="color: #000;">Y a-t-il des actions que vous préférez que le créateur évite de réaliser ?</p>
         <div class="col-4">
           <div class="form-group">
             <input type="name" class="form-control" id="name" aria-describedby="" placeholder="" v-model="form.avoid" style="border: none;box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; border-radius: 10px;">
           </div>
         </div>
       </div>
-      <div class="row" style="display: flex; flex-direction: column; justify-content: center; padding-top: 30px;">
+      <div class="row" style="display: flex; flex-direction: column; align-items: center; padding-top: 30px;">
         <div class="col">
-          <h6 style="color: #000;">Caption (optinal)</h6>
-          <p style="color: #000;">Do you want the Creator to add a Specific caption?</p>
+          <h6 style="color: #000;">Caption & Hashtag</h6>
+          <p style="color: #000;">Précisez le hashtag, votre page, le code promo, ou toute autre information à mentionner.</p>
         </div>
         <div class="col-4">
           <div class="form-group">
@@ -107,7 +114,7 @@
         <br>
         <br>
         <div class="col" style="display: flex;justify-content: center;align-items: center;">
-        <button style="padding: 8px 40px;border: none;background-color: #2A2c76;color: #fff;border-radius: 10px;" @click="save">Next</button>
+        <button style="padding: 8px 40px;border: none;background-color: #2A2c76;color: #fff;border-radius: 10px;" @click="save">Suivant</button>
       </div>
       </div>
     </div>
@@ -122,14 +129,17 @@ export default {
     components: { Typehead },
   data () {
             return {
-
+              input_type:false,
 
             atColor1:'white',
             atColor2:'white',
             atColor3:'white',
+            atColor4:'white',
+
             atasColor4:'white',
             atColor5:'white',
             atColor6:'white',
+            clickedValues: [],
 
                 form: {},
                 users_data:{},
@@ -150,60 +160,46 @@ export default {
   methods: {
 
     action(e , num){
+      // this.clickedValues.push(e);
         if(num == 1){
             this.atColor1 = '#ECEC4F'
-            this.atColor2 = 'white'
-            this.atColor3 = 'white'
-            this.atColor4 = 'white'
-            this.atColor5 = 'white'
-            this.atColor6 = 'white'
-
+           
         }
         if(num == 2){
-            this.atColor1 = 'white'
+         
             this.atColor2 = '#ECEC4F'
-            this.atColor3 = 'white'
-            this.atColor4 = 'white'
-            this.atColor5 = 'white'
-            this.atColor6 = 'white'
+          
            
         }
         if(num == 3){
-            this.atColor1 = 'white'
-            this.atColor2 = 'white'
+           
             this.atColor3 = '#ECEC4F'
-            this.atColor4 = 'white'
-            this.atColor5 = 'white'
-            this.atColor6 = 'white'
+           
         }
         if(num == 4){
-            this.atColor1 = 'white'
-            this.atColor2 = 'white'
-            this.atColor3 = 'white'
+           
             this.atColor4 = '#ECEC4F'
-            this.atColor5 = 'white'
-            this.atColor6 = 'white'
+        
         }
         if(num == 5){
-            this.atColor1 = 'white'
-            this.atColor2 = 'white'
-            this.atColor3 = 'white'
-            this.atColor4 = 'white'
+      
             this.atColor5 = '#ECEC4F'
-            this.atColor6 = 'white'
+            
         }
         if(num == 6){
-            this.atColor1 = 'white'
-            this.atColor2 = 'white'
-            this.atColor3 = 'white'
-            this.atColor4 = 'white'
-            this.atColor5 = 'white'
+          
             this.atColor6 = '#ECEC4F'
         }
       },
 
     action_type(e){
-      this.form.action_type = e;
+      this.clickedValues.push(e);
+      console.log(this.clickedValues);
+      this.form.action_type = this.clickedValues;
+      if(e == 'Customiser l action'){
+        this.input_type = true
+
+      }
     },
 
     save(){

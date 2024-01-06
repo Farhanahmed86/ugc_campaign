@@ -214,6 +214,7 @@ __webpack_require__.r(__webpack_exports__);
       company: "",
       website: "",
       phone: "",
+      auth_type: "",
       isLoading: false
     };
   },
@@ -223,6 +224,16 @@ __webpack_require__.r(__webpack_exports__);
     var companyId = this.$route.params.id;
   },
   methods: {
+    influencer: function influencer() {
+      //  this.$router.push('influencer_singup')
+      //  this.$router.push(`/influencer_singup/${this.company_id}`);
+      this.$router.push("/influencer_singup/".concat(this.company_id)).then(function () {
+        // Use the setTimeout function to refresh the page after a short delay
+        setTimeout(function () {
+          location.reload();
+        }, 10);
+      });
+    },
     save: function save() {
       var _this = this;
 
@@ -234,6 +245,7 @@ __webpack_require__.r(__webpack_exports__);
       this.form.company = this.company;
       this.form.phone = this.phone;
       this.form.id = this.company_id;
+      this.form.auth_type = 'brand';
       console.log(this.form);
       (0,_admin_components_lib_api__WEBPACK_IMPORTED_MODULE_4__.byMethod)(this.method, 'registered', this.form).then(function (res) {
         if (res.data && res.data.saved) {
@@ -617,7 +629,32 @@ var render = function() {
             [_vm._v("Inscription comme une marque")]
           ),
           _vm._v(" "),
-          _vm._m(0),
+          _c(
+            "p",
+            {
+              staticClass: "text-center",
+              staticStyle: {
+                "font-size": "15px",
+                "font-weight": "600",
+                color: "black",
+                cursor: "pointer"
+              },
+              on: { click: _vm.influencer }
+            },
+            [
+              _vm._v("Vous êtes un créateur de contenu ?"),
+              _c(
+                "span",
+                {
+                  staticStyle: {
+                    color: "rgb(10, 199, 199)",
+                    "font-weight": "bold"
+                  }
+                },
+                [_vm._v("Inscrivez-vous ici")]
+              )
+            ]
+          ),
           _vm._v(" "),
           _c("div", { staticClass: "flex" }, [
             _c("label", [
@@ -777,7 +814,7 @@ var render = function() {
             _c("span", [_vm._v("Numéro de téléphone")])
           ]),
           _vm._v(" "),
-          _vm._m(1),
+          _vm._m(0),
           _vm._v(" "),
           _c("button", { staticClass: "submit", on: { click: _vm.save } }, [
             _vm._v("Suivant")
@@ -788,32 +825,6 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "p",
-      {
-        staticClass: "text-center",
-        staticStyle: {
-          "font-size": "15px",
-          "font-weight": "600",
-          color: "black"
-        }
-      },
-      [
-        _vm._v("Vous êtes un créateur de contenu ?"),
-        _c(
-          "span",
-          {
-            staticStyle: { color: "rgb(10, 199, 199)", "font-weight": "bold" }
-          },
-          [_vm._v("Inscrivez-vous ici")]
-        )
-      ]
-    )
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

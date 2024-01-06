@@ -2,8 +2,8 @@
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <div class="row">
             <div class="col-6">
-                <h2 style="color: black;">Quel est votre besoin ?</h2>
-                <span style="color: black;">Sélectionnez l'une des campagnes ci-dessous</span    >
+                <h2 style="color: black;">Les services YALLAD proposées:</h2>
+                <span style="color: black;">Sélectionnez l'une des options ci-dessous:</span    >
 <br>
 <br>
                 <div class="col-12 mt-6">
@@ -24,12 +24,16 @@
                 >
                 Une campagne d'influenceurs
                 </div>
-                <div class="h5 text-xs mb-0 text-gray-800">
-                 <span>Collaborez avec des influenceurs pour publier du
+                <div class="h5 text-s mb-0 text-gray-800">
+                 <span style="font-size: small;">Collaborez avec des influenceurs pour publier du
                 contenu auprès de leur audience</span>
                 </div>
-                <div class="col text-right pb-0" style="bottom: 0%;">
-                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+                <br>
+                <div class="col text-center pb-0" style="bottom: 0%;">
+                  <button class="button2" @click="ugc('Influencer Campaign')" style="font-size: medium;">
+                    Compléter le brief
+                      </button>
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc.<path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg> -->
 
                 </div>
 
@@ -64,11 +68,14 @@
                 Une campagne UGC
                 </div>
                 <div class="h5 text-xs mb-0 text-gray-800">
-                 <span>Co-créez des contenus publicitaires UGC
+                 <span style="font-size: small;">Co-créez des contenus publicitaires UGC
                     authentiques pour vos réseaux sociaux.</span>
                 </div>
-                <div class="col text-right pb-0" style="bottom: 0%;">
-                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+                <br>
+                <div class="col text-center pb-0" style="bottom: 0%;">
+                  <button class="button2" @click="ugc('UGC Campaign')" style="font-size: medium;">
+                    Obtenir des videos virales
+                      </button>
 
                 </div>
 
@@ -103,12 +110,14 @@
                 Social Ads
                 </div>
                 <div class="h5 text-xs mb-0 text-gray-800">
-                 <span>Sponsorisez ces contenus sur Facebook,
+                 <span style="font-size: small;">Sponsorisez ces contenus sur Facebook,
                     Instagram, TikTok et Youtube</span>
                 </div>
-                <div class="col text-right pb-0" style="bottom: 0%;">
-                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
-
+                <br>
+                <div class="col text-center pb-0" style="bottom: 0%;">
+                  <button class="button2" @click="redirect_page" style="font-size: medium;">
+                    Je démarre
+                      </button>
                 </div>
 
 
@@ -121,7 +130,7 @@
     </div>
             </div>
 
-            <div class="col-6 mt-12" style="padding-top: 85px; padding-right: 30px;">
+            <div class="col-6 mt-12" style="padding-top: 100px;; padding-right: 30px;">
                 <img src="images/video.jpg" style="width: 100%;">
             </div>
 
@@ -583,10 +592,12 @@ import Vue from 'vue'
 export default {
   data () {
             return {
+              form:{},
                 users_data:{},
                 model: {
                     data: []
-                }
+                },
+                method: 'POST',
             }
         },
   name: "Dashboard",
@@ -615,6 +626,33 @@ export default {
             // console.log(this.$data.model)
         },
         methods: {
+
+          redirect_page(){
+        window.open("https://calendly.com/demo-yallad", "_blank");
+    },
+
+          ugc(e){
+        this.form.campaign = e;
+        // this.$router.push('/NewCampaign')
+
+        byMethod(this.method, 'api/campaigns' , this.form)
+                    .then((res) => {
+                        console.log(res.data.id)
+                      
+                        if(res.data && res.data.saved) {
+                          this.$router.push(`/NewCampaign/${res.data.id}`)
+                          
+                          
+                        }
+                    })
+                    .catch((error) => {
+                        if(error.response.status === 422) {
+                            this.errors = error.response.data.errors
+                        }
+                        this.isProcessing = false
+                    })
+                
+    },
             detailsPage(item) {
                 this.$router.push(`/dashboard/${item.id}`)
             },
@@ -635,3 +673,69 @@ export default {
         }
 };
 </script>
+
+<style scoped>
+.button2 {
+display: inline-block;
+transition: all 0.2s ease-in;
+position: relative;
+overflow: hidden;
+z-index: 1;
+color: #ffffff;
+font-size: 18px;
+font-weight: 200;
+padding: 5px 30px ;
+border-radius: 0.5em;
+background:#2A2C76;
+border: 1px solid #e8e8e8;
+box-shadow: 6px 6px 12px #c5c5c5,
+           -6px -6px 12px #ffffff;
+           width: 80%;
+}
+.button2:active {
+color: #666;
+box-shadow: inset 4px 4px 12px #c5c5c5,
+           inset -4px -4px 12px #ffffff;
+}
+.button2:before {
+content: "";
+position: absolute;
+left: 50%;
+transform: translateX(-50%) scaleY(1) scaleX(1.25);
+top: 100%;
+width: 140%;
+height: 180%;
+background-color: rgba(0, 0, 0, 0.05);
+border-radius: 50%;
+display: block;
+transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+z-index: -1;
+}
+.button2:after {
+content: "";
+position: absolute;
+left: 55%;
+transform: translateX(-50%) scaleY(1) scaleX(1.45);
+top: 180%;
+width: 160%;
+height: 190%;
+background-color:#ECEC4F;
+border-radius: 50%;
+display: block;
+transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+z-index: -1;
+}
+.button2:hover {
+color: #000;
+border: 1px solid #ECEC4F;
+}
+.button2:hover:before {
+top: -35%;
+background-color: #ECEC4F;
+transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+.button2:hover:after {
+top: -45%;
+background-color: #ECEC4F;
+transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}</style>

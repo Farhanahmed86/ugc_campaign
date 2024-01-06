@@ -170,6 +170,12 @@ import Typehead from '../admin/components/typehead/Typehead.vue'
             }
         },
         methods: {
+
+            
+
+            button(){
+               this.$router.push('/DashboardBrand')
+            },
             setData(res) {
                 Vue.set(this.$data, 'form', res.data.form)
 

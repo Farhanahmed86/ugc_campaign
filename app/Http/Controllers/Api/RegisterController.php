@@ -47,14 +47,50 @@ class RegisterController extends Controller
     public function registered(Request $request){
         // dd($request->all());
         $user = User::where('id' , $request->id)->first();
-        $user->company = $request->company;
-        $user->first_name = $request->first_name;
-        $user->last_name = $request->last_name;
-        $user->location = $request->location;
-        $user->website = $request->website;
-        $user->phone = $request->phone;
+        if($request->auth_type == 'brand'){
+            $user->company = $request->company;
+            $user->first_name = $request->first_name;
+            $user->last_name = $request->last_name;
+            $user->location = $request->location;
+            $user->website = $request->website;
+            $user->phone = $request->phone;
+            $user->auth_type = $request->auth_type;
+            $user->save();
+        }
+        else{
+            $filename = $request->file('image')->getClientOriginalName();
+            // $imagePaths =  $request->file('image')->move(public_path('influencer_images'), $filename);
+            $imagePath =  $request->file('image')->move(public_path('influencer'), $filename);
 
-        $user->save();
+            // dd('sbca');
+            // dd($request->countries['name']);
+            $user->first_name = $request->first_name;
+            $user->last_name = $request->last_name;
+            $user->phone = $request->phone;
+            $user->auth_type = $request->auth_type;
+            $user->pay_email = $request->pay_email;
+            $user->gender = $request->gender;
+            $user->country = $request->countries;
+            $user->city = $request->city;
+            $user->state = $request->states;
+            $user->postal_code = $request->postal;
+            $user->address = $request->address;
+            $user->date_of_birth = $request->age;
+            $user->influencer_image = $filename;
+
+
+            $user->save();
+
+
+
+
+
+
+            // dd('abcd');
+        }
+     
+
+       
         return response()->json(['saved' => true]);
     }
 

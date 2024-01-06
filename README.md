@@ -1,29 +1,29 @@
-
+<!-- 
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
+[![LinkedIn][linkedin-shield]][linkedin-url] -->
 
 
 
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/44405810/129751765-07802bb1-0e55-4311-b6ee-d90f9b2e237b.png" width="160px">
+  <img src="https://allouch.conceptrecall.com/public/images/image_salim.png" width="160px">
 
 
-  <h1 align="center">🎉 Laravel 8, Vue.js & Bootstrap 4 SPA Dashboard 🎉</h1>
+  <h1 align="center">🎉 UGC Campaign, Influencer Campaign and admin Dashboard 🎉</h1>
 
   <div align="center">
-    <h2>An awesome SPA Admin Dashboard starter kit!</h2>
+    <h2>Brand Dashboard for create ugc and inluencer camapaign and assign to influencer and influencer dashboard for all assign product and payment history and admin dashboard for all activities</h2>
   </div>
 </p>
 
 <!-- PREVIEW -->
 ## PREVIEW
-![laravel_vue_admin_dashboard_preview](https://user-images.githubusercontent.com/44405810/129740905-6cce06a4-05ca-4e73-b04f-4045c09eb4a3.gif)
+![Brand UGC Campaign](https://allouch.conceptrecall.com/public/images/dashboard_salim.png)
 
 
 
@@ -33,14 +33,12 @@
 ## About The Project
 
 
-`laravel-vue-dashboard` is a Single Page Application (SPA) dashboard
-built with [Laravel 8](https://laravel.com), [Vue.js](https://vuejs.org/) and [Bootstrap 4](https://getbootstrap.com) ([SB Admin Template](https://github.com/StartBootstrap/startbootstrap-sb-admin-2)). Thanks to the combination of the power of Laravel and the speed of Vue.js it is an excellent full-stack starter kit for enterprise applications.
+`Admin Dashboard` is a Single Page Application (SPA) dashboard
+built with [Laravel 8](https://laravel.com), [Vue.js](https://vuejs.org/) and [Bootstrap 4](https://getbootstrap.com) ([SB Admin Template](https://github.com/StartBootstrap/startbootstrap-sb-admin-2)). Thanks to the combination of the power of Laravel and the speed of Vue.js it is an excellent full-stack Brand UGC Campaing and Influencer campaign and also admin dashboard for all activities enterprise applications.
  
  
 It's a kit to start from scratch, not a Laravel package. It can help you to cut down your time by having an SPA dashboard with authentication system ready to use, taking advantage of [Laravel Passport](https://laravel.com/docs/8.x/passport) that uses the oauth2 authentication protocol.
  
-The project provides sample pages, uses the routing system of Vue.js and Vuex for maintaining the application state.<br>
-The code is structured in such a way to make it easy to modify and add new pages, components and APIs.
 
 
 <!-- FEATURES -->
@@ -70,7 +68,7 @@ The code is structured in such a way to make it easy to modify and add new pages
 
    ```sh
     # Clone the project
-    git clone https://github.com/ramoncrisante/laravel-vue-dashboard.git
+    git clone https://github.com/Farhanahmed86/ugc_campaign
 
     # Enter the project directory
     cd laravel-vue-dashboard
@@ -142,20 +140,15 @@ Contributions are what make the open source community such an amazing place to l
 
 
 
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See [LICENSE](https://github.com/ramoncrisante/laravel-vue-dashboard/blob/main/LICENSE.txt) for more information.
-Basically, feel free to use and re-use any way you want.
 
 
 
 <!-- CONTACT -->
 ## Contact
 
-Ramon Crisante - ramon.crisante@yahoo.com
+Brand Revam:[https://brandrevam.com/](https://brandrevam.com/)
 
-Project Link: [https://github.com/ramoncrisante/laravel-vue-dashboard](https://github.com/ramoncrisante/laravel-vue-dashboard)
+Project Link: [https://salim.conceptrecall.com/login](https://salim.conceptrecall.com/login)
 
 
 
@@ -163,7 +156,7 @@ Project Link: [https://github.com/ramoncrisante/laravel-vue-dashboard](https://g
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/ramoncrisante/laravel-vue-dashboard.svg?style=for-the-badge
+<!-- [contributors-shield]: https://img.shields.io/github/contributors/ramoncrisante/laravel-vue-dashboard.svg?style=for-the-badge
 [contributors-url]: https://github.com/ramoncrisante/laravel-vue-dashboard/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/ramoncrisante/laravel-vue-dashboard.svg?style=for-the-badge
 [forks-url]: https://github.com/ramoncrisante/laravel-vue-dashboard/network/members
@@ -174,4 +167,4 @@ Project Link: [https://github.com/ramoncrisante/laravel-vue-dashboard](https://g
 [license-shield]: https://img.shields.io/github/license/ramoncrisante/laravel-vue-dashboard.svg?style=for-the-badge
 [license-url]: https://github.com/ramoncrisante/laravel-vue-dashboard/blob/main/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/ramoncrisante
+[linkedin-url]: https://linkedin.com/in/ramoncrisante -->

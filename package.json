@@ -26,7 +26,7 @@
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.15.4",
-        "chart.js": "^2.9.4",
+        "apexcharts": "^3.44.0",
         "datatables.net-dt": "^1.1.0",
         "moment": "^2.29.4",
         "startbootstrap-sb-admin-2": "^4.1.4",

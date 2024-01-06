@@ -6,29 +6,29 @@
             </div>  
       <div class="row" style="    display: flex; flex-direction: column; align-items: flex-start;">
         <div class="col">
-          <h4 style="color: #000; font-weight:bold;">Product Delivery</h4>
-          <p style="font-size: 14px; color: #000;">Choose how you want Creators to receive the product.</p>
+          <h4 style="color: #000; font-weight:bold;">Livraison du produit</h4>
+          <p style="font-size: 14px; color: #000;">Choisissez comment vous souhaitez que le créateur reçoit le produit.</p>
         </div>
         <div class="col-8">
           <div class="row">
             <div class="col-4">
-              <div class="card-5" @click="delivery('Not Required')">
+              <div class="card-5" @click="delivery('Livraison')">
                 <div class="product-card" @click="product('ivory-coast' , 1)" :style="{ backgroundColor: dpColor1 }">
-                Not Required
+                  Livraison
               </div> 
             </div> 
             </div>
             <div class="col-4">
-              <div class="card-5" @click="delivery('Shipment')">
+              <div class="card-5" @click="delivery('Sur le point de vente')">
                 <div class="product-card" @click="product('ivory-coast' ,2)" :style="{ backgroundColor: dpColor2 }">
-                 Shipment
+                  Sur le point de vente
               </div>
             </div>
             </div>
             <div class="col-4">
-              <div class="card-5" @click="delivery('Reimbursement')">
+              <div class="card-5" @click="delivery('Code Promo')">
                 <div class="product-card" @click="product('ivory-coast' , 3)" :style="{ backgroundColor: dpColor3 }">
-                Reimbursement
+                  Code Promo
               </div>
             </div>
             </div>
@@ -37,9 +37,8 @@
       </div>
       <div class="row" style="display: flex; flex-direction: column; align-items: flex-start; padding-top: 30px;">
         <div class="col-7">
-          <h5 style="color: #000;">Description and  Instructions</h5>
-          <p style="font-size: 14px; color: #000;">Give creator more details about the product of services to be promoted. as well as general guidelines
-of what's expected from this collaboration</p>
+          <h5 style="color: #000;">Description</h5>
+          <p style="font-size: 14px; color: #000;">Indiquer quel problème votre produit/service résout et de quelle manière vous le faites. Dites nous quels sont vos avantages commerciales / concurrentielle</p>
         </div>
         <div class="col-8">
             <div class="row" style="display: flex; flex-direction: column;padding-left: 15px; gap: 20px;">
@@ -54,8 +53,8 @@ of what's expected from this collaboration</p>
       </div>
       <div class="row" style="display: flex; flex-direction: column; justify-content: center; padding-top: 30px;">
         <div class="col">
-          <h6 style="color: #000;">Product URL ( optional )</h6>
-          <p style="color: #000;">Insert the product URL here so the Creator can discover more about it.</p>
+          <h6 style="color: #000;">Lien vers votre page</h6>
+          <p style="color: #000;">insérez le lien vers votre site web</p>
         </div>
         <div class="col-4">
           <div class="form-group">
@@ -67,7 +66,7 @@ of what's expected from this collaboration</p>
       <br>
       <div class="col">
                       <button class="button2" @click="save">
-                          SEND
+                        Suivant
                       </button>
                   </div>
     </div>

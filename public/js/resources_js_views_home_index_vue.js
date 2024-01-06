@@ -137,7 +137,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Montserrat);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nh1{\n     color: #42B0A4;\n     font-weight: bold;\n  font-family: \"arial\";\n  font-size: 2em;\n  margin: 10px 0 0 10px;\n  white-space: nowrap;\n  overflow: hidden;\n  width: 100%;\n  -webkit-animation: animtext 4s steps(80, end);\n          animation: animtext 4s steps(80, end);\n   transition: all cubic-bezier(0.1, 0.7, 1.0, 0.1);\n}\nh5{\n     color: #42B0A4;\n     font-weight: bold;\n  font-family: \"arial\";\n  font-size: 1em;\n  margin: 10px 0 0 10px;\n  white-space: nowrap;\n  overflow: hidden;\n  width: 100%;\n  -webkit-animation: animtext 4s steps(80, end);\n          animation: animtext 4s steps(80, end);\n   transition: all cubic-bezier(0.1, 0.7, 1.0, 0.1);\n}\n@-webkit-keyframes animtext {\nfrom {\n      width: 0;\n     transition: all 2s ease-in-out;\n}\n}\n@keyframes animtext {\nfrom {\n      width: 0;\n     transition: all 2s ease-in-out;\n}\n}\n.home-title {\n  font-size: 4rem;\n}\n.masthead {\n  background: linear-gradient(0deg, #4e73df 0%, #36b9cc 100%);\n  padding-top: 0rem;\n  padding-bottom: 0rem;\n}\n.min-vh-50 {\n    min-height: 50vh !important;\n}\nhtml, body{\n  height: 100%;\n  font-weight: 800;\n  margin: 0;\n  padding: 0;\n  background-color: #d6d2d2;\n}\nbody{\n\n\n    background-color: #d6d2d2;\n   background-repeat: no-repeat;\n  background-size: cover;\n  background-attachment: fixed;\n  height: 110vh !important;\n  /* background-color: black; */\n}\n.black {\n  /* background-color: black; */\n  /* height: 100vh !important; */\n  /* background-image: url('/images/Number Loops.gif');\n\n   background-repeat: no-repeat;\n  background-size: cover;\n  background-attachment: fixed; */\n}\nsvg {\n    display: block;\n    font: 10.5em 'Montserrat';\n    width: 960px;\n    height: 300px;\n    margin: 0 auto;\n}\n.text-copy {\n    fill: none;\n    stroke: white;\n    stroke-dasharray: 6% 29%;\n    stroke-width: 5px;\n    stroke-dashoffset: 0%;\n    -webkit-animation: stroke-offset 5.5s infinite linear;\n            animation: stroke-offset 5.5s infinite linear;\n}\n.text-copy:nth-child(1){\n\tstroke: #0e1622;\n\t-webkit-animation-delay: -1;\n\t        animation-delay: -1;\n}\n.text-copy:nth-child(2){\n\tstroke: #42B0A4;\n\t-webkit-animation-delay: -2s;\n\t        animation-delay: -2s;\n}\n.text-copy:nth-child(3){\n\tstroke: #ffffff;\n\t-webkit-animation-delay: -3s;\n\t        animation-delay: -3s;\n}\n.text-copy:nth-child(4){\n\tstroke: #42B0A4;\n\t-webkit-animation-delay: -4s;\n\t        animation-delay: -4s;\n}\n.text-copy:nth-child(5){\n\tstroke: #0e1622;\n\t-webkit-animation-delay: -5s;\n\t        animation-delay: -5s;\n}\n@-webkit-keyframes stroke-offset{\n100% {stroke-dashoffset: -35%;}\n}\n@keyframes stroke-offset{\n100% {stroke-dashoffset: -35%;}\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nh1{\r\n     color: #42B0A4;\r\n     font-weight: bold;\r\n  font-family: \"arial\";\r\n  font-size: 2em;\r\n  margin: 10px 0 0 10px;\r\n  white-space: nowrap;\r\n  overflow: hidden;\r\n  width: 100%;\r\n  -webkit-animation: animtext 4s steps(80, end);\r\n          animation: animtext 4s steps(80, end);\r\n   transition: all cubic-bezier(0.1, 0.7, 1.0, 0.1);\n}\nh5{\r\n     color: #42B0A4;\r\n     font-weight: bold;\r\n  font-family: \"arial\";\r\n  font-size: 1em;\r\n  margin: 10px 0 0 10px;\r\n  white-space: nowrap;\r\n  overflow: hidden;\r\n  width: 100%;\r\n  -webkit-animation: animtext 4s steps(80, end);\r\n          animation: animtext 4s steps(80, end);\r\n   transition: all cubic-bezier(0.1, 0.7, 1.0, 0.1);\n}\n@-webkit-keyframes animtext {\nfrom {\r\n      width: 0;\r\n     transition: all 2s ease-in-out;\n}\n}\n@keyframes animtext {\nfrom {\r\n      width: 0;\r\n     transition: all 2s ease-in-out;\n}\n}\n.home-title {\r\n  font-size: 4rem;\n}\n.masthead {\r\n  background: linear-gradient(0deg, #4e73df 0%, #36b9cc 100%);\r\n  padding-top: 0rem;\r\n  padding-bottom: 0rem;\n}\n.min-vh-50 {\r\n    min-height: 50vh !important;\n}\nhtml, body{\r\n  height: 100%;\r\n  font-weight: 800;\r\n  margin: 0;\r\n  padding: 0;\r\n  background-color: #d6d2d2;\n}\nbody{\r\n\r\n\r\n    background-color: #d6d2d2;\r\n   background-repeat: no-repeat;\r\n  background-size: cover;\r\n  background-attachment: fixed;\r\n  height: 110vh !important;\r\n  /* background-color: black; */\n}\n.black {\r\n  /* background-color: black; */\r\n  /* height: 100vh !important; */\r\n  /* background-image: url('/images/Number Loops.gif');\r\n\r\n   background-repeat: no-repeat;\r\n  background-size: cover;\r\n  background-attachment: fixed; */\n}\nsvg {\r\n    display: block;\r\n    font: 10.5em 'Montserrat';\r\n    width: 960px;\r\n    height: 300px;\r\n    margin: 0 auto;\n}\n.text-copy {\r\n    fill: none;\r\n    stroke: white;\r\n    stroke-dasharray: 6% 29%;\r\n    stroke-width: 5px;\r\n    stroke-dashoffset: 0%;\r\n    -webkit-animation: stroke-offset 5.5s infinite linear;\r\n            animation: stroke-offset 5.5s infinite linear;\n}\n.text-copy:nth-child(1){\r\n\tstroke: #0e1622;\r\n\t-webkit-animation-delay: -1;\r\n\t        animation-delay: -1;\n}\n.text-copy:nth-child(2){\r\n\tstroke: #42B0A4;\r\n\t-webkit-animation-delay: -2s;\r\n\t        animation-delay: -2s;\n}\n.text-copy:nth-child(3){\r\n\tstroke: #ffffff;\r\n\t-webkit-animation-delay: -3s;\r\n\t        animation-delay: -3s;\n}\n.text-copy:nth-child(4){\r\n\tstroke: #42B0A4;\r\n\t-webkit-animation-delay: -4s;\r\n\t        animation-delay: -4s;\n}\n.text-copy:nth-child(5){\r\n\tstroke: #0e1622;\r\n\t-webkit-animation-delay: -5s;\r\n\t        animation-delay: -5s;\n}\n@-webkit-keyframes stroke-offset{\n100% {stroke-dashoffset: -35%;}\n}\n@keyframes stroke-offset{\n100% {stroke-dashoffset: -35%;}\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -358,7 +358,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("footer", { staticClass: "footer footer-dark bg-dark" }, [
       _c("div", { staticClass: "container text-center py-5" }, [
-        _c("p", [_vm._v("\n    Design by Kode Creater\n    ")])
+        _c("p", [_vm._v("\n    Design by \n    ")])
       ])
     ])
   }
@@ -392,7 +392,7 @@ var render = function() {
           _c(
             "text",
             { attrs: { "text-anchor": "middle", x: "50%", y: "80%" } },
-            [_vm._v("tester")]
+            [_vm._v("Yallad")]
           )
         ]),
         _vm._v(" "),
@@ -444,7 +444,7 @@ var render = function() {
             attrs: { to: "/login" }
           },
           [
-            _vm._v("\n      Go to dashboard "),
+            _vm._v("\n      Go to Login "),
             _c("i", { staticClass: "fas fa-chevron-right" })
           ]
         )

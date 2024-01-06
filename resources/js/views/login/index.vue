@@ -60,7 +60,7 @@
         <span>Password</span> -->
     </label>
 
-    <p style="color: black; font-weight: bolder;">Forgot Password ?</p>
+    <p style="color: black; font-weight: bolder; cursor: pointer;" @click="forgot">Forgot Password ?</p>
 
     <button class="submit" @click = "login()">Sign In</button>
     <p style="color: black; font-weight: bolder;">Don't have an acount ? <a @click="register" style="color:gray; font-weight: bold;cursor: pointer; ;">SignUp</a> </p>
@@ -171,11 +171,15 @@ export default {
     }
   },
   methods: {
+
+    forgot(){
+      this.$router.push('/forgot-password')
+    },
     register(){
         this.$router.push("/signup")
     },
     login() {
-                this.$router.push("/dashboard")
+                this.$router.push("/DashboardBrand")
                 // this.$router.push("/forgot-password")
 
             },
@@ -199,7 +203,16 @@ export default {
 });
           
         }
-        else{
+
+        else if(response.data.user.auth_type == 'influencer'){
+          this.$router.push("/influencerdashboard").then(() => {
+  // Use the setTimeout function to refresh the page after a short delay
+  setTimeout(() => {
+    location.reload();
+  }, 100);
+})
+        }
+        else if(response.data.user.auth_type == 'brand'){
           this.$router.push("/dashboard").then(() => {
   // Use the setTimeout function to refresh the page after a short delay
   setTimeout(() => {

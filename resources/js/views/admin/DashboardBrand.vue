@@ -2,18 +2,18 @@
   <div class="containe">
       <div class="row" style="display: flex; flex-direction: column; justify-content: center">
           <div class="col">
-              <h4 style="font-weight: 400; padding-bottom: 60px; color: #000;">Dashboard Brand</h4>
+              <h4 style="font-weight: 400; padding-bottom: 60px; color: #000;">Choisissez l'un des services ci-dessous</h4>
           </div>
           <div class="col-11">
               <div class="row brand">
           <div class="col-4">
               <div class="card shadow">
                   <div class="card-body" style="padding: 30px 20px ;">
-                      <h5 class="card-title" >Influencer Campaign</h5>
-                      <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
+                      <h5 class="card-title" >Campagne d'influenceurs</h5>
+                      <p class="card-text">Remplissez notre brief en 3 minutes et choisissez parmi influenceurs qui publieront le contenu sur leur feed.</p>
                       <div class="col text-center">
                       <button class="button2" @click="ugc('Influencer Campaign')">
-                          To Start
+                        Compléter le brief
                       </button>
                   </div>
                   </div>
@@ -22,11 +22,11 @@
           <div class="col-4">
               <div class="card shadow">
                   <div class="card-body" style="padding: 30px 20px ;">
-                      <h5 class="card-title">UGC Campaign</h5>
-                      <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
+                      <h5 class="card-title">Campagne UGC</h5>
+                      <p class="card-text">Obtenez plusieurs contenu vidéo virale, libre de droit de la part de créateurs de contenu à sponsoriser sur vos réseaux sociaux.</p>
                       <div class="col text-center">
-                      <button class="button2" @click="ugc('UGC Campaign')">
-                          To Start
+                      <button class="button2" @click="ugc('UGC Campaign')" style="font-size: medium;">
+                        Obtenir des videos virales
                       </button>
                   </div>
                   </div>
@@ -35,11 +35,12 @@
           <div class="col-4">
               <div class="card shadow">
                   <div class="card-body" style="padding: 30px 20px;">
-                      <h5 class="card-title">Community Management</h5>
-                      <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
+                      <h5 class="card-title">Traffic Management</h5>
+                      <p class="card-text">Amplifiez et utilisez le contenu pour cibler un public spécifique tout en augmentant la portée de l'influenceur</p>
                       <div class="col text-center">
-                      <button class="button2">
-                          To Start
+                      <button class="button2" @click="redirect_page">
+                       
+                        Je démarre
                       </button>
                   </div>
                   </div>
@@ -70,6 +71,10 @@ data () {
       },
 name: "Dashboard",
 methods: {
+
+    redirect_page(){
+        window.open("https://calendly.com/demo-yallad", "_blank");
+    },
     ugc(e){
         this.form.campaign = e;
         // this.$router.push('/NewCampaign')

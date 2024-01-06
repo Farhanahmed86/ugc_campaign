@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Ugccampaign;
 use App\Models\Ugcproduct;
+
+use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 
 
@@ -41,14 +43,14 @@ class AdminController extends Controller
 
 
      public function camp(){
-        $data = Ugccampaign::get();
+        $data = Ugccampaign::with('user')->get();
         return response()->json(['camp' =>$data ]);
      }
 
 
      public function users(){
        
-        $data = User::where('auth_type','!==', 'admin')->orWhereNull('auth_type')->get();
+      $data = User::whereNotIn('auth_type', ['admin'])->get();
 
 
         // $data = User::where(function ($query) {
@@ -61,13 +63,24 @@ class AdminController extends Controller
 
 
      public function campaign(){
+
+      $currentDate = Carbon::now();
+
+   
+     
+    $previousMonthDate = $currentDate->subMonths(1);
+    $formattedDate = $previousMonthDate->toDateString();
+   //  dd($formattedDate);
        
         $data = Ugccampaign::where('campaign' , 'Influencer Campaign')->get()->count();
+      //   $data = Ugcproduct::get()->count();
+
         $datas = Ugccampaign::where('campaign' , 'UGC Campaign')->get()->count();
-        $data2 = Ugccampaign::where('campaign' , 'Community Management')->get()->count();
+        $data2 = Ugcproduct::get()->count();
         $data3 = Ugccampaign::where('gender' , 'Women')->get()->count();
-        $data4 = Ugccampaign::where('gender' , 'Men')->get()->count();
-        $data5 = Ugccampaign::where('gender' , 'Other')->get()->count();
+        $data4 = Ugccampaign::pluck('hire_budget')->sum();
+      //   $data5 = Ugccampaign::where('gender' , 'Other')->get()->count();
+        $data5= User::where('created_at' ,'>', $formattedDate)->get()->count();
 
 
 
@@ -95,10 +108,11 @@ class AdminController extends Controller
 
 
      public function userdetails(){
-        // dd(request()->id);
+      //   dd('acbd');
 
         $data = User::with('campaign')->where('id' ,request()->id)->first();
+        $campaign = Ugccampaign::with('objective.market')->where('auth_id' ,request()->id)->get();
 
-        return response()->json(['product' => $data]);
+        return response()->json(['product' => $data , 'campaign' => $campaign]);
      }
 }

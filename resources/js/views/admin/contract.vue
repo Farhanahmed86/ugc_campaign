@@ -12,13 +12,13 @@
    <div class="panel-heading">
     <div class="row mt-12" >
         <div class="col-8">
-            <h4 class="panel-title" style="color: black;">Contrats & Signature electronique</h4>
+            <h4 class="panel-title" style="color: black;">Contrats & Signature Électronique</h4>
         </div>
         <div class="col-4 text-right">
-            <button style="background-color: black; color: white; border-radius: 5px; height: 30px;
+            <!-- <button style="background-color: black; color: white; border-radius: 5px; height: 30px;
     ">
                         Nouveau contrat
-                    </button>
+                    </button> -->
         </div>
     </div>
 
@@ -39,43 +39,45 @@ justify-content: center; background-color: #ECEC4F;
 
 <div class="form">
 
-        <p style="font-size: 20px; font-weight: bolder; color: black; margin-bottom: 20px;" class="text-center">Influencers</p>
+        <p style="font-size: 20px; font-weight: bolder; color: black; margin-bottom: 20px;" class="text-center">Vos informations sociétés</p>
 
 
         <div class="flex">
         <label>
             <input required="" placeholder="" type="text" class="input" v-model="form.firstname">
-            <span>Firstname</span>
+            <span>Prénom</span>
         </label>
 
         <label>
             <input required="" placeholder="" type="text" class="input" v-model="form.lastname">
-            <span>Lastname</span>
+            <span>Nom</span>
         </label>
     </div>
 
     <label>
         <input required="" placeholder="" type="email" class="input" v-model="form.email">
-        <span>Email</span>
+        <span>e-mail du representant</span>
     </label>
 
     <label>
         <input required="" placeholder="" type="number" class="input" v-model="form.phone">
-        <span>Phone Number</span>
+        <span>Numéro Téléphone</span>
     </label>
 
     <label>
         <input required="" placeholder="" type="text" class="input" v-model="form.address">
-        <span>Address</span>
+        <span>Adresse légale</span>
     </label>
 
     <label>
-    <select class="input" placeholder="Socail media" v-model="form.option">
+      <input required="" placeholder="" type="number" class="input" v-model="form.option">
+        <span>Numéro ICE</span>
+    <!-- <select class="input" placeholder="Socail media" v-model="form.option">
 
       <option value="option1">Option 1</option>
       <option value="option2">Option 2</option>
       <option value="option3">Option 3</option>
-    </select>
+    </select> -->
     </label>
 
 
@@ -284,7 +286,7 @@ export default {
     margin-left: 80px;
   border: none;
   outline: none;
-  background-color:#0f0f0f;
+  background-color:#420988;
   padding: 5px;
   border-radius: 10px;
   color: #fff;

@@ -3,13 +3,14 @@
         <div class="panel-heading">
             <div class="row">
                 <div class="col-6">
-            <h2 class="panel-title">UGC Product</h2>
+            <h2 class="panel-title">Products</h2>
         </div>
 
         <div class="col-6 text-right">
-            <h5 class="panel-title">Name:  {{ product[0].ugc.user.first_name }}</h5>
-            <p class="panel-title">id:  {{ product[0].ugc.user.id }}</p>
-            <p class="panel-title">Location:  {{ product[0].ugc.user.company_data }}</p>
+            <h5 class="panel-title">Name:  {{ product[0] ? product[0].ugc.user.first_name:'----' }}</h5>
+            <p class="panel-title">id:  {{product[0] ? product[0].ugc.user.id:'----' }}</p>
+            <p class="panel-title">Location:  {{ product[0] ? product[0].ugc.user.company_data:'----' }}</p>
+         
 
 
         </div>
@@ -30,6 +31,8 @@
             <table  class="table table-link" style="color:#212F3D; ">
                 <thead>
                     <tr>
+                        <th>ID</th>
+
                         <th>Hiring</th>
                         <th>Action Instruction</th>
                         <th>Action Plateform</th>
@@ -48,6 +51,8 @@
                         <th>Video Lenght</th>
                         <th>No of Product</th>
                         <th>Product Name</th>
+                        <!-- <th>Add Suggestion</th> -->
+
 
 
 
@@ -59,8 +64,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="item in product" :key="item.data" @click="detailsPage(item)">
+                    <tr v-for="item in product" :key="item.data">
               
+                        <td class="w-1">{{item.id ? item.id :"---"}}</td>
 
                         <td class="w-1">{{item.action_type_hiring ? item.action_type_hiring :"---"}}</td>
                         <td class="w-1">{{item.action_type_instruction ? item.action_type_instruction : '---'}}</td>
@@ -81,6 +87,7 @@
                         <td class="w-3">{{item.media_type_videolenght ? item.media_type_videolenght : ''}}</td>
                         <td class="w-3">{{item.number_of_product ? item.number_of_product : ''}}</td>
                         <td class="w-3">{{item.product_name ? item.product_name : ''}}</td>
+                        <!-- <td class="w-3" style="cursor: pointer;"> <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512" style="fill:#4da037; font-size: xx-large;" @click="influencer(item.id)">! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc.<path d="M429.6 92.1c4.9-11.9 2.1-25.6-7-34.7s-22.8-11.9-34.7-7l-352 144c-14.2 5.8-22.2 20.8-19.3 35.8s16.1 25.8 31.4 25.8H224V432c0 15.3 10.8 28.4 25.8 31.4s30-5.1 35.8-19.3l144-352z"/></svg></td> -->
 
 
 
@@ -173,7 +180,11 @@ import vueHtmlToPdf from 'vue-html2pdf';
         methods: {
     
 
+            influencer(e){
+            this.$router.push(`/influencer_suggest/${e}`)
+            // this.$router.push(`/compaigns_ucg`)
 
+            },
 
 
            onSearch(){

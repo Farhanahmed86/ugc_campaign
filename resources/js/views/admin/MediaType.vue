@@ -8,8 +8,8 @@
         <div class="col">
           <div class="row" style="display: flex; flex-direction: column; justify-content: center;">
             <div class="col-7">
-              <h4 style="color: #000; font-weight: bold;">Media Type</h4>
-              <p style="color: #000;">Select the type of creative assest you want for this campaign.</p>
+              <h4 style="color: #000; font-weight: bold;">Type de contenu</h4>
+              <p style="color: #000;">Sélectionnez le type de contenu que le créateur UGC doit vous fournir.</p>
             </div>
             <div class="col-7">
               <div class="row">
@@ -38,22 +38,22 @@
         <div class="col">
           <div class="row" style="display: flex; flex-direction: column; justify-content: center;">
             <div class="col-7">
-              <h5 style="color: #000;">Posting to social media</h5>
-              <p style="color: #000;">Specify if the content requested should be posted by creators on their channels</p>
+              <h5 style="color: #000;">Publication sur les réseaux</h5>
+              <p style="color: #000;">Précisez ci le contenu doit être poster sur le profil du créateur</p>
             </div>
             <div class="col-7">
               <div class="row">
                 <div class="col-6">
-                  <div class="card-3" @click="socail('Posting')">
+                  <div class="card-3" @click="socail('Oui')">
                     <div class="md-card" @click="oduct('ivory-coast' ,1)" :style="{ backgroundColor: dgColor1 }">
-                    Posting
+                      Oui
                   </div>
                 </div>
                 </div>
                 <div class="col-6">
-                  <div class="card-3" @click="socail('No Posting')">
+                  <div class="card-3" @click="socail('Non')">
                     <div class="md-card" @click="oduct('ivory-coast' ,2)" :style="{ backgroundColor: dgColor2 }">
-                    No Posting
+                    Non
                   </div>
                 </div>
                 </div>
@@ -64,23 +64,23 @@
         <div class="col">
           <div class="row" style="display: flex; flex-direction: column; justify-content: center;">
             <div class="col-5">
-              <h5 style="color: #000;">Video Length</h5>
-              <p style="color: #000;">Select the duration of your creative assest </p>
+              <h5 style="color: #000;">Durée de la video UGC</h5>
+              <p style="color: #000;">Selectionnez la durée souhaité du contenu </p>
             </div>
             <div class="col-5">
               <div class="row">
                 <div class="col-6">
-                  <div class="card-4" @click="lenght('20')">
+                  <div class="card-4" @click="lenght('30')">
                     <div class="no-card" @click="duct('ivory-coast' ,1)" :style="{ backgroundColor: dsColor1 }">
-                    <h6 style="padding: 8px 0px 0px 0px;">20</h6>
+                    <h6 style="padding: 8px 0px 0px 0px;">30</h6>
                     <p style="padding: 10px 0px 0px 0px ;">Sec</p>
                   </div>
                 </div>
                 </div>
                 <div class="col-6">
-                  <div class="card-4" @click="lenght('40')">
+                  <div class="card-4" @click="lenght('60')">
                     <div class="no-card" @click="duct('ivory-coast' ,2)" :style="{ backgroundColor: dsColor2 }">
-                    <h6 style="padding: 8px 0px 0px 0px;">40</h6>
+                    <h6 style="padding: 8px 0px 0px 0px;">60</h6>
                     <p style="padding: 10px 0px 0px 0px;">Sec</p>
                   </div>
                 </div>
@@ -89,49 +89,13 @@
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="row" style="display: flex; flex-direction: column; justify-content: center;">
-            <div class="col-8">
-              <h5 style="color: #000;">Raw / Ready to use</h5>
-              <p style="color: #000;">Let the Creator know if you need the final (ready-to-use) version of the video only the raw footage 
-or maybe both!</p>
-            </div>
-            <div class="col-8">
-              <div class="row">
-                <div class="col-4">
-                  <div class="card-3" @click="raw('Raw Footage')">
-                    <div class="lg-card" @click="last('ivory-coast' ,1)" :style="{ backgroundColor: lgColor1 }">
-                    Raw Footage
-                  </div>
-                </div>
-                </div>
-                <div class="col-4">
-                  <div class="card-3"  @click="raw('Ready to use Ad')">
-                    <div class="lg-card" @click="last('ivory-coast' ,2)" :style="{ backgroundColor: lgColor2 }">
-                    Ready to use Ad
-                  </div>
-                </div>
-                </div>
-                <div class="col-4">
-                  <div class="card-5" @click="raw('Ready to use Ad + Raw Footage')">
-                    <div class="lg-5-card" @click="last('ivory-coast' ,3)" :style="{ backgroundColor: lgColor3 }">
-                    Ready to use Ad
-                    + Raw Footage
-                  </div>
-                </div>
-                </div>
-
-
-              </div>
-            </div>
-          </div>
-        </div>
+       
 
         
     
       <div class="col">
                       <button class="button2" @click="save">
-                          SEND
+                        Suivant
                       </button>
                   </div>
       </div>

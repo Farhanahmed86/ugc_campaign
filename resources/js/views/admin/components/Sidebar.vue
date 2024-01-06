@@ -18,6 +18,9 @@
       <!-- Divider -->
       <hr class="sidebar-divider my-0" />
 
+     
+
+
       <!-- Nav Item - Dashboard -->
     
 
@@ -33,6 +36,13 @@
       <!-- Divider -->
       <hr class="sidebar-divider" />
 
+      <li class="nav-item active" >
+        <router-link class="nav-link" to="/invited">
+          <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
+          <span class="text-center" style=" font-weight: bold;">Invited Influencers</span></router-link
+        >
+      </li>
+
       <!-- Heading -->
       <!-- <div class="sidebar-heading">Campaigns</div> -->
 
@@ -45,13 +55,13 @@
       <hr class="sidebar-divider d-none d-md-block" />
 
       <!-- Sidebar Toggler (Sidebar) -->
-      <div class="text-center d-none d-md-inline">
+      <!-- <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
-      </div>
+      </div> -->
     </ul>
 
 
-    <ul v-else
+    <ul  v-else-if="users_data.auth_type == 'brand'"
       class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
       id="accordionSidebar"
     >
@@ -78,12 +88,19 @@
       <li class="nav-item active" >
         <router-link class="nav-link" to="/dashboard">
           <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
-          <span class="text-center" style=" font-weight: bold;">Dashboard</span></router-link
+          <span class="text-center" style=" font-weight: bold;">Nos services</span></router-link
         >
       </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider" />
+
+      <!-- <li class="nav-item" >
+        <router-link class="nav-link" to="/dashboard">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Nos services</span></router-link
+        >
+      </li> -->
 
       <!-- Heading -->
       <!-- <div class="sidebar-heading">Campaigns</div> -->
@@ -92,7 +109,7 @@
       <li class="nav-item" >
         <router-link class="nav-link" to="/compaigns">
           <i class="fas fa-fw fa-chart-area"></i>
-          <span>Campaigns Influencers</span>
+          <span>Mes campagnes</span>
        </router-link
         >
         <!-- <span v-if="users_data.guards == 'management'">Trail Balance</span></router-link> -->
@@ -103,7 +120,7 @@
       <li class="nav-item" >
         <router-link class="nav-link" to="/compaigns_ucg">
           <i class="fas fa-fw fa-chart-area"></i>
-          <span>Campaigns UCG</span></router-link
+          <span>Les créateurs</span></router-link
         >
       </li>
 
@@ -200,7 +217,7 @@
       <li class="nav-item" >
         <router-link class="nav-link" to="/brands/">
           <i class="fas fa-fw fa-folder"></i>
-          <span>Ma marque</span></router-link
+          <span>Mes produits & services</span></router-link
         >
       </li>
 
@@ -213,12 +230,12 @@
       </li>
 
       <!-- Nav Item - Charts -->
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <router-link class="nav-link" to="/creators">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Créateurs</span></router-link
         >
-      </li>
+      </li> -->
 
       <!-- Nav Item - Tables -->
       <!-- <li class="nav-item">
@@ -229,12 +246,7 @@
       </li> -->
 
 
-      <li class="nav-item" >
-        <router-link class="nav-link" to="/DashboardBrand/">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Mes contenus</span></router-link
-        >
-      </li>
+     
       <!-- <button>
     <a>Hover me</a>
 </button> -->
@@ -290,7 +302,7 @@ export default {
 
 .bg-gradient-primary {
     /* background-color: #0f102c !important; */
-    background-image: linear-gradient(180deg, #2A2C76 10%, #2A2C76 30%,#2A2C76 100%);
+    background-image: linear-gradient(180deg, #420988 10%, #420988 30%,#420988 100%);
     background-size: cover;
 }
 </style>

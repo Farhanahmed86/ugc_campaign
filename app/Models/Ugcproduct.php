@@ -14,4 +14,10 @@ class Ugcproduct extends Model
         return $this->belongsTo(Ugccampaign::class ,'campaign_id', 'id');
     
     }
+    
+     public function user()
+    {
+        return $this->belongsTo(User::class ,'auth_id', 'id');
+    
+    }
 }

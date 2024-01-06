@@ -8,9 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Countries extends Model
 {
     use HasFactory;
+    protected $table="countries";
 
     protected $fillable = [
-        'title'
+        'name'
 
     ];
 
@@ -19,6 +20,6 @@ class Countries extends Model
     ];
     public function getTextAttribute()
     {
-        return $this->attributes['title'];
+        return $this->attributes['name'];
     }
 }

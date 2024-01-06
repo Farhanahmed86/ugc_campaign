@@ -9,15 +9,15 @@
           <div class="row">
               <div class="col-6">
                 <div class="form-type" style="width: 40%; padding-bottom: 25px;">
-                  <h4 style="font-weight: 400;color: #000;border-bottom: 1px solid #2A2C76;">Add UGC Product</h4>
+                  <h4 style="font-weight: 400;color: #000;border-bottom: 1px solid #2A2C76;">Ajouter un produit à envoyer aux créateurs</h4>
                 </div>
                   
                      <div class="form-group">
-                          <label for="Product Name*"  style="color: #000; font-size: 18px;" >Product Name*</label>
+                          <label for="Product Name*"  style="color: #000; font-size: 18px;" >Nom du produit</label>
                           <input type="name" class="form-control" v-model="form.product_name" id="name" aria-describedby="" placeholder="" style= "border: none;box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; border-radius: 5px;">
                       </div>
                       <div class="form-group">
-                          <label for="Product Name*" style="color: #000; font-size: 18px;">Product Description*</label>
+                          <label for="Product Name*" style="color: #000; font-size: 18px;">Description de votre produit</label>
                           <textarea class="form-control" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;border: none; border-radius: 10px; width:100%%"
                               id="textarea"
                               v-model="form.product_description"
@@ -26,15 +26,15 @@
                           placeholder=""></textarea>
                       </div>
                       <div class="form-group">
-                          <label for="Product Name*" style="color: #000; font-size: 18px;">Start of Application*</label>
-                          <input type="name" class="form-control" v-model="form.start_of_application" id="name" aria-describedby="" placeholder="" style="border: none;box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; border-radius: 5px;">
+                          <label for="Product Name*" style="color: #000; font-size: 18px;">Quand souhaitez-vous démarrer la campagne ?</label>
+                          <input type="date" class="form-control" v-model="form.start_of_application" id="name" aria-describedby="" placeholder="" style="border: none;box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; border-radius: 5px;">
                       </div>
                       <div class="form-group">
-                          <label for="Product Name*" style="color: #000; font-size: 18px;">End of Application*</label>
-                          <input type="name" class="form-control" v-model="form.end_of_application" id="name" aria-describedby="" placeholder="" style="border: none;box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; border-radius: 5px;">
+                          <label for="Product Name*" style="color: #000; font-size: 18px;">Lien de votre page @instagram</label>
+                          <input type="date" class="form-control" v-model="form.end_of_application" id="name" aria-describedby="" placeholder="" style="border: none;box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; border-radius: 5px;">
                       </div>
                       <div class="form-group">
-                      <label for="Product Name*" style="color: #000; font-size: 18px;">Number of products you would like to offer*</label>
+                      <label for="Product Name*" style="color: #000; font-size: 18px;">Quelle quantité produits pouvez-vous mettre a disposition ?</label>
                           <input type="name" class="form-control" v-model="form.number_of_product" id="name" aria-describedby="" placeholder="" style="border: none;box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; border-radius: 5px;">
                       </div>
                       <div class="col">
@@ -48,7 +48,7 @@
                 <br>
                 <br>
                 <br>
-                <p style="color: #000; font-size: 18px;"> Image of your Product</p>
+                <p style="color: #000; font-size: 18px;"> Ajoutez une image qui met en avant au mieux votre produit</p>
                 <div
       id="image-drop-area"
       @dragover="onDragOver"
@@ -66,7 +66,7 @@
       </div>
     </div>
 <br>
-    <p style="color: #000;">How do you want to distribute your project?</p>
+   
               </div>
           </div>
       </div>

@@ -3,7 +3,7 @@
     <div  class="container">
     <form class="form" @submit.prevent="register">
     <p style="font-size: 24px; font-weight: bold; color: black;" class="text-center">Inscription comme une marque</p>
-    <p style="font-size: 15px; font-weight: 600; color: black;" class="text-center">Vous êtes un créateur de contenu ?<span style="color: rgb(10, 199, 199); font-weight: bold;">Inscrivez-vous ici</span> </p>
+    <p style="font-size: 15px; font-weight: 600; color: black; cursor: pointer;" class="text-center" @click="influencer">Vous êtes un créateur de contenu ?<span style="color: rgb(10, 199, 199); font-weight: bold;">Inscrivez-vous ici</span> </p>
 
         <div class="flex">
         <label>
@@ -153,6 +153,7 @@ export default {
   },
   data() {
     return {
+    
       form: {},
       method: 'POST',
       first_name: "",
@@ -164,6 +165,7 @@ export default {
       company: "",
       website: "",
       phone:"",
+      auth_type:"",
 
 
 
@@ -179,6 +181,22 @@ export default {
   },
   methods: {
 
+    
+    
+
+
+    influencer(){
+//  this.$router.push('influencer_singup')
+//  this.$router.push(`/influencer_singup/${this.company_id}`);
+
+ this.$router.push(`/influencer_singup/${this.company_id}`).then(() => {
+  // Use the setTimeout function to refresh the page after a short delay
+  setTimeout(() => {
+    location.reload();
+  }, 10);
+});
+    },
+
     save(){
 
 this.form.id = this.company_id;
@@ -189,6 +207,7 @@ this.form.website = this.website;
 this.form.company = this.company;
 this.form.phone = this.phone;
 this.form.id = this.company_id;
+this.form.auth_type = 'brand'
 
 
 console.log(this.form);
@@ -212,49 +231,7 @@ console.log(this.form);
             })
 
 },
-    // async register() {
-    //   this.isLoading = true;
-    //   try {
-    //     var response = await axios.post("registered", {
-    //       first_name: this.first_name,
-    //       last_name: this.last_name,
-    //       email: this.email,
-    //       password: this.password,
-    //       password_confirm: this.password_confirm,
-    //       location: this.location,
-    //       website: this.website,
-    //       company: this.company,
-
-
-
-    //     });
-
-    //     this.isLoading = false;
-
-    //     if (response.data.must_verify_email) {
-    //       this.$router.push(`/verify/user/${response.data.id}`);
-    //     } else {
-    //       let message =
-    //         "Your account has been created successfully.";
-    //       let toast = Vue.toasted.show(message, {
-    //         theme: "toasted-primary",
-    //         position: "top-right",
-    //         duration: 5000,
-    //       });
-    //       this.$router.push(`/register/company/${response.data.id}`);
-    //     }
-    //   } catch (error) {
-    //     notify.authError(error);
-    //     this.isLoading = false;
-    //   }
-
-
-
-
-
-
-      
-    // },
+   
   },
 };
 </script>

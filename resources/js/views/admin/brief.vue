@@ -97,18 +97,7 @@
       </div>
     </div>
 
-    <!-- <div class="image-drop-area">
-    <label for="file-input" class="image-drop-zone" @dragover="onDragOver" @drop="onDrop" @click="openFileDialog">
-      <input type="file" id="file-input" style="display: none" @change="handleFileChange" accept="image/*">
-      <div v-if="!imageUrl">
-        <i class="fas fa-cloud-upload-alt"></i>
-        <p>Click, drag, or drop an image here</p>
-      </div>
-      <div v-else class="image-preview">
-        <img :src="imageUrl" alt="Uploaded Image" />
-      </div>
-    </label>
-  </div> -->
+  
   </div>
   <br>
     
@@ -262,7 +251,7 @@
       v-model="form.description"
       rows="5"
       cols="30"
-      placeholder="    Describe the product you promoting."
+      placeholder="Describe the product you promoting."
     ></textarea>
 </div>
 <br>
@@ -376,6 +365,7 @@ export default {
             handleFileChange(event) {
       this.file = event.target.files[0];
       this.imageUrl = URL.createObjectURL(this.file);
+      
     },
     onDragOver(event) {
       event.preventDefault();

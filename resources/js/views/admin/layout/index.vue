@@ -26,7 +26,7 @@
           <div class="copyright text-center my-auto">
             <span style="font-weight: bold;">Copyright &copy; Brand Revam 2023</span>
             <br>
-            <span style="font-weight: bold; color: #0C5F80;">Design By : Nazar Nasim</span>
+            <span style="font-weight: bold; color: #0C5F80;">Design By :</span>
           </div>
         </div>
       </footer>

@@ -4,9 +4,6 @@
 
     <div class="panel">
 
-
-
-
 <!-- </div> -->
 <div>
 
@@ -14,19 +11,27 @@
     <br>
     <div class="row">
         <div class="col-10" style="overflow-y: scroll; overflow-x: hidden; height: 600px;">
+          <div v-if="filter_input">
+
+          
 <div class="row">
 
-    <div class="col-4">
+    <div class="col-3">
+      <label>Filter</label> 
   <div class="input-group">
+    
     <div class="input-group-prepend">
       <span class="input-group-text">
         <i class="fas fa-fw fa-table"></i>
       </span>
     </div>
-    <select class="form-control" v-model="selectedOption">
-      <option value="option1">Option 1</option>
-      <option value="option2">Option 2</option>
-      <option value="option3">Option 3</option>
+   
+    <select class="form-control" v-model="form.plateform">
+      <option value="instagram">Instagram</option>
+      <option value="facebook">Facebook</option>
+      <option value="tiktok">Tiktok</option>
+      <option value="youtube">Youtube</option>
+
     </select>
   </div>
 </div>
@@ -34,105 +39,286 @@
 
     <div class="col-4">
         <div class="form-group">
+          <label>Rechercher un influenceur</label>
 
-                        <input type="text" class="form-control" placeholder="Bio, Username, Fullname" v-model="form.bios">
+                        <input type="text" class="form-control" placeholder="Rechercher un influenceur" v-model="form.bios">
 
                     </div>
     </div>
     <div class="col-2">
 
         <div class="form-group">
+          <label>Hashtags</label>
 
-<input type="text" class="form-control" placeholder="Hashtags" v-model="form.hashtags">
+<input type="text" class="form-control" placeholder="Hashtags" v-model="form.hashtags" >
 
 </div>
     </div>
 
+    <div class="col-2 text-center">
+      <label>Gender</label>
+  <select class="form-control" v-model="form.tags">
+    <option value="Male">Men</option>
+      <option value="Female">Women</option>
+      
+
+      
+    </select>
+</div>
+
+
+</div>
+
+<div class="row">
+  <div class="col-2">
+    <label>Taux d'engagement</label>
+    <select class="form-control" v-model="form.engagement" >
+    <option value="1%">1%</option>
+      <option value="2%">2%</option>
+      <option value="3%">3%</option>
+      <option value="4%">4%</option>
+      <option value="5%">5%</option>
+      <option value="6%">6%</option>
+      <option value="7%">7%</option>
+      <option value="10%">10%</option>
+      <option value="12%">12%</option>
+      <option value="15%">15%</option>
+      <option value="20%">20%</option>
+      <option value="25%">25%</option>
+      <option value="30%">30%</option>
+    </select>
+  </div>
+
+  <div class="col-4">
+    <div class="col text-center">
+    <label>gamme d'abonnés</label>
+  </div>
+    <div class="row">
+      <div class="col">
+    <select class="form-control" v-model="form.firstfollowers" >
+    <option value="10000">10k</option>
+      <option value="20000">20k</option>
+      <option value="30000">30k</option>
+      <option value="40000">40k</option>
+      <option value="50000">50k</option>
+      <option value="60000">60k</option>
+      <option value="70000">70k</option>
+      <option value="80000">80k</option>
+      <option value="90000">90k</option>
+      <option value="100000">100k</option>
+
+
+
+
+
+
+
+
+    </select>
+  </div>
+<div class="col">
+    <select class="form-control" v-model="form.secondfollowers">
+    <option value="200000">200k</option>
+      <option value="300000">300k</option>
+      <option value="400000">400k</option>
+      <option value="500000">500k</option>
+      <option value="600000">600k</option>
+      <option value="700000">700k</option>
+      <option value="800000">800k</option>
+      <option value="900000">900k</option>
+      <option value="1000000">1M</option>
+      <option value="2000000">2M</option>
+      <option value="3000000">3M</option>
+      <option value="4000000">4M</option>
+      <option value="5000000">5M</option>
+      <option value="6000000">6M</option>
+      <option value="7000000">7M</option>
+      <option value="8000000">8M</option>
+      <option value="9000000">9M</option>
+      <option value="10000000">10M</option>
+      <option value="12000000">12M</option>
+      <option value="15000000">15M</option>
+      <option value="20000000">20M</option>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </select>
+  </div>
+  </div>
+  </div>
+
+  <div class="col-2">
+    <label>Age</label> 
+    <select class="form-control" v-model="form.agerange" >
+    <option value="13-40">13-40</option>
+      <option value="18-50">18-50</option>
+      <option value="13-50">13-50</option>
+
+    </select>
+  </div>
+  <div class="col-3">
+    <label>Comté d'influenceur</label> 
+    
+    <typehead    :url="countriestURL" :initialize="form.influencercountries"
+                            @input="onCountry($event)" style=""/>
+  
+  </div>
+</div>
+<div class="row mt-3">
+  <div class="col-4">
+    <label>comté d'audience</label> 
+    
+    <typehead    :url="countriestURL" :initialize="form.audiencecountries"
+                            @input="onCountries($event)" style=""/>
+  
+  </div>
+
+  <div class="col-4">
+    <label>Vrai compte</label> 
+    <select class="form-control" v-model="form.real">
+    <option value="10%">10%</option>
+      <option value="20%">20%</option>
+      <option value="30%">30%</option>
+      <option value="40%">40%</option>
+      <option value="50%">50%</option>
+      <option value="60%">60%</option>
+      <option value="70%">70%</option>
+      <option value="80%">80%</option>
+      <option value="90%">90%</option>
+      <option value="100%">100%</option>
+
+
+
+
+
+
+
+
+    </select>
+  </div>
+
+  <div class="col-2 mt-4">
+  <button class="butts" @click="filterdata">Search</button>
+</div>
+</div>
+<br>
+</div>
+<div class="row">
+  <div class="col"><h2 style="color:black; font-weight:bold">Les créateurs</h2></div>
+  <div class="col">
+    <div class="row">
+      <div class="col text-right">
+    <div style="    border: 1px solid rgb(72 211 27);
+    border-radius: 20px;
+    padding: 5px 45px;
+    color: rgb(32, 199, 32);
+    font-weight: 700;
+    float: right;
+    cursor: pointer;"  @click="showfilter(1)">
+    <i class="fas fa-fw fa-filter"></i>
+
+     Show Filter
+    </div>
+  </div>
+<div class="col">
+    <div style="    border: 1px solid rgb(247 6 6);
+    border-radius: 20px;
+    padding: 5px 45px;
+    color: rgb(221, 7, 7);
+    font-weight: 700;
+    float: right;
+    cursor: pointer;"  @click="hidefilter(1)">
+    <i class="fas fa-fw fa-filter"></i>
+
+     Hide Filter
+    </div>
+  </div>
+</div>
+  </div>
 
 </div>
 
 
-<div class="row" style="padding-top: 10px;">
-    <ul style="display: flex; gap: 2px;">
+
+
+<!-- <div class="row" style="padding-top: 10px;">
+  <div class="col text-center" v-if="button_click">
+  <input  type="text" class="form-control"  :placeholder="place"  v-model="form.tags" @keyup.enter="send(form.tags, 'decs')">
+</div>
+<div class="col text-center" v-if="gender">
+  <select class="form-control" v-model="form.tags" @change="send(form.tags , 'decs')">
+    <option value="Male">Men</option>
+      <option value="Female">Women</option>
+      
+
+      
+    </select>
+</div>
+
+<div class="col text-center" v-if="Taux">
+  <select class="form-control" v-model="form.tags" @change="send(form.tags , 'decs')">
+    <option value="Low">Low</option>
+      <option value="Medium">Medium</option>
+      <option value="High">High</option>
+
+    </select>
+</div>
+  <ul style="display: flex; gap: 2px;">
     <li style="list-style: none;" >
-        <button class="buttons mx-0">
-      Location
+        <button class="buttons mx-0" @click="show_input('Enter Localisation ')">
+          Localisation 
     </button>
     </li>
 
     <li>
-        <button class="buttons mx-0">
-      Categories
+        <button class="buttons mx-0" @click="show_input('Enter Categories')">
+          Intérêt de l'audience
     </button>
     </li>
-    <li style="list-style: none;" >
+    <li style="list-style: none;" @click="show_input('Genre')">
         <button class="buttons mx-0">
-      Gender
-    </button>
-    </li>
-
-    <li>
-        <button class="buttons mx-0">
-      Age
-    </button>
-    </li>
-    <li style="list-style: none;" >
-        <button class="buttons mx-0">
-      Ethnicity
+          Genre 
     </button>
     </li>
 
-    <li>
-        <button class="buttons mx-0">
-      Price
-    </button>
-    </li>
+    
     <li style="list-style: none;" >
-        <button class="buttons mx-0">
-      ER
+        <button class="buttons mx-0" @click="show_input('Taux')">
+          Taux d'engagement
     </button>
     </li>
 
-    <li>
-        <button class="buttons mx-0">
-      Badges
+   
+    <li style="list-style: none;" >
+        <button class="buttons mx-0" @click="show_input('Enter Followers')">
+          Followers
     </button>
     </li>
+
+    
 </ul>
 
 
-  </div>
-
-
-  <div class="row" style="padding-top: 10px;">
-    <ul style="display: flex; gap: 2px;">
-    <li style="list-style: none;" >
-        <button class="buttonss mx-0">
-      Amazon Storefront
-    </button>
-    </li>
-
-    <li>
-        <button class="buttonss mx-0">
-      Prevoius Collabration
-    </button>
-    </li>
-    <li>
-        <button class="buttonss mx-0">
-      Favorties
-    </button>
-    </li>
-
-    <li class="buttonsss">
-        <svg xmlns="http://www.w3.org/2000/svg" height="3em" width="3em" viewBox="0 0 448 512" style="margin-left: 20px; color: gray;"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M8 256a56 56 0 1 1 112 0A56 56 0 1 1 8 256zm160 0a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zm216-56a56 56 0 1 1 0 112 56 56 0 1 1 0-112z"/></svg>
-    </li>
+  </div> -->
 
 
 
-</ul>
-
-
-  </div>
 
   <div class="form-group " style="margin-top: 40px;">
                         <div class="custom-control custom-checkbox large">
@@ -142,7 +328,7 @@
                             id="customCheck"
                           />
                           <label class="custom-control-label" style="color: black; font-size: medium; font-weight: bold;" for="customCheck"
-                            >Dont send this brief to the following creators from past compaigns</label
+                            >Parcourez les profils et mettez en favoris ou invitez vos préférés</label
                           >
 
                           </div>
@@ -154,25 +340,44 @@
 <div class="row">
   <div class="card-container">
 
-    <div class="card" @click="portfolio">
-        <div class="card-image">
-            <img src="images/influencer.jpg" style="width: 99%;
-    border-radius: 20px;">
-        </div>
-      <div class="image-container ">
+    <div class="card"  v-for="item in model.data">
+        
 
-        <img src="images/Ellipse.jpg" alt="Illustration Image">
+        <div class="card-image" @click="portfolio(item.id)" style="    display: flex;
+    justify-content: center;">
+          <img v-if="item.influncer_profile_image == null" src='/influencer/no_image.png' style="width: 80%; height: 100%; border-radius: 50%;">
+
+          <img v-else  :src="'/influencer/' + item.influncer_profile_image" style=" height: 100%; border-radius: 50%;">
+         
+          <!-- <img v-else  :src="https://scontent.cdninstagram.com/v/t51.2885-19/391379106_710351987602941_6845938254589432177_n.jpg?stp=dst-jpg_s80x80&_nc_cat=106&ccb=1-7&_nc_sid=c4dd86&_nc_ohc=fGdV-b-sMewAX963hYS&_nc_ht=scontent.cdninstagram.com&oh=00_AfC0po7g9Zqzyf7flpWkcEskJVPRog0wMsB1NijM8rB01w&oe=6563CD91" style=" height: 100%; border-radius: 50%;"> -->
+    <!-- <img src="https://www.instagram.com/p/CxicCGCN8VM/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==" style="width: 99%; border-radius: 20px;"> -->
+</div>
+        <div class=" row mt-2">
+          <div class=" image-container col-2">
+
+            <img v-if="item.plateform =='instagram'" src="/images/instagram.png" style="height: 80%;" alt="Illustration Image">
+            
+            <img v-if="item.plateform =='facebook'" src="/images/facebook (1).png" style="height: 80%;" alt="Illustration Image">
+           
+            <img v-if="item.plateform =='tiktok'" src="/images/tiktok.png" style="height: 80%;" alt="Illustration Image">
+            <img v-if="item.plateform =='youtube'" src="/images/youtube.png" style="height: 80%;" alt="Illustration Image">
+
+          </div>
+          <div class="col text-right">
+
+            <button class="butt" @click="emailsent(item.id)">Invite</button>
+</div>
       </div>
       <div class="content">
         <!-- <div class="category"> Illustration </div> -->
         <div class="row">
-            <div class="col-6" style="font-weight: bold; color: black;">Marina</div>
-            <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div>
+            <div class="col-6" style="font-weight: bold; color: black;">{{ item.name }}</div>
+            <div class="col-6 text-right" style="font-weight: bold; color: black;">Likes:{{ item.avg_likes }}</div>
 
         </div>
         <div class="row">
-            <div class="col-6" style="font-size: 12px;">United States</div>
-            <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div>
+            <div class="col-6" style="font-size: 12px;">{{ item.influencer_location }}</div>
+            <div class="col-6 text-right" style="font-size: 12px;">Followers:{{ formatFollowers(item.followers) }}</div>
 
         </div>
 
@@ -180,152 +385,48 @@
     </div>
 
 
-    <!-- <div class="card">
-        <div class="card-image"></div>
-    <div class="category"> Illustration </div>
-    <div class="heading"> A heading that must span over two lines
-        <div class="author"> By <span class="name">Abi</span> 4 days ago</div>
-    </div>
-    </div> -->
-
-    <div class="card" @click="portfolio">
-        <div class="card-image">
-            <img src="images/influencer_2.jpg" style="width: 99%;
-    border-radius: 20px;">
-        </div>
-      <div class="image-container ">
-
-        <img src="images/Ellipse.jpg" alt="Illustration Image">
-      </div>
-      <div class="content">
-        <!-- <div class="category"> Illustration </div> -->
-        <div class="row">
-            <div class="col-6" style="font-weight: bold; color: black;">Marina</div>
-            <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div>
-
-        </div>
-        <div class="row">
-            <div class="col-6" style="font-size: 12px;">United States</div>
-            <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div>
-
-        </div>
-
-      </div>
-    </div>
-
-    <div class="card" @click="portfolio">
-        <div class="card-image">
-            <img src="images/influencer_3.jpg" style="width: 99%;
-    border-radius: 20px;">
-        </div>
-      <div class="image-container ">
-
-        <img  src="images/Ellipse.jpg" alt="Illustration Image">
-      </div>
-      <div class="content">
-        <!-- <div class="category"> Illustration </div> -->
-        <div class="row">
-            <div class="col-6" style="font-weight: bold; color: black;">Marina</div>
-            <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div>
-
-        </div>
-        <div class="row">
-            <div class="col-6" style="font-size: 12px;">United States</div>
-            <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div>
-
-        </div>
-
-      </div>
-    </div>
-
-
-    <div class="card" @click="portfolio">
-        <div class="card-image">
-            <img src="images/influencer_4.jpg" style="width: 99%;
-    border-radius: 20px;">
-        </div>
-      <div class="image-container ">
-
-        <img src="images/Ellipse.jpg" alt="Illustration Image">
-      </div>
-      <div class="content">
-        <!-- <div class="category"> Illustration </div> -->
-        <div class="row">
-            <div class="col-6" style="font-weight: bold; color: black;">Marina</div>
-            <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div>
-
-        </div>
-        <div class="row">
-            <div class="col-6" style="font-size: 12px;">United States</div>
-            <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div>
-
-        </div>
-
-      </div>
-    </div>
-
-    <div class="card" @click="portfolio">
-        <div class="card-image">
-            <img src="images/influencer_5.jpg" style="width: 99%;
-    border-radius: 20px;">
-        </div>
-      <div class="image-container ">
-
-        <img src="images/Ellipse.jpg" alt="Illustration Image">
-      </div>
-      <div class="content">
-        <!-- <div class="category"> Illustration </div> -->
-        <div class="row">
-            <div class="col-6" style="font-weight: bold; color: black;">Marina</div>
-            <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div>
-
-        </div>
-        <div class="row">
-            <div class="col-6" style="font-size: 12px;">United States</div>
-            <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div>
-
-        </div>
-
-      </div>
-    </div>
-
-    <div class="card" @click="portfolio">
-        <div class="card-image">
-            <img src="images/influencer_6.jpg" style="width: 99%;
-    border-radius: 20px;">
-        </div>
-      <div class="image-container ">
-
-        <img src="images/Ellipse.jpg" alt="Illustration Image">
-      </div>
-      <div class="content">
-        <!-- <div class="category"> Illustration </div> -->
-        <div class="row">
-            <div class="col-6" style="font-weight: bold; color: black;">Marina</div>
-            <div class="col-6 text-right" style="font-weight: bold; color: black;">$120</div>
-
-        </div>
-        <div class="row">
-            <div class="col-6" style="font-size: 12px;">United States</div>
-            <div class="col-6 text-right" style="font-size: 12px;">Avr.Price</div>
-
-        </div>
-
-      </div>
-    </div>
   </div>
 </div>
 </div>
 
 <div class="col-2">
-<span style="font-size: 20px; color: black;">Creators List</span>
-<p>No creators have been added to your list yet . Use the search features to find creators and add them!</p>
+<span style="font-size: 20px; color: black;">Liste des favoris</span>
+<ul v-for="fav in favorite" v-if="favorite[0]">
+  <li>{{ fav.name }}</li>
+</ul>
+
+<p v-if="favorite == null">Aucun créateur n'a été ajouté en favori pour le moment, parcourez les profils et selectionnez la petite étoile pour les épingler ici.</p>
+
 
 </div>
 
 </div>
 
 </div>
+
+<div class="panel-footer flex-between text-center mt-4">
+            <div>
+                <small style="font-weight: bold;">Showing {{model.from}} - {{model.to}} of {{model.total}}</small>
+            </div>
+            <div>
+                <button class="btn btn-lg " style="     color: black;
+    font-weight: bold;
+    background-color: rgb(111, 120, 129);
+    border-radius: 40px;
+    font-size: smaller;
+    padding: 14px 11px" :disabled="!model.prev_page_url" @click="prevPage">
+                    Prev
+                </button>
+                <button class="btn btn-lg" style="     color: white;
+    font-weight: bold;
+    background-color: rgb(33, 47, 61);
+    border-radius: 40px;
+    font-size: smaller;
+    padding: 14px 11px" :disabled="!model.next_page_url" @click="nextPage">
+                    Next
+                </button>
+            </div>
+        </div>
 
 
 
@@ -341,46 +442,205 @@ import Vue from 'vue'
 
     import { get , byMethod} from '../admin/components/lib/api'
     import Typehead from '../admin/components/typehead/Typehead.vue'
+    import VueSweetalert2 from 'vue-sweetalert2';
+    import 'sweetalert2/dist/sweetalert2.min.css';
+    
 
 export default {
-    components: { Typehead },
+    components: { Typehead , VueSweetalert2 },
   data () {
             return {
+              filter_input:false,
+              countriestURL: '/api/search/countries',
+              button_click:false,
+              gender:false,
+              Taux:false,
                 selectedOption:'',
                 form: {},
                 countriesURL:'/api/search/countries',
                 aboutURL:'/api/search/about',
+                place:'',
+                favorite:{},
 
                 countries:{},
                 users_data:{},
                 model: {
-                    data: []
+                    data:[]
                 }
             }
         },
   name: "Dashboard",
 
 
-//   beforeRouteEnter(to, from, next) {
-//             get('/api/dashboard', to.query)
-//                 .then((res) => {
-//                     next(vm => vm.setData(res))
+  beforeRouteEnter(to, from, next) {
+            get('/api/influencers', to.query)
+                .then((res) => {
+                    next(vm => vm.setData(res))
 
-//                 })
-//         },
-//         beforeRouteUpdate(to, from, next) {
-//             get('/api/dashboard', to.query)
-//                 .then((res) => {
-//                     this.setData(res)
-//                     next()
+                })
+        },
+        beforeRouteUpdate(to, from, next) {
+            get('/api/influencers', to.query)
+                .then((res) => {
+                    this.setData(res)
+                    next()
 
-//                 })
-//         },
+                })
+        },
 
         methods: {
+          hidefilter(){
+            this.filter_input = false
+          },
 
-            portfolio(){
-                this.$router.push(`/portfolio`);
+          showfilter(){
+            this.filter_input = true
+          },
+          formatFollowers(value) {
+      if (value >= 1000000) {
+        return (value / 1000000).toFixed(1) + 'M';
+      } else if (value >= 1000) {
+        return (value / 1000).toFixed(1) + 'k';
+      }
+      return value.toString();
+    },
+          filterdata(){
+            const queryParams = new URLSearchParams(this.form);
+            get('/api/influencers/?'  + queryParams.toString()).then((res) => {
+                      this.setData(res)
+                    
+  
+                  })
+          
+          },
+          onCountry(e) {
+                
+                const countries = e.target.value
+                Vue.set(this.form, 'influencercountries', countries)
+                Vue.set(this.form, 'countries_name', countries.name)
+
+                // Vue.set(this.form, 'countries_id', countries.id)
+            },
+
+            onCountries(e) {
+                
+                const countries = e.target.value
+                Vue.set(this.form, 'audiencecountries', countries)
+                Vue.set(this.form, 'audience_countries_name', countries.name)
+
+                // Vue.set(this.form, 'countries_id', countries.id)
+            },
+
+          emailsent(e){
+            get('/api/influencer_email?id=' +e) .then((res) => {
+                    console.log(res.data.data);
+                    if(res.data.data) {
+                            this.$swal.fire({
+                                icon:'success',
+                                title:'Email Sent',
+                                text: 'Your request sent Influencer will contact you',
+                            })
+                        }
+                    
+                });
+          },
+
+          show_input(e){
+            if(e == 'Genre'){
+              console.log(e);
+              this.button_click = false
+              this.Taux = false
+              this.gender = true
+
+            }
+            else if(e =='Taux'){
+              this.gender = false
+              this.button_click = false
+              this.Taux = true
+            }
+            else{
+              this.Taux = false
+              this.gender = false
+              this.button_click = true
+            }
+            
+            
+            this.form.tags = '',
+            
+            this.place = e
+          },
+
+          send(e, f){
+            console.log(e);
+            if(f == 'option'){
+
+              get('/api/influencers/?q=' +e).then((res) => {
+                      this.setData(res)
+                    
+  
+                  })
+            }
+
+            if(f == 'bios'){
+
+            get('/api/influencers/?bios=' +e).then((res) => {
+                    this.setData(res)
+                  
+
+                })
+            }
+
+            if(f == 'hash'){
+
+          get('/api/influencers/?hash=' +e).then((res) => {
+                  this.setData(res)
+                
+
+              })
+          }
+
+          if(f == 'decs'){
+            console.log(e);
+
+        get('/api/influencers/?decs=' +e).then((res) => {
+                this.setData(res)
+              
+
+            })
+        }
+        if(f == 'followers'){
+            console.log(e);
+
+            get('/api/influencers/?firstfollowers=' + this.form.firstfollowers + '&secondfollowers=' + this.form.secondfollowers).then((res) => {
+                this.setData(res)
+              
+
+            })
+        }
+        if(f == 'decss'){
+            console.log(e);
+
+        get('/api/influencers/?decss=' +e).then((res) => {
+                this.setData(res)
+              
+
+            })
+        }
+
+
+        if(f == 'agerange'){
+            console.log(e);
+
+        get('/api/influencers/?agerange=' +e).then((res) => {
+                this.setData(res)
+              
+
+            })
+        }
+          },
+
+            portfolio(e){
+                this.$router.push(`/portfolio/${e}`);
             },
 
 
@@ -403,21 +663,49 @@ export default {
                 this.$router.push(`/dashboard/${item.id}`)
             },
             setData(res) {
-                Vue.set(this.$data, 'model', res.data.results)
-                //this.page = this.model.current_page
+                Vue.set(this.$data, 'model', res.data.data)
+                Vue.set(this.$data, 'favorite', res.data.fav)
 
-                // console.log(res.data)
+                //this.page = this.model.current_page
+                this.page = this.model.current_page
+
+                console.log(res.data.fav)
             },
 
 
-        }
+            nextPage() {
+                if(this.model.next_page_url) {
+                    const query = Object.assign({}, this.$route.query)
+                    query.page = query.page ? (Number(query.page) + 1) : 2
+
+                    this.$router.push({
+                        path: '/compaigns_ucg',
+                        query: query
+                    })
+                }
+            },
+
+            prevPage () {
+                if(this.model.prev_page_url) {
+                    const query = Object.assign({}, this.$route.query)
+                    query.page = query.page ? (Number(query.page) - 1) : 1
+
+                    this.$router.push({
+                        path: '/compaigns_ucg',
+                        query: query
+                    })
+                }
+            }
+
+
+        } 
 };
 </script>
 
 <style scoped>
 .buttons {
     background-color: #ffffff;
- width: 8em;
+ width: 11em;
  height: 3em;
  border-radius: 5px;
  font-size: 12px;
@@ -463,10 +751,27 @@ export default {
 
 }
 .card-container {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between; /* Adjust alignment as needed */
   gap: 20px; /* Adjust the gap between cards */
+}
+
+.butt{
+  border: none;
+    color: white;
+    background-color: #420988;
+    border-radius: 5px;
+    padding: 2px 20px;
+}
+
+.butts{
+  border: none;
+    color: white;
+    background-color: #420988;
+    border-radius: 5px;
+    padding: 9px 25px;
 }
 /* .card {
     display: flex;
@@ -494,7 +799,7 @@ export default {
 }
 
 .card-image {
-  background-color: rgb(236, 236, 236);
+  /* background-color: rgb(236, 236, 236); */
   width: 100%;
   height: 200px;
   border-radius: 12px 12px 0 0;

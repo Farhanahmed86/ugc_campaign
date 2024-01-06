@@ -20,6 +20,8 @@ use App\Http\Controllers\CountriesController;
 use App\Http\Controllers\UgcControllere;
 use App\Http\Controllers\UgcproductController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\InfluencerController;
+
 
 
 
@@ -51,6 +53,15 @@ Route::post('company_register', [Api\RegisterController::class, 'company']);
 Route::post('company_types', [Api\RegisterController::class, 'company_type']);
 Route::post('company_category', [Api\RegisterController::class, 'category']);
 Route::post('company_recommandation', [Api\RegisterController::class, 'recommandation']);
+Route::get('/api/search/countries', [CountriesController::class,'search']);
+Route::get('/api/search/city', [CountriesController::class,'city']);
+Route::get('/api/search/states', [CountriesController::class,'states']);
+Route::post('influencer_details', [InfluencerController::class, 'details']);
+Route::post('influencer_profile', [InfluencerController::class, 'profile']);
+
+
+
+
 
 
 
@@ -70,6 +81,9 @@ Route::resource('/api/sales', SalesController::class);
 Route::resource('/api/inventory', InventoryController::class);
 Route::resource('/api/invoices', InvoiceController::class);
 Route::resource('/api/vouchers', VoucherController::class);
+Route::resource('/api/influencers', InfluencerController::class);
+
+
 Route::resource('/api/accounts', AccountController::class);
 
 
@@ -101,13 +115,27 @@ Route::post('api/ugc_product_media', [UgcproductController::class, 'ugcproductme
 Route::post('api/ugc_product_action', [UgcproductController::class, 'ugcproductaction']);
 Route::post('api/brief', [UgcproductController::class, 'brief']);
 Route::get('api/brand', [UgcproductController::class, 'brand']);
+Route::get('api/influencer_brand', [UgcproductController::class, 'influencer_brand']);
+
+Route::get('api/brand_details', [UgcproductController::class, 'brand_details']);
+
 Route::get('api/query', [AdminController::class, 'get_user']);
 Route::get('api/camp', [AdminController::class, 'camp']);
 Route::get('api/use', [AdminController::class, 'users']);
 Route::get('api/campaignss', [AdminController::class, 'campaign']);
 Route::get('api/details', [AdminController::class, 'details']);
 Route::get('api/user_details', [AdminController::class, 'userdetails']);
+Route::get('api/solo_inf', [InfluencerController::class, 'influencer']);
+Route::get('api/influencer_email', [InfluencerController::class, 'email']);
+Route::get('api/get_influencer', [InfluencerController::class, 'get_influencer']);
+Route::get('api/favorite', [InfluencerController::class, 'favorite']);
+
+
+
+
 Route::post('api/contract', [UgcproductController::class, 'contract']);
+Route::post('api/post_influencers', [UgcControllere::class, 'post_influencer']);
+
 
 
 
@@ -144,7 +172,7 @@ Route::post('api/register_company', [Api\RegisterController::class, 'company']);
 Route::get('/api/customers', [CustomerController::class,'search']);
 Route::get('/api/search/accounts', [chartController::class,'dropdown']);
 Route::get('/api/search/assets', [chartController::class,'filter']);
-Route::get('/api/search/countries', [CountriesController::class,'search']);
+// Route::get('/api/search/countries', [CountriesController::class,'search']);
 Route::get('/api/search/about', [CountriesController::class,'about']);
 
 
@@ -178,6 +206,8 @@ Route::get('/api/inventory/stock', [InventoryController::class,'stock']);
 Route::get('/api/chart/search', [chartController::class,'search']);
 // Route::get('/api/auth_users', [chartController::class,'search']);
 Route::get('/api/auth_users', [Api\AuthController::class,'users_data']);
+Route::get('/api/invited', [InfluencerController::class,'invited']);
+
 
 
 

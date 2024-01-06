@@ -89,7 +89,9 @@
         </ul>
       </div>
     </div>
+ 
     <br>
+
     <div class="col ul-title">
           <h4>User Campaings Details</h4>
           <!-- <p>2023-10-13</p> -->
@@ -98,6 +100,7 @@
             <table  class="table table-link" style="color:#212F3D; ">
                 <thead>
                     <tr>
+                      <th>ID</th>
                         <th>Action avoid</th>
                         <th>Action Instruction</th>
                         <th>Action Specific Caption</th>
@@ -108,7 +111,7 @@
 
 
                         <th>Gender</th>
-                        <th>Marketing objective</th>
+                        <!-- <th>Marketing objective</th> -->
                         <th>Min Age</th>
                         <th>Max age</th>
                         <th>PlateForm</th>
@@ -127,6 +130,7 @@
                 <tbody>
                     <tr v-for="item in users_detail.campaign" :key="item.data" @click="detailsPage(item)">
               
+                      <td class="w-1">{{item.id ? item.id :""}}</td>
 
                         <td class="w-1">{{item.action_avoid ? item.action_avoid :"---"}}</td>
                         <td class="w-1">{{item.action_instruction ? item.action_instruction : '---'}}</td>
@@ -139,7 +143,7 @@
                         <td class="w-3">{{item.gender ? item.gender : ''}}</td>
 
 
-                        <td class="w-3">{{item.marketing_objective ? item.marketing_objective : ''}}</td>
+                        <!-- <td class="w-3">{{item.marketing_objective ? item.marketing_objective : ''}}</td> -->
                         <td class="w-3">{{item.min_age ? item.min_age : ''}}</td>
                         <td class="w-3">{{item.max_age ? item.max_age : ''}}</td>
                         <td class="w-3">{{item.plateform ? item.plateform : ''}}</td>
@@ -156,6 +160,30 @@
                 </tbody>
             </table>
         </div>
+
+
+        <br>
+        <div class="col ul-title">
+          <h4>Marketing Objective</h4>
+          <!-- <p>2023-10-13</p> -->
+        </div>
+        <br>
+        <div class="row">
+          <div class="col" style="    font-size: larger;
+    color: black;
+    font-weight: 600;">Campaign ID</div>
+          <div class="col" style="    font-size: larger;
+    color: black;
+    font-weight: 600;">Objective</div>
+
+        </div>
+        
+        <ul class="row text-center" v-for="camps in campaigns" style=" list-style: none; border: 1px solid; height: 3rem;">
+          <strong style="font-size: x-large;
+    color: #2a3aae;">{{ camps.id }}</strong>
+        <li class="col" v-for="abcd in camps.objective">
+        {{ abcd.market.title }}</li>
+        </ul>
             
            
 
@@ -190,6 +218,7 @@ import vueHtmlToPdf from 'vue-html2pdf';
         
         data () {
             return {
+              campaigns:[],
                 id:'',
                 users_detail:[],
                 users_detail:{},
@@ -213,6 +242,8 @@ import vueHtmlToPdf from 'vue-html2pdf';
     get('/api/user_details?id='+this.id)
                 .then((res) => {
                     Vue.set(this.$data, 'users_detail', res.data.product)
+                    Vue.set(this.$data, 'campaigns', res.data.campaign)
+
                     // Vue.set(this.$data, 'campaign', res.data.product.)
 
                 })

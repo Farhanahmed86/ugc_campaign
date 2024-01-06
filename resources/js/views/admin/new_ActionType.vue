@@ -2,7 +2,7 @@
     <div class="contanir">
       <div class="col text-center" style="padding: 10px 0px 50px 0px;">
                 <img
-            src="/images/dline-5.png" style="width: 90%;height: 20px;"/>
+            src="/images/id2line.png" style="width: 90%;height: 20px;"/>
             </div> 
       <div class="row" style="display: flex; flex-direction: column; justify-content: center; gap: 40px;">
         <div class="col">
@@ -20,15 +20,15 @@
     padding: 20px;">
     </div>
     <div class="col-6 text-center" style="    margin-top: 60px;">
-        <h5 style="color: black;">Enable Influencers Whitelisting</h5>
+        <h5 style="color: black;">Activer l'option Whitelisting</h5>
         <p style="color: black;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit molestias totam numquam, ducimus iste voluptas quibusdam est quam, odio ipsa soluta quos officia commodi sequi quod. Molestias cupiditate quibusdam ipsa?</p>
         <div class="row">
     
 
-    <div class="col-4"><button class="but" @click="whitelist('Upto 15 days')">Upto 15 days </button></div>
-    <div class="col-4"><button class="but" @click="whitelist('Upto 60 days')">Upto 60 days</button></div>
+    <div class="col-4"><button class="but" @click="whitelist('15 jours')">15 jours </button></div>
+    <div class="col-4"><button class="but" @click="whitelist('60 jours')">60 jours</button></div>
 
-    <div class="col-4"><button class="but" @click="whitelist('Upto 90 days')">Upto 90 days</button></div>
+    <div class="col-4"><button class="but" @click="whitelist('90 jours')">90 jours</button></div>
 <br>
 </div>
     </div>
@@ -39,13 +39,13 @@
 
 </div>
 <br>
-            <p style="color: #000; margin-left: 10px;" >Specify what type of video need for your campaign.</p>
+            <p style="color: #000; margin-left: 10px;" >Quel type d'action souhaitez-vous que le créateur effectue ?</p>
             <div class="col-7">
               <div class="row">
                 <div class="col-4">
-                  <div class="card-3" @click="video('Testmonial')">
+                  <div class="card-3" @click="video('Témoignage')">
                     <div class="mini-card" @click="mini('ivory-coast' , 1)" :style="{ backgroundColor: miColor1 }">
-                    Testmonial
+                    Témoignage
                   </div>
                 </div>
                 </div>
@@ -74,9 +74,9 @@
             <div class="col-7">
               <div class="row">
                 <div class="col-4">
-                  <div class="card-3" @click="video('Product Review')">
+                  <div class="card-3" @click="video('Revue Produit')">
                     <div class="mini-card" @click="mini('ivory-coast' , 4)" :style="{ backgroundColor: miColor4 }">
-                    Product Review
+                    Revue Produit
                   </div>
                 </div>
                 </div>
@@ -88,9 +88,9 @@
                 </div>
                 </div>
                 <div class="col-4">
-                  <div class="card-3" @click="video('Custom')">
+                  <div class="card-3" @click="video('Customiser')">
                     <div class="mini-card" @click="mini('ivory-coast' , 6)" :style="{ backgroundColor: miColor6 }">
-                    Custom
+                    Customiser
                   </div>
                 </div>
                 </div>
@@ -117,8 +117,8 @@
         <div class="col">
           <div class="row" style="display: flex; flex-direction: column; justify-content: center;">
             <div class="col-5">
-              <h5 style="color: #000;">Plateform</h5>
-              <p style="color: #000;">Select the Plateform that your plan to use the content for. </p>
+              <h5 style="color: #000;">Plateforme</h5>
+              <p style="color: #000;">Sur quelle plateforme souhaitez-vous utiliser le contenu ? </p>
             </div>
             <div class="col-8">
               <div class="row">
@@ -152,7 +152,7 @@
                 <div class="col-3">
                   <div class="cardsss" @click="plateform('Other')">
                     <div class="social-card" @click="social('ivory-coast' , 4)" :style="{ backgroundColor: siColor4 }">
-                    <img src="/images/f3.png" style="width: 30%; margin-top: 10px;">
+                    <img src="/images/youtube.png" style="width: 30%; margin-top: 10px;">
                     <p style="padding: 10px 0px 0px 0px;">Other </p>
                   </div>
                 </div>
@@ -166,10 +166,10 @@
         <div class="col">
           <div class="row" style="display: flex; flex-direction: column; justify-content: center;">
             <div class="col-8">
-              <h5 style="color: #000;">How Many creators do you want to hire?</h5>
-              <p style="color: #000;">Select the ideal number of Creator that your aiming to hire for this campaign
-</p>
-<p style="color: #000;">Note-this doesnot restrict the number you can hire the next stages.</p>
+              <h5 style="color: #000;">Combien de créateur UGC souhaitez-vous ?</h5>
+              <!-- <p style="color: #000;">Select the ideal number of Creator that your aiming to hire for this campaign -->
+<!-- </p>
+<p style="color: #000;">Note-this doesnot restrict the number you can hire the next stages.</p> -->
             </div>
             <div class="col-8">
               <div class="row">
@@ -209,7 +209,7 @@
       </div>
       <br>
       <br>
-      <div class="col"><button class="button2" @click="save">Next</button></div>
+      <div class="col"><button class="button2" @click="save">Suivant</button></div>
       <br>
     </div>
 </template>
@@ -254,6 +254,13 @@ export default {
             }
         },
   name: "Dashboard",
+
+  created() {
+    console.log(this.$route.params.id);
+    this.id = this.$route.params.id;
+    
+
+  },
   methods: {
     short(e , num){
         if(num == 1){
@@ -398,7 +405,13 @@ export default {
                      .then((res) => {
                        
                          if(res.data && res.data.saved) {
-                          this.$router.push('/creators')
+                          if(res.data.data.ugc.suggest_influencer != null){
+                            
+                            this.$router.push(`/creators/${res.data.data.id}`)
+                          }
+                          else{
+                            this.$router.push(`/compaigns_ucg/${res.data.data.id}`)
+                          }
                              // this.success(res)
                          }
                      })

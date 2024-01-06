@@ -61,7 +61,7 @@
             selectedText() {
                 return this.initialize && this.initialize.text
                     ? this.initialize.text
-                    : 'Type or click to select'
+                    : ' Select'
             }
         },
         methods: {

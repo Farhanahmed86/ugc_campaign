@@ -14,7 +14,7 @@
               justify-content-between
             "
           >
-            <h6 class="m-0 font-weight-bold text-primary">Influncers Overview</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Statistiques inscriptions</h6>
             <!-- <h6 class="m-0 font-weight-bold text-primary">Total Profit : {{this.$data.model[7]}}</h6> -->
             <div class="dropdown no-arrow">
               <a
@@ -55,8 +55,8 @@
       </div>
     </div>
     <div class="col ul-title">
-          <h4>Campaigns</h4>
-          <p>2023-10-13</p>
+          <h4>Campagne crées</h4>
+          <p>{{ formattedDate }}</p>
         </div>
     <div class="row" style="padding-top: 30px;">
 
@@ -67,7 +67,7 @@
                   <img src="/images/user (1).png" style="width: 75%; padding-left: 12px;"/>
                 </div>
                <h5 class="card-title">{{ community_management }}</h5>
-                 <p class="card-text">Community Management</p>
+                 <p class="card-text">Total Brands</p>
                 </div>
             </div>
           </div>
@@ -102,7 +102,7 @@
                   <img src="/images/user (1).png" style="width: 75%;padding-left: 12px;"/>
                 </div>
                <h5 class="card-title">{{ women }}</h5>
-                 <p class="card-text">Women</p>
+                 <p class="card-text">Influencers Singup</p>
                 </div>
             </div>
           </div>
@@ -113,7 +113,7 @@
                   <img src="/images/user (1).png" style="width: 75%;padding-left: 12px;"/>
                 </div>
                <h5 class="card-title">{{ men }}</h5>
-                 <p class="card-text">Men</p>
+                 <p class="card-text">Total Budget</p>
                 </div>
             </div>
           </div>
@@ -124,7 +124,7 @@
                   <img src="/images/user (1).png" style="width: 75%;padding-left: 12px;"/>
                 </div>
                <h5 class="card-title">{{ other }}</h5>
-                 <p class="card-text">Other</p>
+                 <p class="card-text">New Clients</p>
                 </div>
             </div>
           </div>
@@ -132,8 +132,8 @@
     <div class="row" style="padding-top: 30px;">
       <div class="col-6 Country">
         <div class="col ul-title">
-          <h4>Location</h4>
-          <p>2023-10-13</p>
+          <h4>Localisation des marques inscrites</h4>
+          <p>{{ formattedDate }}</p>
         </div>
         <ul v-for="item in country">
           <li class="li_list" v-if="item.company_data == 'Espagne 🇪🇸'">
@@ -160,8 +160,8 @@
       </div>
       <div class="col-6 Country">
         <div class="col ul-title">
-          <h4>Company Types</h4>
-          <p>2023-10-13</p>
+          <h4>Comment ils nous en connus ?</h4>
+          <p>{{ formattedDate }}</p>
         </div>
         <ul v-for="datas in rec">
           <li class="li_list" v-if="datas.company_recommandation == 'Instagram / Linked In'">
@@ -191,8 +191,8 @@
     <div class="row" style="padding-top: 30px;">
       <div class="col-6 Country">
         <div class="col ul-title">
-          <h4>Sector of your company</h4>
-          <p>2023-10-13</p>
+          <h4>Industries représentés</h4>
+          <p>{{ formattedDate }}</p>
         </div>
         <ul v-for="cat in category ">
           <li class="li_list" v-if="cat.company_category == 'Autre'">
@@ -215,8 +215,8 @@
       </div>
       <div class="col-6 Country">
         <div class="col ul-title">
-          <h4>How did you know Yallad</h4>
-          <p>2023-10-13</p>
+          <h4>Type de commerce</h4>
+          <p>{{ formattedDate }}</p>
         </div>
         <ul v-for="ty in type">
           <li class="li_list" v-if="ty.company_type == 'Entreprise B2C'">
@@ -246,25 +246,26 @@
     <div class="row">
   
     
-  <div class="col">
+  <div class="col-6">
     <div class="card">
       <h4 style="    text-align: center;
     color: black;
     margin-bottom: 10px;
     margin-top: 10px;
-">Ugc Campaigns</h4>
+">Campagnes Crées Short</h4>
     <table  class="table table-striped table-sm table-hover" style="color:#212F3D; cursor: pointer;">
                 <thead class="thead-dark">
                     <tr>
                         <!-- <th>ID</th> -->
-                        <th>Campaign</th>
-
-                        <th>Objective</th>
-                        <th>Country</th>
+                        <th>Type de campagne</th>
+                        <th>User </th>
+                      <th>Objectif</th>
+                        <th>Client ID</th>
+                        <th>Budget</th>
                         <!-- <th>Type</th> -->
-                        <th>Gender</th>
-                        <th>Plateform </th>
-                        <!-- <th>Action </th> -->
+                        <th>Action type</th>
+                        
+                        <th>Action </th>
                         
 
 
@@ -274,16 +275,25 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="(item , index) in camp" :key="index"  @click="detailpage(item.id)">
+                    <tr v-for="(item , index) in camp" :key="index"  >
               
 
                        
-                        <td class="w-1">{{item.campaign ? item.campaign : ''}}</td>
-                        <td class="w-1">{{item.marketing_objective ? item.marketing_objective : ''}}</td>
-                        <td class="w-3">{{item.country ? item.country : ''}}</td>
+                        <td class="w-1" @click="detailpage(item.id)">{{item.campaign ? item.campaign : ''}}</td>
+                       
+                        <!-- <td v-if="item.user = null"  class="w-1" @click="detailpage(item.id)">{{''}}</td>
+                        <td v-else  class="w-1" @click="detailpage(item.id)">{{item.user}}</td> -->
+                        <td  class="w-1" >{{item.user ? item.user.first_name :'-----'}}</td>
+                        
+                        <td class="w-1" @click="detailpage(item.id)">{{item.marketing_objective ? item.marketing_objective : ''}}</td>
+                        <td  class="w-1" >{{item.user ? item.user.id :'-----'}}</td>
+
+                        <!-- <td class="w-3" @click="detailpage(item.id)">{{item.country ? item.country : '0.00'}}</td> -->
                         <!-- <td class="w-3">{{item.campaign_type ? item.campaign_type : ''}}</td> -->
-                        <td class="w-3">{{item.gender ? item.gender : ''}}</td>
-                        <td class="w-3">{{item.plateform ? item.plateform : ''}}</td>
+                        <td class="w-3" @click="detailpage(item.id)">{{item.hire_budget ? item.hire_budget : '0.00'}}</td>
+                        <td class="w-3" @click="detailpage(item.id)">{{item.plateform ? item.plateform : ''}}</td>
+                        <td class="w-3" style="cursor: pointer;"> <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512" style="fill:#4da037; font-size: xx-large;" @click="influencer(item.id)">! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc.<path d="M429.6 92.1c4.9-11.9 2.1-25.6-7-34.7s-22.8-11.9-34.7-7l-352 144c-14.2 5.8-22.2 20.8-19.3 35.8s16.1 25.8 31.4 25.8H224V432c0 15.3 10.8 28.4 25.8 31.4s30-5.1 35.8-19.3l144-352z"/></svg></td>
+
 
 
                         <!-- <td class="w-3">{{item.action_type ? item.action_type : 'none'}}</td> -->
@@ -298,24 +308,26 @@
 </div>
 
 
-<div class="col">
+<div class="col-6">
     <div class="card">
       <h4 style="    text-align: center;
     color: black;
     margin-bottom: 10px;
     margin-top: 10px;
-">Ugc Campaigns</h4>
+">Marques inscrites</h4>
     <table  class="table table-striped table-sm table-hover" style="color:#212F3D; cursor: pointer ">
                 <thead class="thead-dark">
                     <tr>
-                        <!-- <th>ID</th> -->
+                        <th>ID</th>
                         <th>Name</th>
 
-                        <th>Category  </th>
-                        <th>Country</th>
+                        
+                        
                         <!-- <th>Type</th> -->
-                        <th>Recommandation</th>
-                        <th>Company Type </th>
+                        <th>Phone number</th>
+                        <th>Country</th>
+                        <th>website </th>
+                        <th>Company  </th>
                         <!-- <th>Action </th> -->
                         
 
@@ -329,13 +341,14 @@
                     <tr v-for="(item , index) in use" :key="index" @click="user_detail(item.id)">
               
 
+                      <td class="w-1">{{item.id}}</td>
                        
                         <td class="w-1">{{item.first_name ? item.first_name : ''}}</td>
-                        <td class="w-1">{{item.company_category ? item.company_category : ''}}</td>
+                        <td class="w-1">{{item.phone? item.phone: '---'}}</td>
                         <td class="w-3">{{item.company_data ? item.company_data : ''}}</td>
                         <!-- <td class="w-3">{{item.campaign_type ? item.campaign_type : ''}}</td> -->
                         <td class="w-3">{{item.company_recommandation ? item.company_recommandation : ''}}</td>
-                        <td class="w-3">{{item.company_type ? item.company_type : ''}}</td>
+                        <td class="w-3">{{item.website ? item.website : ''}}</td>
 
 
                         <!-- <td class="w-3">{{item.action_type ? item.action_type : 'none'}}</td> -->
@@ -359,6 +372,7 @@
 import chartAreaDemo from "../../chart/demo/chart-area-demo";
 import chartPieDemo from "../../chart/demo/chart-pie-demo";
 import Vue from 'vue'
+import moment from 'moment';
 
   import { get , byMethod} from '../admin/components/lib/api'
   import Typehead from '../admin/components/typehead/Typehead.vue'
@@ -397,6 +411,11 @@ mounted() {
     chartAreaDemo();
     
   },
+  computed: {
+    formattedDate() {
+      return moment(this.currentDate).format('MMMM Do YYYY');
+    },
+  },
 beforeRouteEnter(to, from, next) {
             get('/api/query', to.query)
             
@@ -422,6 +441,12 @@ beforeRouteEnter(to, from, next) {
 
   
 methods: {
+
+  influencer(e){
+            this.$router.push(`/influencer_suggest/${e}`)
+            // this.$router.push(`/compaigns_ucg`)
+
+            },
 
   user_detail(e){
     this.$router.push(`/user_details/${e}`)
